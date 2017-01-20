@@ -1,0 +1,29 @@
+<!-- logged out menu -->
+<ion-menu id="loggedOutMenu" [content]="content">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="outer-content">
+
+    <ion-list>
+      <ion-list-header>
+        Navigate
+      </ion-list-header>
+      <button ion-item menuClose (click)="openPage()">
+        <ion-icon item-left name="settings"></ion-icon>
+        Menu1
+      </button>
+      <button ion-item menuClose (click)="openPage()">
+        <ion-icon item-left name="person-add"></ion-icon>
+        Signup
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
