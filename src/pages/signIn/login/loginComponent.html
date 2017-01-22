@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar class="login-title">
+    <ion-title>
+      <div class="page-subtitle">Welcome to ADD Dashboard</div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="login-content">
+  <ion-list>
+    <ion-item class="login-pic">
+      <img src=".../../img/signIn/welcome_phone.png">
+    </ion-item>
+    <ion-item class="login-item item-input">
+      <label class="item-input-wrapper input-label">
+        <input type="text" ng-model="form?.email" placeholder="please input your email">
+      </label>
+    </ion-item>
+    <ion-item class="login-item item-input">
+      <label class="item-input-wrapper input-label">
+        <input type="password" ng-model="form?.loginPassword" placeholder="please input your password">
+      </label>
+    </ion-item>
+    <div class="login-button">
+      <button class="button round-button" (click)="login()"><span>Login</span></button>
+    </div>
+  </ion-list>
+</ion-content>
