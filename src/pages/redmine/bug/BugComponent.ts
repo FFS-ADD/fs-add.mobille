@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 import BugAction from "./BugAction";
 import {BugState} from "./BugState";
-import { ChartsModule } from 'ng2-charts/ng2-charts';
+//import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 @Component({
 

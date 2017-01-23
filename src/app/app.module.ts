@@ -9,7 +9,7 @@ import { ResourceService } from '../providers/resource.service';
 import {Dispatcher} from "../core/Dispatcher";
 import {HttpService} from "../core/HttpService";
 import {BugComponent} from "../pages/redmine/bug/BugComponent";
-import { ChartsModule } from 'ng2-charts/ng2-charts';
+//import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 @NgModule({
   declarations: [
@@ -21,14 +21,14 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    ChartsModule
+    //ChartsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     TabsPage,
-    LoginComponent,
+    Login,
     BugComponent
   ],
   providers: [
