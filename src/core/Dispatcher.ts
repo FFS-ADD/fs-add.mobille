@@ -1,15 +1,26 @@
-import {Injectable, EventEmitter} from "@angular/core";
-import {Action} from "./Action";
+import { Injectable, EventEmitter } from "@angular/core";
+import { Action, ActionBind } from "./Action";
 
 @Injectable()
 export class Dispatcher extends EventEmitter<Action> {
-   public bindAction(actionType:any, instance:any, handler:any) {
+  public bindActions(...actionBinds: ActionBind[]) {
     return this.subscribe(o => {
-      handler.call(instance, o.params);
+      const actions = actionBinds.find(a => a.type === o.type);
+      if (actions) {
+        const handler = actions.handler;
+        const instance = actions.instance;
+        handler.call(instance, o.params);
+      }
     });
   }
 
-  public dispatch(actionName:string, params?:Object) {
-    this.emit({params: params, type: actionName});
+  // public bindAction(actionType: any, instance: any, handler: any) {
+  //   return this.subscribe(o => {
+  //     handler.call(instance, o.params);
+  //   });
+  // }
+
+  public dispatch(actionName: string, params?: Object) {
+    this.emit({ params: params, type: actionName });
   }
 }

@@ -1,24 +1,20 @@
-import {Injectable} from "@angular/core";
-import {Http, Response, URLSearchParams, Headers} from "@angular/http";
-import {Observable} from "rxjs/Rx";
-import BusinessFailureException from "./BusinessFailureException";
+import { Injectable } from "@angular/core";
+import { Http, Response, URLSearchParams, Headers } from "@angular/http";
+import { BusinessFailureException } from "./BusinessFailureException";
 import "rxjs/add/operator/map";
-import {AppConfig} from "../config/app.config";
-
-export const APP_ROOT = "http://localhost:8080/add-api";
+import { AppConfig } from "../config/app.config";
 
 @Injectable()
 export class HttpService {
-
-  constructor(private http:Http) {
+  constructor(private http: Http) {
   }
 
-  public get(url:string, data?:Object) {
+  public get(url: string, data?: Object) {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
 
     let parameters = new URLSearchParams();
-    Object.keys(data).map((k)=> {
+    Object.keys(data).map((k) => {
       if (data.hasOwnProperty(k)) {
         parameters.set(k, data[k]);
       }
@@ -27,36 +23,32 @@ export class HttpService {
     let observable = this.http.get(AppConfig.apiURL + url, {
       search: parameters,
       headers: headers
-    }).map((res:Response) => res.json());
+    }).map((res: Response) => res.json());
 
     observable.subscribe(
       null,
-      error => {
+      (error) => {
         console.log(error);
-        // throw new BusinessFailureException(error);
-      }
-    );
+        throw new BusinessFailureException(error);
+      });
     return observable;
   }
 
-  public post(url:string, data?:any) {
+  public post(url: string, data?: any) {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
     let observable = this.http.post(
       AppConfig.apiURL + url,
       JSON.stringify(data),
-      {headers: headers}
-    ).map((res:Response) => res.json());
-
+      { headers: headers }
+    ).map((res: Response) => res.json());
 
     observable.subscribe(
       null,
-      error => {
+      (error) => {
         console.log(error);
-        // throw new BusinessFailureException(error);
-      }
-    );
+        throw new BusinessFailureException(error);
+      });
     return observable;
   }
-
 }

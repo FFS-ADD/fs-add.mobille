@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar class="login-title">
+        <ion-title>
+            <div class="page-subtitle">Welcome to ADD Dashboard</div>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="login-content">
+    <ion-list>
+        <ion-item class="login-pic">
+            <img src="../../../assets/images/signIn/welcome.jpeg">
+        </ion-item>
+        <ion-item class="login-item item-input">
+            <label class="item-input-wrapper input-label">
+                <ion-icon name="mail-outline"></ion-icon>
+                <input type="text" [(ngModel)]="form.email" placeholder="please input your email"/>                
+             </label>
+        </ion-item>
+        <ion-item class="login-item item-input">
+            <label class="item-input-wrapper input-label">
+                <ion-icon name="key-outline"></ion-icon>
+                <input type="password" [(ngModel)]="form.password" placeholder="please input your password">
+                <ion-icon name="eye-outline"></ion-icon>
+            </label>
+        </ion-item>
+        <div class="login-button">
+            <button class="button round-button" (click)="login()">
+                <ion-icon name="arrow-round-forward"></ion-icon>
+                <span>Login</span>
+            </button>
+        </div>
+    </ion-list>
+</ion-content>

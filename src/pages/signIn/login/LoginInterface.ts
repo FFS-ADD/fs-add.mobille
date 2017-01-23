@@ -4,5 +4,5 @@ export interface LoginResponseInterface {
 
 export interface LoginRequestInterface {
     email: string;
-    loginPassword: string;
+    password: string;
 }
