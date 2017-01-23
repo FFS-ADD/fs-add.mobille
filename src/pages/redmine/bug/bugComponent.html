@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar class="login-title">
+    <ion-title>
+      <div class="page-subtitle">Welcome to ADD Dashboard</div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="login-content">
+  <ion-list>
+    <ion-item class="login-pic">
+      <ion-label>CHART{{form?.response?.chartType}}</ion-label>
+      <div>
+        <canvas baseChart
+                [chartType]="form.response.chartType"
+                [datasets]="form.response.datasets"
+                [options]="form.response.options">
+        </canvas>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

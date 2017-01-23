@@ -8,23 +8,28 @@ import { APP_CONFIG, AppConfig } from '../config/app.config';
 import { ResourceService } from '../providers/resource.service';
 import {Dispatcher} from "../core/Dispatcher";
 import {HttpService} from "../core/HttpService";
+import {BugComponent} from "../pages/redmine/bug/BugComponent";
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     TabsPage,
-    Login
+    Login,
+    BugComponent
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ChartsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     TabsPage,
-    Login
+    LoginComponent,
+    BugComponent
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
