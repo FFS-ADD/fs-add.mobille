@@ -15,7 +15,7 @@ export class Login implements OnInit {
   }
 
   public ngOnInit() {
-    this.form = { email: "default@add.com", password: "p@ssword" }
+    this.form = { email: "", password: "" }
   }
 
   public login() {
