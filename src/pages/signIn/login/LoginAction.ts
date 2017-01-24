@@ -9,6 +9,7 @@ export default class LoginAction {
   }
 
   public login(form) {
+    console.debug("LoginAction");
     //let observable = this.httpService.post('/auth/mail/password', form);
     let observable = this.httpService.get('manifest.json', form);
     observable.subscribe(
@@ -16,5 +17,6 @@ export default class LoginAction {
         this.dispatcher.dispatch(LoginActionType.LOGIN, data);
       }
     );
+    return observable;
   }
 }
