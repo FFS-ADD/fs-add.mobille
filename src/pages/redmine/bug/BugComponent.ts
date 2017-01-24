@@ -13,42 +13,33 @@ export class BugComponent {
   private CHART_OPTIONS = {
     responsive: true,
     maintainAspectRatio: false,
-    legend: {
-      display: false
-    },
-    tooltips: '',
-    scales: {
-      xAxes: [{
-        display: true,
-        scaleLabel: {
-          show: true
+    tooltips: {
+      display: true,
+      enabled: true,
+      callbacks: {
+        beforeTitle: function(tooltipItems, data) {
+          let item = tooltipItems[0];
+          let labels = data.datasets[item.datasetIndex].labels;
+
+          return labels[item.index];
         },
-        gridLines: {
-          display: false
-        },
-        ticks: {
-          suggestedMin: 0,
-          fontSize: 10,
-          fontColor: '#91a0ad',
-          maxRotation: 0
+        label: function(tooltipItem, data) {
+          let item = tooltipItem;
+          let datasets = data.datasets[item.datasetIndex].data;
+          let sum: number = 0;
+          for (let i = 0; i < datasets.length; i++) {
+            sum = sum + datasets[i];
+          }
+          return Math.floor(datasets[item.index] * 100 / sum) + '%';
         }
-      }],
-      yAxes: [{
-        display: false,
-        ticks: {
-          suggestedMin: 0
-        }
-      }]
-    },
-    ticks: {
-      suggestedMin: 0,
-      fontSize: 10,
-      fontColor: '#91a0ad',
-      maxRotation: 0
+      }
     },
   };
   private chartType = "doughnut";
-  private data = [{data :[90, 50, 40, 50, 48, 33, 12]}];
+  private data = [{
+    labels : ["New","In Progress","Fixed","ReTesting","Closed"],
+    data :[90, 50, 40, 50, 48]
+  }];
   constructor(private action: BugAction, private state: BugState) {
     this.form =  {
       response: {

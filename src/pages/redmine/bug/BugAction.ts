@@ -1,5 +1,4 @@
 import {Injectable} from "@angular/core";
-import {Observable} from "rxjs/Rx";
 import {Dispatcher} from "../../../core/Dispatcher";
 import {HttpService} from "../../../core/HttpService";
 import {BugActionType} from './BugActionType';

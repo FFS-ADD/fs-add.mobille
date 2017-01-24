@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-import { Login } from '../pages/signIn/login/Login';
+import {BugComponent} from "../pages/redmine/bug/BugComponent";
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = Login;
+  rootPage = BugComponent;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
