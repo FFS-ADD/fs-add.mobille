@@ -1,0 +1,53 @@
+//---------------------------------------- header用 ----------------------------------------
+ion-header {
+    .setting-title {
+        .title {
+            background: #03a9f4;
+            line-height: 41px;
+            .backbutton {
+              color:#ffffff;
+            }
+            .page-subtitle {
+                font-size: 16px;
+                font-weight: 400;
+                white-space: normal;
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+//---------------------------------------- content用 ----------------------------------------
+.setting-content {
+  .toparea {
+    height: 100px;
+    .notice {
+      font-size: medium;
+      height: 50px;
+      text-align: left;
+      padding-top: 30px;
+      padding-bottom: 0px;
+      padding-left: 13px;
+      .redstar {
+        padding-right: 4px;
+        font-size: larger;
+        color:red;
+      }
+    }
+    .title {
+      font-size: medium;
+      height: 50px;
+      text-align: left;
+      padding-top: 25px;
+      padding-bottom: 0px;
+      padding-left: 10px;
+      .redstar {
+        font-size: larger;
+        color:red;
+      }
+    }
+
+  }
+
+
+}
