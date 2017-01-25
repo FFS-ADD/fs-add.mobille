@@ -10,6 +10,7 @@ import {Dispatcher} from "../core/Dispatcher";
 import {HttpService} from "../core/HttpService";
 import {BugComponent} from "../pages/redmine/bug/BugComponent";
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
 
 @NgModule({
   declarations: [
