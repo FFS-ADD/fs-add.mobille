@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-import {BugComponent} from "../pages/redmine/bug/BugComponent";
+import {BugComponent} from "../pages/redmine/bug/bug";
 
 @Component({
   templateUrl: 'app.html'

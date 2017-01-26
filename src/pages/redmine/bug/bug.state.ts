@@ -1,8 +1,9 @@
 import {Injectable} from "@angular/core";
-import {BugResponseInterface} from './BugInterface';
+import {BugResponseInterface} from './bug.interface';
 
 @Injectable()
 export class BugState {
   response: BugResponseInterface;
-  success:boolean;
+  totalBugs: number;
+  success: boolean;
 }

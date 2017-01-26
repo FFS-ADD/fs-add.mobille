@@ -5,6 +5,9 @@ export interface BugResponseInterface {
 }
 
 export interface BugRequestInterface {
-    email: string;
-    loginPassword: string;
+  new: number;
+  inProgress: number;
+  fixed: number;
+  retesting: number;
+  close: number;
 }

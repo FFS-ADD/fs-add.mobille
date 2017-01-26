@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Dispatcher} from "../../../core/Dispatcher";
 import {HttpService} from "../../../core/HttpService";
-import {BugActionType} from './BugActionType';
+import {BugActionType} from './bug.action.type';
 
 @Injectable()
 export default class BugAction {

@@ -1,15 +1,15 @@
 import {Component} from "@angular/core";
-import BugAction from "./BugAction";
-import {BugState} from "./BugState";
-//import { ChartsModule } from 'ng2-charts/ng2-charts';
+import BugAction from "./bug.action";
+import {BugState} from "./bug.state";
 
 @Component({
-
+  selector: "bug",
   providers: [BugAction, BugState],
-  templateUrl: "bugComponent.html",
+  templateUrl: "bug.html",
 })
 export class BugComponent {
   private form;
+
   private CHART_OPTIONS = {
     responsive: true,
     maintainAspectRatio: false,
@@ -35,18 +35,25 @@ export class BugComponent {
       }
     },
   };
+
   private chartType = "doughnut";
+
   private data = [{
     labels : ["New","In Progress","Fixed","ReTesting","Closed"],
     data :[90, 50, 40, 50, 48]
   }];
+
+  private colors = [{backgroundColor: ["#efb14e", "#6e3c78", "#2d578b", "#3f99ec", "#00060e"]}];
+
   constructor(private action: BugAction, private state: BugState) {
     this.form =  {
       response: {
         chartType: this.chartType,
         datasets: this.data,
-        options: this.CHART_OPTIONS
-      }
+        options: this.CHART_OPTIONS,
+        colors: this.colors
+      },
+      totalBugs: state.totalBugs
     }
     console.info(this.form);
   }

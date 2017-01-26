@@ -1,13 +1,29 @@
 //---------------------------------------- bugComponent用 ----------------------------------------
 .bug-content {
+  border-radius: 5px;
+  border-bottom: 1px solid #aaaaaa;
+  margin: 3px;
+
   .scroll-content {
     padding: 0 10px;
 
     .bug-title {
       border: 0;
+      font-size: 18px;
       padding: 0;
+
+      .bug-title-name {
+        font-weight: bold;
+      }
+
+      .bug-title-detail {
+        font-size: 16px;
+        text-align: right;
+      }
+
       .item-inner {
         padding: 0;
+        border: none;
       }
       img {
         height: 100%;
@@ -23,48 +39,63 @@
 
       .item-inner {
         border: none;
+        padding-right: 0;
       }
 
       .bug-canvas-title {
         float: left;
-        width: 50%;
+        font-size: 12px;
+        margin: 0;
+        width: 40%;
 
-        p {
-          display: inline-flex;
-          margin-right: 10px;
-          height: 15px;
-          width: 15px;
-          border-radius: 3px;
-          border: 1px solid #aaaaaa;
+        div {
+          height: 28px;
+          padding: 6px 0;
+          border-bottom: 1px solid #aaaaaa;
+          width: 90%;
 
-          &.bug-new-title {
-            background: #0c60ee;
-          }
+          p {
+            display: inline-flex;
+            margin-right: 10px;
+            height: 16px;
+            width: 16px;
+            border-radius: 3px;
+            border: 1px solid #aaaaaa;
 
-          &.bug-in-progress-title {
-            background: #fbb6b6;
-          }
+            &.bug-new-title {
+              background: color($colors, orange-color);
+            }
 
-          &.bug-fixed-title {
-            background: #21b94e;
-          }
+            &.bug-in-progress-title {
+              background: color($colors, violet-color);
+            }
 
-          &.bug-retesting-title {
-            background: #e93b39;
-          }
+            &.bug-fixed-title {
+              background: color($colors, darkblue-color);
+            }
 
-          &.bug-closed-title {
-            background: #aaaaaa;
+            &.bug-retesting-title {
+              background: color($colors, lightblue-color);
+            }
+
+            &.bug-closed-title {
+              background: color($colors, black-color);
+            }
           }
         }
       }
-      .bug-canvas {
-        float: right;
-        width: 50%;
+      .bug-canvas-area {
+        margin: 0;
+        width: 60%;
 
-        .canvas {
+        .bug-canvas {
           float: right;
-          width: 280px;
+          width: 100%;
+
+          .canvas {
+            float: right;
+            width: 280px;
+          }
         }
       }
     }
