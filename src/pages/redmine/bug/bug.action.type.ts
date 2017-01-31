@@ -1,4 +1,4 @@
 export const BugActionType = {
-    LOGIN: 'LOGIN_ACTION.LOGIN'
+    INIT: 'BUG_ACTION.INIT'
 };
 

@@ -1,10 +1,16 @@
-export interface BugResponseInterface {
-  chartType: string;
-  datasets: number[];
+export interface BugScreenInterface {
+  dataSets: BugScreenDataSet[];
+  bugResponse: BugResponseInterface;
   options: any;
+  colors: any;
 }
 
-export interface BugRequestInterface {
+export interface BugScreenDataSet {
+  labels: string[];
+  data: number[];
+}
+
+export interface BugResponseInterface {
   new: number;
   inProgress: number;
   fixed: number;

@@ -19,6 +19,15 @@
       .bug-title-detail {
         font-size: 16px;
         text-align: right;
+
+        .bug-title-detail-name {
+          display: inline-block;
+          line-height: 0.8;
+        }
+
+        ion-icon {
+          width: 10px;
+        }
       }
 
       .item-inner {
