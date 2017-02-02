@@ -1,9 +1,18 @@
-<ion-content class="bug-content">
-  <ion-item class="bug-title">
-    <ion-label class="bug-title-name">BUG</ion-label>
-    <ion-label class="bug-title-detail" (click)="goBugDetails()">
-      <p class="bug-title-detail-name">Details</p>
-      <ion-icon name="md-more"></ion-icon>
+<ion-content class="bug-details-content">
+  <ion-navbar #ionNavbar>
+    <button ion-button menuToggle >
+      <ion-icon name="md-arrow-back"></ion-icon>
+    </button>
+    <ion-title>
+      Weekly Bug History
+    </ion-title>
+  </ion-navbar>
+  <ion-item class="weekly-bug-details">
+    <ion-label class="weekly-bug-details-label">
+      <p class="icon">
+        <i class="history details"></i>
+      </p>
+      <p class="weekly-bug-details-title">Weekly Bug Details History</p>
     </ion-label>
   </ion-item>
   <ion-item class="bug-canvas">
@@ -34,11 +43,19 @@
     </ion-label>
     <ion-label class="bug-canvas-area">
       <canvas baseChart class="canvas"
-              [chartType]="state?.screen?.chartType"
+              [chartType]="chartType"
               [datasets]="state?.screen?.dataSets"
               [options]="state?.screen?.options"
               [colors]="state?.screen?.colors">
       </canvas>
+    </ion-label>
+  </ion-item>
+  <ion-item class="weekly-bug-details">
+    <ion-label class="weekly-bug-details-label">
+      <p class="icon">
+        <i class="history bug-fix"></i>
+      </p>
+      <p class="weekly-bug-details-title">Weekly BugFix History</p>
     </ion-label>
   </ion-item>
 </ion-content>

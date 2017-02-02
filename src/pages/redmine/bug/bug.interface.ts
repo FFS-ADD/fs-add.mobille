@@ -1,4 +1,5 @@
 export interface BugScreenInterface {
+  chartType: String;
   dataSets: BugScreenDataSet[];
   bugResponse: BugResponseInterface;
   options: any;

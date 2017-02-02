@@ -11,6 +11,7 @@ import {HttpService} from "../core/HttpService";
 import {BugComponent} from "../pages/redmine/bug/bug";
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
+import {BugDetailsComponent} from "../pages/redmine/bugDetails/bug-details";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
     HomePage,
     TabsPage,
     Login,
-    BugComponent
+    BugComponent,
+    BugDetailsComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -30,7 +32,8 @@ import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
     HomePage,
     TabsPage,
     Login,
-    BugComponent
+    BugComponent,
+    BugDetailsComponent
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

@@ -1,20 +1,17 @@
 import {Injectable}from "@angular/core";
 import {Dispatcher}from "../../../core/Dispatcher";
-import {BugState}from "./bug.state";
-import {BugActionType}from "./bug.action.type";
-import {BugResponseInterface, BugScreenDataSet, BugScreenInterface} from "./bug.interface";
+import {BugDetailsActionType} from "./bug-details.action.type";
+import {BugDetailsState} from "./bug-details.state";
 
 @Injectable()
-export class BugStore {
-  constructor(private dispatcher:Dispatcher, private state:BugState) {
+export class BugDetailsStore {
+  constructor(private dispatcher:Dispatcher, private state: BugDetailsState) {
         this.dispatcher.bindActions( {
-      type:BugActionType.INIT,
-      instance:this,
-      handler:this.init
+      type: BugDetailsActionType.INIT,
+      instance: this,
+      handler: this.init
     });
   }
-
-  private chartType:string = "doughnut";
 
   private CHART_OPTIONS = {
     responsive: true,
@@ -48,21 +45,20 @@ export class BugStore {
 
   public init(data) {
     console.log("BugStore#init");
-    console.log(data);
-    let response: BugResponseInterface = data.result;
-    let totalBugs: number = response.new + response.inProgress + response.fixed + response.retesting + response.close;
-    let dataSets: BugScreenDataSet = {
-      labels: this.DATA_SET_LABELS,
-      data: [response.new, response.inProgress, response.fixed, response.retesting, response.close]
-    };
-    let screenResponse: BugScreenInterface = {
-      chartType: this.chartType,
-      dataSets: [dataSets],
-      bugResponse: response,
-      colors : this.colors,
-      options: this.CHART_OPTIONS
-    };
-    this.state.totalBugs = totalBugs;
-    this.state.screen = screenResponse;
+    // console.log(data);
+    // let response: BugResponseInterface = data.result;
+    // let totalBugs: number = response.new + response.inProgress + response.fixed + response.retesting + response.close;
+    // let dataSets: BugScreenDataSet = {
+    //   labels: this.DATA_SET_LABELS,
+    //   data: [response.new, response.inProgress, response.fixed, response.retesting, response.close]
+    // };
+    // let screenResponse: BugScreenInterface = {
+    //   dataSets: [dataSets],
+    //   bugResponse: response,
+    //   colors : this.colors,
+    //   options: this.CHART_OPTIONS
+    // };
+    // this.state.totalBugs = totalBugs;
+    // this.state.screen = screenResponse;
   }
 }
