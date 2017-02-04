@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {LoginResponseInterface} from './LoginInterface';
+import {LoginResponseInterface} from './login.interface';
 
 @Injectable()
 export class LoginState {

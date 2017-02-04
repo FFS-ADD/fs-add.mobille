@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Dispatcher } from "../../../core/Dispatcher";
-import { LoginState } from "./LoginState";
-import { LoginActionType } from "./LoginActionType";
+import { LoginState } from "./login.state";
+import { LoginActionType } from "./login.action.type";
 
 @Injectable()
 export class LoginStore {

@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { NavController } from 'ionic-angular';
-import LoginAction from "./LoginAction";
-import { LoginState } from "./LoginState";
-import { LoginStore } from "./LoginStore";
-import { LoginRequestInterface } from './LoginInterface';
+import LoginAction from "./login.action";
+import { LoginState } from "./login.state";
+import { LoginStore } from "./login.store";
+import { LoginRequestInterface } from './login.interface';
 import { HomePage } from '../../home/home';
 
 @Component({

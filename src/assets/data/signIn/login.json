@@ -1,0 +1,10 @@
+ {
+     "status": 0,
+     "result": {
+         "access_token": "e2ae11c9-ea52-4c86-a07e-057999ad9518",
+         "token_type": "bearer",
+         "refresh_token": "126f009e-bd33-4ee5-8d16-7cbacd0907b9",
+         "expires_in": 119,
+         "scope": "read write trust"
+     }
+ }
