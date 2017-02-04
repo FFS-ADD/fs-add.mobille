@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Weekly Source Quality History
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="sonarqube-detail-page">
+    <div class="sonarqube-detail-title">
+        <ion-icon name="logo-buffer"></ion-icon><div>Weekly VBC History</div>
+    </div>
+    <div class="sonarqube-detail-chart">
+        <canvas baseChart height="200px"
+                [datasets]="vbc.lineChartData"
+                [labels]="vbc.lineChartLabels"
+                [options]="vbc.lineChartOptions"
+                [colors]="vbc.lineChartColors"
+                legend="true"
+                chartType="line"></canvas>
+    </div>
+    <div class="sonarqube-detail-title">
+        <ion-icon name="logo-buffer"></ion-icon><div>Weekly LOC History</div>
+    </div>
+    <div class="sonarqube-detail-chart">
+        <canvas baseChart height="200px"
+                [datasets]="loc.lineChartData"
+                [labels]="loc.lineChartLabels"
+                [options]="loc.lineChartOptions"
+                [colors]="loc.lineChartColors"
+                legend="true"
+                chartType="line"></canvas>
+    </div>
+    <div class="sonarqube-detail-title">
+        <ion-icon name="logo-buffer"></ion-icon><div>Weekly Coverage History</div>
+    </div>
+    <div class="sonarqube-detail-chart">
+        <canvas baseChart height="200px"
+                [datasets]="coverage.lineChartData"
+                [labels]="coverage.lineChartLabels"
+                [options]="coverage.lineChartOptions"
+                [colors]="coverage.lineChartColors"
+                legend="true"
+                chartType="line"></canvas>
+    </div>
+</ion-content>

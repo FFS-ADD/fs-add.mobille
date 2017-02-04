@@ -1,0 +1,21 @@
+.sonarqube-detail-page {
+
+    .sonarqube-detail-title {
+        display: flex;
+        height: 30px;
+        background-color: #33C6D8;
+        line-height: 30px;
+        ion-icon {
+            margin-left: 10px;
+        }
+        div {
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+    }
+
+    .sonarqube-detail-chart {
+        margin-bottom: 5px;
+    }
+
+}

@@ -1,0 +1,154 @@
+<div class="sonarqube-page">
+    <div class="sonarqube-title">
+        <ion-icon name="logo-buffer"></ion-icon><div>Sonarqube</div>
+    </div>
+    <div class="sonarqube-subtitle">
+        The following data is obtained from sonarqube.
+    </div>
+    <!--Quality Gate-->
+    <ion-card>
+        <ion-card-header>
+            <ion-grid class="sonarqube-quality-title">
+                <div>Quality Gate</div>
+                <div>
+                    <button ion-button color="danger" round small>
+                        Failed
+                    </button>
+                </div>
+                <div>
+                    <button ion-button clear item-right icon-right small color="dark" (click)="detail()">
+                        Details
+                        <ion-icon name="md-more"></ion-icon>
+                    </button>
+                </div>
+            </ion-grid>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-33>
+                        <div>
+                            <div>Vulneralilities</div>
+                            <div class="sonarqube-value">{{state?.screen?.sonarqubeResponse?.vulneralilities}}</div>
+                        </div>
+                    </ion-col>
+                    <ion-col width-33 center class="sonarqube-value-border">
+                        <div>
+                            <div>Bugs</div>
+                            <div class="sonarqube-value">{{state?.screen?.sonarqubeResponse?.bugs}}</div>
+                        </div>
+                    </ion-col>
+                    <ion-col width-33>
+                        <div>
+                            <div>Code Smells</div>
+                            <div class="sonarqube-value">{{state?.screen?.sonarqubeResponse?.code}}</div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+    <!--LOC -->
+    <ion-card>
+        <ion-card-header>
+            <ion-grid class="sonarqube-loc-title">
+                <div>LOC</div>
+                <div class="second-title">Lines of Code</div>
+                <div class="thrid-title">19K</div>
+            </ion-grid>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-33>
+                        <div>
+                            <div>Line</div>
+                            <div class="sonarqube-value">359.2K</div>
+                        </div>
+                    </ion-col>
+                    <ion-col width-33 center class="sonarqube-value-border">
+                        <div>
+                            <div>Statement</div>
+                            <div class="sonarqube-value">912K</div>
+                        </div>
+                    </ion-col>
+                    <ion-col width-33>
+                        <div>
+                            <div>File</div>
+                            <div class="sonarqube-value">1.1K</div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+    <!--Coverage -->
+    <ion-card>
+        <ion-card-header>
+            <ion-grid class="sonarqube-coverage-title">
+                <div>Coverage</div>
+                <div class="sonarqube-coverage-value">87.1%</div>
+            </ion-grid>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-33>
+                        <div>
+                            <div>Tests</div>
+                            <div class="sonarqube-value">300</div>
+                        </div>
+                    </ion-col>
+                    <ion-col width-33 center class="sonarqube-value-border">
+                        <div>
+                            <div>Sucess</div>
+                            <div class="sonarqube-value">214</div>
+                        </div>
+                    </ion-col>
+                    <ion-col width-33>
+                        <div>
+                            <div>Failures</div>
+                            <div class="sonarqube-value">86</div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+    <!--Duplication -->
+    <ion-card>
+        <ion-card-header>
+            <ion-grid class="sonarqube-duplication-title">
+                <div>Duplication</div>
+                <span class="sonarqube-duplication-value">12.1%</span>
+            </ion-grid>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-33>
+                        <div>
+                            <div>Line</div>
+                            <div class="sonarqube-value">369.7K</div>
+                        </div>
+                    </ion-col>
+                    <ion-col width-33 center class="sonarqube-value-border">
+                        <div>
+                            <div>Blocks</div>
+                            <div class="sonarqube-value">1.3K</div>
+                        </div>
+                    </ion-col>
+                    <ion-col width-33>
+                        <div>
+                            <div>File</div>
+                            <div class="sonarqube-value">317</div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+</div>

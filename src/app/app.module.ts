@@ -12,6 +12,8 @@ import {BugComponent} from "../pages/redmine/bug/bug";
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
 import {BugDetailsComponent} from "../pages/redmine/bugDetails/bug-details";
+import { SonarqubeComponent } from '../pages/home/sonarqube/sonarqube';
+import { SonarqubeDetailPage } from '../pages/home/sonarqube/sonarqube-detail/sonarqube-detail'
 
 @NgModule({
   declarations: [
@@ -20,10 +22,14 @@ import {BugDetailsComponent} from "../pages/redmine/bugDetails/bug-details";
     TabsPage,
     Login,
     BugComponent,
-    BugDetailsComponent
+    BugDetailsComponent,
+    SonarqubeComponent,
+    SonarqubeDetailPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      backButtonText: ''
+    }),
     ChartsModule
   ],
   bootstrap: [IonicApp],
@@ -33,7 +39,8 @@ import {BugDetailsComponent} from "../pages/redmine/bugDetails/bug-details";
     TabsPage,
     Login,
     BugComponent,
-    BugDetailsComponent
+    BugDetailsComponent,
+    SonarqubeDetailPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
