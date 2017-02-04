@@ -9,7 +9,7 @@ export default class SonarqubeAction {
   }
 
   public init() {
-    let observable = this.httpService.get('/assets/datas/sonarqube/datas.json', {});
+    let observable = this.httpService.get('/assets/data/sonarqube/datas.json', {});
     observable.subscribe(
        data => {
         if (data.status === 1) {
