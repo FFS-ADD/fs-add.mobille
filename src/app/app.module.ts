@@ -14,6 +14,7 @@ import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
 import {BugDetailsComponent} from "../pages/redmine/bugDetails/bug-details";
 import { SonarqubeComponent } from '../pages/home/sonarqube/sonarqube';
 import { SonarqubeDetailPage } from '../pages/home/sonarqube/sonarqube-detail/sonarqube-detail'
+import { DataSetting } from '../pages/signIn/displaydatasetting/datasetting.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SonarqubeDetailPage } from '../pages/home/sonarqube/sonarqube-detail/so
     BugComponent,
     BugDetailsComponent,
     SonarqubeComponent,
-    SonarqubeDetailPage
+    SonarqubeDetailPage,
+    DataSetting
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -40,7 +42,8 @@ import { SonarqubeDetailPage } from '../pages/home/sonarqube/sonarqube-detail/so
     Login,
     BugComponent,
     BugDetailsComponent,
-    SonarqubeDetailPage
+    SonarqubeDetailPage,
+    DataSetting
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

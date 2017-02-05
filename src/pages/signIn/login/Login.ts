@@ -5,6 +5,7 @@ import { LoginState } from "./login.state";
 import { LoginStore } from "./login.store";
 import { LoginRequestInterface } from './login.interface';
 import { HomePage } from '../../home/home';
+import { DataSetting } from '../displaydatasetting/datasetting.component';
 
 @Component({
   providers: [LoginAction, LoginState, LoginStore],
@@ -25,7 +26,8 @@ export class Login implements OnInit {
     let observable = this.action.login(this.form);
     observable.subscribe((data) => {
       // this.navCtrl.push(HomePage);
+      this.navCtrl.push(DataSetting, {"perPage" : "login"});
     });
-    this.navCtrl.push(HomePage);
+
   }
 }
