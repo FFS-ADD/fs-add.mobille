@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
+import { NavController, NavParams } from 'ionic-angular';
 import {Login} from "../pages/signIn/login/Login";
 // import {BugComponent} from "../pages/redmine/bug/bug";
 import { HomePage } from '../pages/home/home';
+import { DataSetting } from '../pages/signIn/displaydatasetting/datasetting.component';
 
 @Component({
   templateUrl: 'app.html'
@@ -21,7 +23,13 @@ export class MyApp {
     });
   }
 
-  openPage() {
+  public openPage() {
 
+  }
+
+  public datasetting() {
+    //this.navCtrl.push(DataSetting, {
+    //  "perPage" : "setting"
+    //} );
   }
 }

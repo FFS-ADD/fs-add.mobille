@@ -1,25 +1,30 @@
 <!-- logged out menu -->
 <ion-menu id="loggedOutMenu" [content]="content">
 
-  <ion-header hide-back-button="true">
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
+  <ion-header class="menu-header">
+    <ion-avatar item-left class="photo">
+      <img src="../assets/images/tom.png">
+    </ion-avatar>
+    <h2 class="name">TOM</h2>
   </ion-header>
 
   <ion-content class="outer-content">
-
     <ion-list>
-      <ion-list-header>
-        Navigate
-      </ion-list-header>
-      <button ion-item menuClose (click)="openPage()">
+      <button ion-item menuClose (click)="datasetting()">
         <ion-icon item-left name="settings"></ion-icon>
-        Menu1
+        Display Data Settings
       </button>
       <button ion-item menuClose (click)="openPage()">
         <ion-icon item-left name="person-add"></ion-icon>
-        Signup
+        User Profile Settings
+      </button>
+      <button ion-item menuClose (click)="openPage()">
+        <ion-icon item-left name="key"></ion-icon>
+        Password Reset
+      </button>
+      <button ion-item menuClose (click)="openPage()">
+        <ion-icon item-left name="log-out"></ion-icon>
+        Logout
       </button>
     </ion-list>
   </ion-content>

@@ -24,3 +24,30 @@
       url('../assets/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
       font-weight:normal;font-style:normal
 }
+
+
+.menu-header {
+ display: flex;
+  padding-bottom: 10%;
+  .photo {
+    margin-top: 6%;
+    margin-left: 10%;
+    width: 20%;
+    height: 20%;
+  }
+
+  .name {
+    margin-top: 12%;
+    margin-left: 10%;
+
+  }
+
+}
+.outer-content {
+  .fixed-content {
+    margin-top: 100px !important;
+  }
+  .scroll-context {
+    margin-top: 100px !important;
+  }
+}
