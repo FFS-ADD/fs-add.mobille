@@ -1,0 +1,74 @@
+<ion-content class="task-details-content">
+    <ion-navbar #ionNavbar>
+        <button ion-button menuToggle>
+      <ion-icon name="md-arrow-back"></ion-icon>
+    </button>
+        <ion-title>
+            Weekly Task History
+        </ion-title>
+    </ion-navbar>
+    <ion-item class="weekly-task-details">
+        <ion-label class="weekly-task-details-label">
+            <p class="icon">
+                <i class="history details"></i>
+            </p>
+            <p class="weekly-task-details-title">Weekly History</p>
+        </ion-label>
+    </ion-item>
+    <ion-item class="task-canvas">
+        <ion-label class="task-canvas-title">
+            <div>
+                <label>Total tasks : {{state?.totalTasks}}</label>
+            </div>
+            <div>
+                <p class="task-new-title"></p>
+                <label>New : {{state?.screen?.taskResponse?.new}}</label>
+            </div>
+            <div>
+                <p class="task-in-progress-title"></p>
+                <label>In Progress : {{state?.screen?.taskResponse?.inProgress}}</label>
+            </div>
+            <div>
+                <p class="task-fixed-title"></p>
+                <label>Fixed : {{state?.screen?.taskResponse?.fixed}}</label>
+            </div>
+            <div>
+                <p class="task-retesting-title"></p>
+                <label>ReTesting : {{state?.screen?.taskResponse?.retesting}}</label>
+            </div>
+            <div>
+                <p class="task-closed-title"></p>
+                <label>Closed : {{state?.screen?.taskResponse?.close}}</label>
+            </div>
+        </ion-label>
+        <ion-label class="task-canvas-area" *ngIf="state.screen && state.screen.dataSets">
+            <canvas baseChart class="canvas" [chartType]="chartType" [datasets]="state?.screen?.dataSets" [options]="state?.screen?.options" [colors]="state?.screen?.colors">
+            </canvas>
+        </ion-label>
+    </ion-item>
+    <ion-item class="weekly-task-details">
+        <ion-label class="weekly-task-details-label">
+            <p class="icon">
+                <i class="history task-fix"></i>
+            </p>
+            <p class="weekly-task-details-title">Delay Task List</p>
+        </ion-label>
+    </ion-item>
+    <ion-list class="weekly-task-details-list">
+        <div class="weekly-task-details-list-item" *ngFor="let item of state.screen?.delayTaskList">
+            <div class="weekly-task-details-list-item-title">
+                <ion-label class="label-title">
+                    <p>{{item.taskId}}</p>
+                </ion-label>
+            </div>
+            <div class="weekly-task-details-list-item-graph"></div>
+            <div class="weekly-task-details-list-item-content">
+                <ion-label class="label-content">
+                    <p>Tiket: Coding UserController</p>
+                    <p>Owner: Wei.Zhang</p>
+                    <p>Planed End Date: 2015/06/17</p>
+                </ion-label>
+            </div>
+        </div>
+    </ion-list>
+</ion-content>

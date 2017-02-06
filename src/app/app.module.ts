@@ -6,17 +6,19 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { Login } from '../pages/signIn/login/Login';
 import { APP_CONFIG, AppConfig } from '../config/app.config';
 import { ResourceService } from '../providers/resource.service';
-import {Dispatcher} from "../core/Dispatcher";
-import {HttpService} from "../core/HttpService";
-import {BugComponent} from "../pages/redmine/bug/bug";
+import { Dispatcher } from "../core/Dispatcher";
+import { HttpService } from "../core/HttpService";
+import { BugComponent } from "../pages/redmine/bug/bug";
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
-import {BugDetailsComponent} from "../pages/redmine/bugDetails/bug-details";
+import { BugDetailsComponent } from "../pages/redmine/bugDetails/bug-details";
 import { SonarqubeComponent } from '../pages/home/sonarqube/sonarqube';
 import { SonarqubeDetailPage } from '../pages/home/sonarqube/sonarqube-detail/sonarqube-detail'
 import { DataSetting } from '../pages/signIn/displaydatasetting/datasetting.component';
-import {BackLogComponent} from "../pages/redmine/backlog/master/backlog-master";
-import {BackLogDetailComponent} from "../pages/redmine/backlog/detail/backlog-detail";
+import { BackLogComponent } from "../pages/redmine/backlog/master/backlog-master";
+import { BackLogDetailComponent } from "../pages/redmine/backlog/detail/backlog-detail";
+import {TaskComponent} from "../pages/redmine/task/task";
+import {TaskDetailsComponent} from "../pages/redmine/taskDetails/taskDetails";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import {BackLogDetailComponent} from "../pages/redmine/backlog/detail/backlog-de
     SonarqubeDetailPage,
     DataSetting,
     BackLogComponent,
-    BackLogDetailComponent
+    BackLogDetailComponent,
+    TaskComponent,
+    TaskDetailsComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -49,14 +53,14 @@ import {BackLogDetailComponent} from "../pages/redmine/backlog/detail/backlog-de
     SonarqubeDetailPage,
     DataSetting,
     BackLogComponent,
-    BackLogDetailComponent
+    BackLogDetailComponent,
+    TaskComponent,
+    TaskDetailsComponent
   ],
-  providers: [
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    { provide: APP_CONFIG, useValue: AppConfig },
+  providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, { provide: APP_CONFIG, useValue: AppConfig },
     ResourceService,
     Dispatcher,
     HttpService
   ]
 })
-export class AppModule {}
+export class AppModule { }

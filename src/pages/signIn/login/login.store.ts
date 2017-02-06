@@ -15,7 +15,7 @@ export class LoginStore {
 
   public login(data) {
     console.debug("LoginStore");
-    if (data.status === "SUCCESS") {
+    if (data.status === 1) {
       this.state.success = true;
     } else {
       this.state.success = false;

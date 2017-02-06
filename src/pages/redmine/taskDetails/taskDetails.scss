@@ -1,0 +1,197 @@
+//---------------------------------------- taskComponent用 ----------------------------------------
+.task-details-content {
+    .scroll-content {
+        ion-navbar {
+            .toolbar-background {
+                background-color: color($colors, narbar-color);
+            }
+            .back-button {
+                color: color($colors, black-color);
+                margin: 0;
+                padding: 0;
+                width: 44px;
+            }
+            .toolbar-content {
+                .title {
+                    &.title-ios {
+                        padding: 0 60px 1px;
+                    }
+                    &.title-md {
+                        text-align: center;
+                        width: calc(100% - 44px);
+                    }
+                    .toolbar-title {
+                        color: color($colors, light);
+                        font-size: 18px;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+        .weekly-task-details {
+            background-color: color($colors, light-blue-color);
+            height: 22px;
+            padding: 0;
+            min-height: 22px;
+            p {
+                color: color($colors, black-color);
+                padding-left: 5px;
+                margin: 0;
+            }
+            .item-inner {
+                min-height: 22px;
+                height: 22px;
+                .input-wrapper {
+                    height: 22px;
+                    .weekly-task-details-label {
+                        display: inline-flex;
+                        margin: 0;
+                        .icon {
+                            .history {
+                                font: normal normal normal 14px/1 FontAwesome2;
+                                &.details {
+                                    &:before {
+                                        content: "\f080";
+                                    }
+                                }
+                                &.task-fix {
+                                    &:before {
+                                        content: "\f201";
+                                    }
+                                }
+                                &:before {
+                                    box-sizing: border-box;
+                                    font-size: 19px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .weekly-task-details-title {
+                font-size: 16px;
+            }
+        }
+        .weekly-task-details-list {
+            .weekly-task-details-list-item {
+                display: flex;
+                padding-left: 6px;
+                padding-right: 6px;
+                border-style: solid;
+                font-size: 16px;
+                border-width: 1px;
+                margin-top: 4px;
+                margin-bottom: -1px;
+                border-color: #e3e7e8;
+                border-left-style: none;
+                border-right-style: none;
+                .weekly-task-details-list-item-title {
+                    display: flex;
+                    align-items: center;
+                    width: 60px;
+                    .label-title {
+                        text-align: center;
+                    }
+                }
+                .weekly-task-details-list-item-graph {
+                    width: 10px;
+                    background: color($colors, task-delay-color);
+                    border-radius: 5px;
+                }
+                .weekly-task-details-list-item-content {
+                    padding-left: 6px;
+                    .label-content {
+                        margin: 0;
+                    }
+                }
+                &:nth-child(even) {
+                    background-color: #e3e7e8;
+                }
+            }
+        }
+        .task-title {
+            border: 0;
+            font-size: 18px;
+            padding: 0;
+            .task-title-name {
+                font-weight: bold;
+            }
+            .task-title-detail {
+                font-size: 16px;
+                text-align: right;
+                .task-title-detail-name {
+                    display: inline-block;
+                    line-height: 0.8;
+                }
+                ion-icon {
+                    width: 10px;
+                }
+            }
+            .item-inner {
+                padding: 0;
+                border: none;
+            }
+            img {
+                height: 100%;
+                width: 100%;
+            }
+            .label {
+                margin: 0;
+            }
+        }
+        .task-canvas {
+            padding: 0;
+            .item-inner {
+                border: none;
+                padding-right: 0;
+            }
+            .task-canvas-title {
+                float: left;
+                font-size: 12px;
+                margin: 0;
+                width: 40%;
+                div {
+                    height: 28px;
+                    padding: 6px 0;
+                    border-bottom: 1px solid #aaaaaa;
+                    width: 90%;
+                    p {
+                        display: inline-flex;
+                        margin-right: 10px;
+                        height: 16px;
+                        width: 16px;
+                        border-radius: 3px;
+                        border: 1px solid #aaaaaa;
+                        &.task-new-title {
+                            background: color($colors, orange-color);
+                        }
+                        &.task-in-progress-title {
+                            background: color($colors, violet-color);
+                        }
+                        &.task-fixed-title {
+                            background: color($colors, darkblue-color);
+                        }
+                        &.task-retesting-title {
+                            background: color($colors, lightblue-color);
+                        }
+                        &.task-closed-title {
+                            background: color($colors, black-color);
+                        }
+                    }
+                }
+            }
+            .task-canvas-area {
+                margin: 0;
+                width: 60%;
+                .task-canvas {
+                    float: right;
+                    width: 100%;
+                    .canvas {
+                        float: right;
+                        width: 280px;
+                    }
+                }
+            }
+        }
+    }
+}
