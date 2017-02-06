@@ -15,6 +15,8 @@ import {BugDetailsComponent} from "../pages/redmine/bugDetails/bug-details";
 import { SonarqubeComponent } from '../pages/home/sonarqube/sonarqube';
 import { SonarqubeDetailPage } from '../pages/home/sonarqube/sonarqube-detail/sonarqube-detail'
 import { DataSetting } from '../pages/signIn/displaydatasetting/datasetting.component';
+import {BackLogComponent} from "../pages/redmine/backlog/master/backlog-master";
+import {BackLogDetailComponent} from "../pages/redmine/backlog/detail/backlog-detail";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { DataSetting } from '../pages/signIn/displaydatasetting/datasetting.comp
     BugDetailsComponent,
     SonarqubeComponent,
     SonarqubeDetailPage,
-    DataSetting
+    DataSetting,
+    BackLogComponent,
+    BackLogDetailComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -43,7 +47,9 @@ import { DataSetting } from '../pages/signIn/displaydatasetting/datasetting.comp
     BugComponent,
     BugDetailsComponent,
     SonarqubeDetailPage,
-    DataSetting
+    DataSetting,
+    BackLogComponent,
+    BackLogDetailComponent
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
