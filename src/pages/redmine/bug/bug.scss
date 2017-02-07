@@ -1,110 +1,104 @@
 //---------------------------------------- bugComponent用 ----------------------------------------
-.bug-content {
-  border-radius: 5px;
-  border-bottom: 1px solid color($colors, gray-color);
-  margin: 3px;
+.bug-card {
+  padding: 0 10px 15px 10px;
 
-  .scroll-content {
-    padding: 0 10px;
+  .bug-title {
+    border: 0;
+    font-size: 18px;
+    padding: 0;
 
-    .bug-title {
-      border: 0;
-      font-size: 18px;
-      padding: 0;
+    .bug-title-name {
+      font-weight: bold;
+    }
 
-      .bug-title-name {
-        font-weight: bold;
+    .bug-title-detail {
+      font-size: 16px;
+      text-align: right;
+
+      .bug-title-detail-name {
+        display: inline-block;
+        line-height: 0.8;
       }
 
-      .bug-title-detail {
-        font-size: 16px;
-        text-align: right;
-
-        .bug-title-detail-name {
-          display: inline-block;
-          line-height: 0.8;
-        }
-
-        ion-icon {
-          width: 10px;
-        }
-      }
-
-      .item-inner {
-        padding: 0;
-        border: none;
-      }
-      img {
-        height: 100%;
-        width: 100%;
-      }
-      .label {
-        margin: 0;
+      ion-icon {
+        width: 10px;
       }
     }
 
-    .bug-canvas {
+    .item-inner {
       padding: 0;
+      border: none;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+    }
+    .label {
+      margin: 0;
+    }
+  }
 
-      .item-inner {
-        border: none;
-        padding-right: 0;
-      }
+  .bug-canvas {
+    padding: 0;
 
-      .bug-canvas-title {
-        float: left;
-        font-size: 12px;
-        margin: 0;
-        width: 40%;
+    .item-inner {
+      border: none;
+      padding-right: 0;
+    }
 
-        div {
-          height: 28px;
-          padding: 6px 0;
-          border-bottom: 1px solid color($colors, gray-color);
-          width: 90%;
+    .bug-canvas-title {
+      float: left;
+      font-size: 12px;
+      margin: 0;
+      width: 40%;
 
-          p {
-            display: inline-flex;
-            margin-right: 10px;
-            height: 16px;
-            width: 16px;
-            border-radius: 3px;
-            border: 1px solid color($colors, gray-color);
+      div {
+        height: 28px;
+        padding: 6px 0;
+        border-bottom: 1px solid color($colors, gray-color);
+        width: 90%;
 
-            &.bug-new-title {
-              background: color($colors, orange-color);
-            }
+        p {
+          display: inline-flex;
+          margin-right: 10px;
+          height: 16px;
+          width: 16px;
+          border-radius: 3px;
+          border: 1px solid color($colors, gray-color);
 
-            &.bug-in-progress-title {
-              background: color($colors, violet-color);
-            }
+          &.bug-new-title {
+            background: color($colors, orange-color);
+          }
 
-            &.bug-fixed-title {
-              background: color($colors, darkblue-color);
-            }
+          &.bug-in-progress-title {
+            background: color($colors, violet-color);
+          }
 
-            &.bug-retesting-title {
-              background: color($colors, lightblue-color);
-            }
+          &.bug-fixed-title {
+            background: color($colors, darkblue-color);
+          }
 
-            &.bug-closed-title {
-              background: color($colors, black-color);
-            }
+          &.bug-retesting-title {
+            background: color($colors, lightblue-color);
+          }
+
+          &.bug-closed-title {
+            background: color($colors, black-color);
           }
         }
       }
-      .bug-canvas-area {
-        margin: 0;
-        width: 60%;
+    }
+    .bug-canvas-area {
+      margin: 0;
+      width: 60%;
 
-        .bug-canvas {
+      .bug-canvas {
+        float: right;
+        width: 100%;
+
+        .canvas {
           float: right;
-          width: 100%;
-
-          .canvas {
-            float: right;
-            width: 280px;
-          }
+          width: 280px;
         }
       }
     }
