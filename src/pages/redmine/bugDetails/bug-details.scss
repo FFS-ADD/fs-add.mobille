@@ -1,39 +1,41 @@
 //---------------------------------------- bugComponent用 ----------------------------------------
-.bug-details-content {
+.bug-details-header {
+  ion-navbar {
+    .toolbar-background {
+      background-color: color($colors, narbar-color);
+    }
 
-  .scroll-content {
+    .back-button {
+      color: color($colors, black-color);
+      margin: 0;
+      padding: 0;
+      width: 44px;
+    }
 
-    ion-navbar {
-      .toolbar-background {
-        background-color: color($colors, narbar-color);
-      }
+    .toolbar-content {
+      .title {
+        &.title-ios {
+          padding: 0 60px 1px;
+        }
 
-      .back-button {
-        color: color($colors, black-color);
-        margin: 0;
-        padding: 0;
-        width: 44px;
-      }
+        &.title-md {
+          text-align: center;
+          width: calc(100% - 44px);
+        }
 
-      .toolbar-content {
-        .title {
-          &.title-ios {
-            padding: 0 60px 1px;
-          }
-
-          &.title-md {
-            text-align: center;
-            width: calc(100% - 44px);
-          }
-
-          .toolbar-title {
-            color: color($colors, light);
-            font-size: 18px;
-            font-weight: normal;
-          }
+        .toolbar-title {
+          color: color($colors, light);
+          font-size: 18px;
+          font-weight: normal;
         }
       }
     }
+  }
+}
+
+.bug-details-content {
+
+  .scroll-content {
 
     .weekly-bug-details {
       background-color: color($colors, light-blue-color);
