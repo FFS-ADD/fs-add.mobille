@@ -75,6 +75,12 @@
                   }
                 }
 
+                &.bug-list {
+                  &:before {
+                    content: "\f188";
+                  }
+                }
+
                 &:before {
                   box-sizing: border-box;
                   font-size: 19px;
@@ -90,103 +96,75 @@
       }
     }
 
-    .bug-title {
-      border: 0;
-      font-size: 18px;
-      padding: 0;
-
-      .bug-title-name {
-        font-weight: bold;
-      }
-
-      .bug-title-detail {
-        font-size: 16px;
-        text-align: right;
-
-        .bug-title-detail-name {
-          display: inline-block;
-          line-height: 0.8;
-        }
-
-        ion-icon {
-          width: 10px;
-        }
-      }
+    .bug-details-history-canvas {
+      margin: 10px 0;
+      padding: 0 10px;
+      width: 100%;
 
       .item-inner {
+        border-bottom: 0;
         padding: 0;
-        border: none;
-      }
-      img {
-        height: 100%;
-        width: 100%;
-      }
-      .label {
-        margin: 0;
-      }
-    }
 
-    .bug-canvas {
-      padding: 0;
+        .label-md {
+          margin: 0;
 
-      .item-inner {
-        border: none;
-        padding-right: 0;
-      }
+          .bug-details-history-canvas-area {
+            display: flex;
+            margin: 0;
+            width: 100%;
 
-      .bug-canvas-title {
-        float: left;
-        font-size: 12px;
-        margin: 0;
-        width: 40%;
-
-        div {
-          height: 28px;
-          padding: 6px 0;
-          border-bottom: 1px solid #aaaaaa;
-          width: 90%;
-
-          p {
-            display: inline-flex;
-            margin-right: 10px;
-            height: 16px;
-            width: 16px;
-            border-radius: 3px;
-            border: 1px solid #aaaaaa;
-
-            &.bug-new-title {
-              background: color($colors, orange-color);
-            }
-
-            &.bug-in-progress-title {
-              background: color($colors, violet-color);
-            }
-
-            &.bug-fixed-title {
-              background: color($colors, darkblue-color);
-            }
-
-            &.bug-retesting-title {
-              background: color($colors, lightblue-color);
-            }
-
-            &.bug-closed-title {
-              background: color($colors, black-color);
+            .canvas {
+              width: 100%;
             }
           }
         }
       }
-      .bug-canvas-area {
-        margin: 0;
-        width: 60%;
+    }
 
-        .bug-canvas {
-          float: right;
+    .redminding-bug-list {
+      padding: 0;
+
+      .redminding-bug {
+        border-top: 1px solid color($colors, gray-color);
+        border-bottom: 1px solid color($colors, gray-color);
+        margin: 2px 0;
+
+        &:nth-child(even) {
+          background-color: color($colors, light-gray-color);
+        }
+
+        .redminding-no {
+          margin: auto;
+          text-align: center;
+          width: 60px;
+        }
+
+        .bug-priority {
+          width: 8px;
+          border-radius: 4px;
+
+          &.bug-critial {
+            background-color: color($colors, danger);
+          }
+
+          &.bug-high {
+            background-color: color($colors, light-orange-color);
+          }
+
+          &.bug-middle {
+            background-color: color($colors, light-purple-color);
+          }
+
+          &.bug-low {
+            background-color: color($colors, green-color);
+          }
+        }
+
+        .redminding-bug-detail {
           width: 100%;
 
-          .canvas {
-            float: right;
-            width: 280px;
+          p {
+            margin: 4px 5px;
           }
         }
       }

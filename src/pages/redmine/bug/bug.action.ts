@@ -9,23 +9,13 @@ export default class BugAction {
   }
 
   public init() {
-    let data = {
-      "status": "SUCCESS",
-      "result": {
-        "new": 15,
-        "inProgress": 9,
-        "fixed": 6,
-        "retesting": 3,
-        "close": 8
-      }
-    };
-    // let observable = this.httpService.get('./data/bug-init.json', {});
-    // observable.subscribe(
-    //   data => {
-        if (data.status === "SUCCESS") {
+    let observable = this.httpService.get('./assets/data/redmine/bugInit.json', {});
+    observable.subscribe(
+      data => {
+        if (data.status === 1) {
           this.dispatcher.dispatch(BugActionType.INIT, data)
         }
-    //   }
-    // );
+      }
+    );
   }
 }

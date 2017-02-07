@@ -1,0 +1,10 @@
+{
+  "status": 1,
+  "result": {
+    "new": 15,
+    "inProgress": 9,
+    "fixed": 6,
+    "retesting": 3,
+    "close": 8
+  }
+}

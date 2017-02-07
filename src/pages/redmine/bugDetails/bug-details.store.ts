@@ -2,6 +2,10 @@ import {Injectable}from "@angular/core";
 import {Dispatcher}from "../../../core/Dispatcher";
 import {BugDetailsActionType} from "./bug-details.action.type";
 import {BugDetailsState} from "./bug-details.state";
+import {
+  BugDetailsCanvasInterface, BugDetailsScreenInterface, BugDetailsScreenDataSet,
+  BugDetailsResponse, BugFixDataSet
+} from "./bug-details.interface";
 
 @Injectable()
 export class BugDetailsStore {
@@ -13,52 +17,178 @@ export class BugDetailsStore {
     });
   }
 
-  private CHART_OPTIONS = {
+  private BAR_CHART_OPTIONS = {
     responsive: true,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
+    legend: {
+      display: true,
+      position: "bottom",
+      onClick: null,
+      labels: {
+        boxWidth: 13
+      }
+    },
+    scales: {
+      xAxes: [{
+        stacked: true,
+        categoryPercentage: 0.7,
+        gridLines: {
+          drawTicks: false
+        }
+      }],
+      yAxes: [{
+        stacked: true,
+        gridLines: {
+          drawTicks: false
+        }
+      }]
+    },
     tooltips: {
       display: true,
       enabled: true,
-      callbacks: {
-        beforeTitle: function(tooltipItems, data) {
-          let item = tooltipItems[0];
-          let labels = data.datasets[item.datasetIndex].labels;
-
-          return labels[item.index];
-        },
-        label: function(tooltipItem, data) {
-          let item = tooltipItem;
-          let datasets = data.datasets[item.datasetIndex].data;
-          let sum: number = 0;
-          for (let i = 0; i < datasets.length; i++) {
-            sum = sum + datasets[i];
-          }
-          return Math.floor(datasets[item.index] * 100 / sum) + '%';
-        }
-      }
+      mode: 'label',
     },
   };
 
-  private DATA_SET_LABELS = ["New","In Progress","Fixed","ReTesting","Closed"];
+  private BAR_CHART_COLORS = [
+    {backgroundColor: ["#6fb02f","#6fb02f","#6fb02f","#6fb02f","#6fb02f","#6fb02f","#6fb02f"]},
+    {backgroundColor: ["#bb2c2f","#bb2c2f","#bb2c2f","#bb2c2f","#bb2c2f","#bb2c2f","#bb2c2f"]},
+    {backgroundColor: ["#6c7371","#6c7371","#6c7371","#6c7371","#6c7371","#6c7371","#6c7371"]},
+    {backgroundColor: ["#e6a375","#e6a375","#e6a375","#e6a375","#e6a375","#e6a375","#e6a375"]},
+    {backgroundColor: ["#d38d77","#d38d77","#d38d77","#d38d77","#d38d77","#d38d77","#d38d77"]}];
 
-  private colors = [{backgroundColor: ["#efb14e", "#6e3c78", "#2d578b", "#3f99ec", "#00060e"]}];
+  private LINE_CHART_OPTIONS = {
+    responsive: true,
+    maintainAspectRatio: true,
+    legend: {
+      display: true,
+      position: "bottom",
+      onClick: null,
+      labels: {
+        boxWidth: 13
+      }
+    },
+    scales: {
+      xAxes: [{
+        gridLines: {
+          drawTicks: false
+        }
+      }],
+      yAxes: [{
+        gridLines: {
+          drawTicks: false
+        }
+      }]
+    },
+    tooltips: {
+      display: true,
+      enabled: true,
+      mode: 'label',
+    },
+  };
+
+  private LINE_CHART_COLORS = [
+    {backgroundColor: "#51a7f8", borderColor: "#51a7f8", pointBackgroundColor: '#FFF', pointBorderColor: '#51a7f8', pointBorderWidth: 2},
+    {backgroundColor: "#61b066", borderColor: "#61b066", pointBackgroundColor: '#FFF', pointBorderColor: '#61b066', pointBorderWidth: 2},
+    {backgroundColor: "#fae02b", borderColor: "#fae02b", pointBackgroundColor: '#FFF', pointBorderColor: '#fae02b', pointBorderWidth: 2}];
 
   public init(data) {
-    console.log("BugStore#init");
-    // console.log(data);
-    // let response: BugResponseInterface = data.result;
-    // let totalBugs: number = response.new + response.inProgress + response.fixed + response.retesting + response.close;
-    // let dataSets: BugScreenDataSet = {
-    //   labels: this.DATA_SET_LABELS,
-    //   data: [response.new, response.inProgress, response.fixed, response.retesting, response.close]
-    // };
-    // let screenResponse: BugScreenInterface = {
-    //   dataSets: [dataSets],
-    //   bugResponse: response,
-    //   colors : this.colors,
-    //   options: this.CHART_OPTIONS
-    // };
-    // this.state.totalBugs = totalBugs;
-    // this.state.screen = screenResponse;
+    console.log("BugDetailsStore#init");
+    console.log(data);
+    let response: BugDetailsResponse = data.result;
+
+    let bugDetailsHistory: BugDetailsCanvasInterface = this.getBugDetailsHistory(response);
+
+    let bugFixHistory: BugDetailsCanvasInterface = this.getBugFixHistory(response);
+
+    let screenResponse: BugDetailsScreenInterface = {
+      bugDetailsHistory : bugDetailsHistory,
+      bugFixHistory: bugFixHistory,
+      redmindingBugList: response.redmindingBugList
+    };
+    this.state.screen = screenResponse;
+    console.info(this.state);
+  }
+
+  private getBugDetailsHistory(response: BugDetailsResponse): BugDetailsCanvasInterface {
+    let dataSets: BugDetailsScreenDataSet[] = new Array();
+
+    let newDataSet: BugDetailsScreenDataSet = {
+      label: "New",
+      data: response.bugDetailsHistoryData.new
+    };
+
+    let inProgressDataSet: BugDetailsScreenDataSet = {
+      label: "In Progress",
+      data: response.bugDetailsHistoryData.inProgress
+    };
+
+    let fixedDataSet: BugDetailsScreenDataSet = {
+      label: "Fixed",
+      data: response.bugDetailsHistoryData.fixed
+    };
+
+    let reTestingDataSet: BugDetailsScreenDataSet = {
+      label: "ReTesting",
+      data: response.bugDetailsHistoryData.reTesting
+    };
+
+    let closedDataSet: BugDetailsScreenDataSet = {
+      label: "Closed",
+      data: response.bugDetailsHistoryData.closed
+    };
+
+    dataSets.push(newDataSet);
+    dataSets.push(inProgressDataSet);
+    dataSets.push(fixedDataSet);
+    dataSets.push(reTestingDataSet);
+    dataSets.push(closedDataSet);
+
+    let bugDetailsHistory: BugDetailsCanvasInterface = {
+      chartType: "bar",
+      labels: response.historyDate,
+      dataSets: dataSets,
+      options: this.BAR_CHART_OPTIONS,
+      colors: this.BAR_CHART_COLORS
+    };
+    return bugDetailsHistory;
+  }
+
+  private getBugFixHistory(response: BugDetailsResponse): BugDetailsCanvasInterface {
+    let dataSets: BugDetailsScreenDataSet[] = new Array();
+
+    let inProgressDataSet: BugFixDataSet = {
+      label: "In Progress",
+      fill: false,
+      lineTension: 0,
+      data: response.bugFixHistoryData.inProgress
+    };
+
+    let newDataSet: BugFixDataSet = {
+      label: "New",
+      fill: false,
+      lineTension: 0,
+      data: response.bugFixHistoryData.new
+    };
+
+    let fixedDataSet: BugFixDataSet = {
+      label: "Fixed",
+      fill: false,
+      lineTension: 0,
+      data: response.bugFixHistoryData.fixed
+    };
+
+    dataSets.push(inProgressDataSet);
+    dataSets.push(newDataSet);
+    dataSets.push(fixedDataSet);
+
+    let bugFixHistory: BugDetailsCanvasInterface = {
+      chartType: "line",
+      labels: response.historyDate,
+      dataSets: dataSets,
+      options: this.LINE_CHART_OPTIONS,
+      colors: this.LINE_CHART_COLORS
+    };
+    return bugFixHistory;
   }
 }

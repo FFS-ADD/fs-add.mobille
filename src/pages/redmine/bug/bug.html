@@ -32,7 +32,7 @@
         <label>Closed : {{state?.screen?.bugResponse?.close}}</label>
       </div>
     </ion-label>
-    <ion-label class="bug-canvas-area">
+    <ion-label class="bug-canvas-area" *ngIf="state != null && state.screen != null">
       <canvas baseChart class="canvas"
               [chartType]="state?.screen?.chartType"
               [datasets]="state?.screen?.dataSets"

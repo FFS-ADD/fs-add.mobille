@@ -1,19 +1,52 @@
 export interface BugDetailsScreenInterface {
+  bugDetailsHistory: BugDetailsCanvasInterface;
+  bugFixHistory: BugDetailsCanvasInterface;
+  redmindingBugList: RedmindingBugInterface[];
+}
+
+export interface BugDetailsCanvasInterface {
+  chartType: string,
+  labels: string[];
   dataSets: BugDetailsScreenDataSet[];
-  bugResponse: BugDetailsResponseInterface;
   options: any;
   colors: any;
 }
 
 export interface BugDetailsScreenDataSet {
-  labels: string[];
+  label: string;
   data: number[];
 }
 
-export interface BugDetailsResponseInterface {
-  new: number;
-  inProgress: number;
-  fixed: number;
-  retesting: number;
-  close: number;
+export interface BugFixDataSet extends BugDetailsScreenDataSet {
+  fill: boolean;
+  lineTension: number;
+}
+
+export interface RedmindingBugInterface {
+  no: string;
+  title: string;
+  priority: string;
+  owner: string;
+  dueDate: string;
+}
+
+export interface BugDetailsResponse {
+  bugDetailsHistoryData: BugDetailsHistoryDataInterface;
+  bugFixHistoryData: BugFixHistoryDataInterface;
+  redmindingBugList: RedmindingBugInterface[];
+  historyDate: string[];
+}
+
+export interface BugDetailsHistoryDataInterface {
+  new: number[];
+  inProgress: number[];
+  fixed: number[];
+  reTesting: number[];
+  closed: number[];
+}
+
+export interface BugFixHistoryDataInterface {
+  inProgress: number[];
+  new: number[];
+  fixed: number[];
 }
