@@ -3,12 +3,17 @@
     <ion-icon name="logo-buffer"></ion-icon><div>Redmine</div>
   </div>
   <div class="redmine-subtitle">
-    The following data is obtained from redmine.
+    <ion-item>
+      <ion-thumbnail item-left>
+        <img src="../../../assets/images/redmine.jpeg">
+      </ion-thumbnail>
+      <p>The following data is obtained from redmine.</p>
+    </ion-item>
   </div>
   <ion-card>
     <ion-item class="backlog-title">
       <ion-label class="backlog-title-name">BackLog</ion-label>
-      <ion-label class="backlog-title-detail" (click)="goBugDetails()">
+      <ion-label class="backlog-title-detail" (click)="goBackLogDetails()">
         <p class="backlog-title-detail-name">Details</p>
         <ion-icon name="md-more"></ion-icon>
       </ion-label>
@@ -36,6 +41,27 @@
           </ion-col>
         </ion-row>
       </ion-grid>
+      <ion-item>
+        <ion-label>
+          <div>
+            <label>Completion Degree</label>
+          </div>
+          <div>
+            <label>268 of 460</label>
+          </div>
+          <div>
+            <label>Backlogs Completed</label>
+          </div>
+        </ion-label>
+        <ion-label class="bug-canvas-area" *ngIf="state != null && state.screen != null">
+          <canvas baseChart class="canvas"
+                  [chartType]="state?.screen?.chartType"
+                  [datasets]="state?.screen?.dataSets"
+                  [options]="state?.screen?.options"
+                  [colors]="state?.screen?.colors">
+          </canvas>
+        </ion-label>
+      </ion-item>
     </ion-card-content>
   </ion-card>
 </div>

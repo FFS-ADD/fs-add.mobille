@@ -17,7 +17,7 @@ export class BackLogComponent {
     console.info(this.state);
   }
 
-  public goBugDetails() {
+  public goBackLogDetails() {
     this.navCtrl.push(BackLogDetailComponent);
   }
 }
