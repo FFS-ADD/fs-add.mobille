@@ -1,16 +1,23 @@
 export interface TaskDetailsScreenInterface {
-  // dataSets: TaskDetailsScreenDataSet[];
+  taskHistory: TaskReport[];
   delayTaskList: TaskDetails[];
-  // options: any;
-  // colors: any;
+}
+
+export interface TaskCanvasInterface {
+  chartType: string,
+  labels: string[];
+  dataSets: TaskDetailsScreenDataSet[];
+  options: any;
+  colors: any;
 }
 
 export interface TaskDetailsScreenDataSet {
-  labels: string[];
+  label: string;
   data: number[];
 }
 
-export interface TaskDetailsResponseInterface {
+export interface TaskReport {
+  date: string;
   onSchedule: number;
   delay: number;
   closed: number;

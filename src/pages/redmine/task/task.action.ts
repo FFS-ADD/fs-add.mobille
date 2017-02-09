@@ -9,7 +9,6 @@ export default class TaskAction {
   }
 
   public init() {
-
     // let observable = this.httpService.get('./data/task-init.json', {});
     let observable = this.httpService.get('/assets/data/redmine/task.json', {});
     observable.subscribe(

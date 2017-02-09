@@ -1,33 +1,66 @@
  {
      "status": 1,
      "result": {
-         "onSchedule": 22,
-         "delay": 4,
-         "closed": 3,
-         "pending": 1,
+         "taskHistory": [{
+                 "date": "2/9",
+                 "onSchedule": 10,
+                 "delay": 20,
+                 "closed": 40,
+                 "pending": 80
+             },
+             {
+                 "date": "2/10",
+                 "onSchedule": 22,
+                 "delay": 4,
+                 "closed": 3,
+                 "pending": 1
+             },
+
+             {
+                 "date": "2/11",
+                 "onSchedule": 22,
+                 "delay": 4,
+                 "closed": 3,
+                 "pending": 1
+             },
+             {
+                 "date": "2/11",
+                 "onSchedule": 22,
+                 "delay": 4,
+                 "closed": 3,
+                 "pending": 1
+             },
+             {
+                 "date": "2/12",
+                 "onSchedule": 22,
+                 "delay": 4,
+                 "closed": 3,
+                 "pending": 1
+             }
+         ],
          "delayTaskList": [{
                  "taskId": "2019",
-                 "tiket": "Coding UserController",
+                 "tiket": "Coding UserController a",
                  "owner": "Wei.Zhang",
+                 "planedEndDate": "2017/01/20"
+             },
+             {
+                 "taskId": "2020",
+                 "tiket": "Coding UserController b",
+                 "owner": "Dehua.liu",
                  "planedEndDate": "2017/01/21"
              },
              {
-                 "taskId": "2019c",
-                 "tiket": "Coding UserController",
-                 "owner": "Wei.Zhang",
-                 "planedEndDate": "2017/01/21"
+                 "taskId": "2021",
+                 "tiket": "Coding UserController c",
+                 "owner": "Xueyou.zhang",
+                 "planedEndDate": "2017/01/22"
              },
              {
-                 "taskId": "2019abcd",
+                 "taskId": "2069",
                  "tiket": "Coding UserController",
                  "owner": "Wei.Zhang",
-                 "planedEndDate": "2017/01/21"
-             },
-             {
-                 "taskId": "2019",
-                 "tiket": "Coding UserController",
-                 "owner": "Wei.Zhang",
-                 "planedEndDate": "2017/01/21"
+                 "planedEndDate": "2017/01/15"
              },
              {
                  "taskId": "2019",
