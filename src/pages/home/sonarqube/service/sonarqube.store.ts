@@ -16,7 +16,7 @@ export class SonarqubeStore {
     }
 
     public init(data) {
-        let response: SonarqubeResponseInterface = data.data;
+        let response: SonarqubeResponseInterface = data;
         let screenResponse: SonarqubeScreenInterface = {
             sonarqubeResponse: response
         };

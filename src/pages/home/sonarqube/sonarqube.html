@@ -12,7 +12,7 @@
                 <div>Quality Gate</div>
                 <div>
                     <button ion-button color="danger" round small>
-                        Failed
+                        {{state?.screen?.sonarqubeResponse?.qualityGateStatus}}
                     </button>
                 </div>
                 <div>
@@ -41,7 +41,7 @@
                     <ion-col width-33>
                         <div>
                             <div>Code Smells</div>
-                            <div class="sonarqube-value">{{state?.screen?.sonarqubeResponse?.code}}</div>
+                            <div class="sonarqube-value">{{state?.screen?.sonarqubeResponse?.codeSmells}}</div>
                         </div>
                     </ion-col>
                 </ion-row>

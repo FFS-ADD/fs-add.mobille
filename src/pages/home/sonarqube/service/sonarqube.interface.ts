@@ -3,7 +3,8 @@ export interface SonarqubeScreenInterface {
 }
 
 export interface SonarqubeResponseInterface {
+  qualityGateStatus: string,
   vulneralilities: string,
   bugs: string,
-  code: string
+  codeSmells: string
 }

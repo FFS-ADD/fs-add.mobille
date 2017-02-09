@@ -9,7 +9,7 @@ export default class BugDetailsAction {
   }
 
   public init() {
-    let observable = this.httpService.get('./assets/data/redmine/bugDetailsInit.json', {});
+    let observable = this.httpService.getFakeData('./assets/data/redmine/bugDetailsInit.json', {});
     observable.subscribe(
       data => {
         if (data.status === 1) {

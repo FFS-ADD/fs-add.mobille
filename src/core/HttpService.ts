@@ -9,7 +9,7 @@ export class HttpService {
   constructor(private http: Http) {
   }
 
-  public get(url: string, data?: Object) {
+  private getRequest(url: string, data?: Object) {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
 
@@ -20,7 +20,7 @@ export class HttpService {
       }
     });
 
-    let observable = this.http.get(AppConfig.apiURL + url, {
+    let observable = this.http.get(url, {
       search: parameters,
       headers: headers
     }).map((res: Response) => res.json());
@@ -32,6 +32,14 @@ export class HttpService {
         throw new BusinessFailureException(error);
       });
     return observable;
+  }
+
+  public getFakeData(url: string, data?: Object) {
+    return this.getRequest(url, data);
+  }
+
+  public get(url: string, data?: Object) {
+    return this.getRequest(AppConfig.apiURL + url, data);
   }
 
   public post(url: string, data?: any) {
