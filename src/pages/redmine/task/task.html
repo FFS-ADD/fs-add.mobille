@@ -29,7 +29,11 @@
             </div>
         </ion-label>
         <ion-label class="task-canvas-area" *ngIf="state.screen && state.screen.dataSets">
-            <canvas baseChart class="canvas" [chartType]="state?.screen?.chartType" [datasets]="state?.screen?.dataSets" [options]="state?.screen?.options" [colors]="state?.screen?.colors">
+            <canvas baseChart class="canvas"
+                    [chartType]="state?.screen?.chartType"
+                    [datasets]="state?.screen?.dataSets"
+                    [options]="state?.screen?.options"
+                    [colors]="state?.screen?.colors">
             </canvas>
         </ion-label>
     </ion-item>

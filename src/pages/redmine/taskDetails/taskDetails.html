@@ -17,7 +17,12 @@
     </ion-item>
     <ion-item class="task-canvas">
         <ion-row class="task-canvas-area" *ngIf="state.taskHistoryCanvas && state.taskHistoryCanvas.dataSets">
-            <canvas baseChart class="canvas" [labels]="state?.taskHistoryCanvas?.labels" [chartType]="state?.taskHistoryCanvas?.chartType" [datasets]="state?.taskHistoryCanvas?.dataSets" [options]="state?.taskHistoryCanvas?.options" [colors]="state?.taskHistoryCanvas?.colors">
+            <canvas baseChart class="canvas"
+                    [labels]="state?.taskHistoryCanvas?.labels"
+                    [chartType]="state?.taskHistoryCanvas?.chartType"
+                    [datasets]="state?.taskHistoryCanvas?.dataSets"
+                    [options]="state?.taskHistoryCanvas?.options"
+                    [colors]="state?.taskHistoryCanvas?.colors">
             </canvas>
         </ion-row>
     </ion-item>

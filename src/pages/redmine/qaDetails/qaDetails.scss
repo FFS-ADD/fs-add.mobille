@@ -1,5 +1,5 @@
-//---------------------------------------- taskComponent用 ----------------------------------------
-.task-details-content {
+//---------------------------------------- qaComponent用 ----------------------------------------
+.qa-details-content {
     .scroll-content {
         ion-navbar {
             .toolbar-background {
@@ -28,7 +28,7 @@
                 }
             }
         }
-        .weekly-task-details {
+        .weekly-qa-details {
             background-color: color($colors, light-blue-color);
             height: 22px;
             padding: 0;
@@ -43,7 +43,7 @@
                 height: 22px;
                 .input-wrapper {
                     height: 22px;
-                    .weekly-task-details-label {
+                    .weekly-qa-details-label {
                         display: inline-flex;
                         margin: 0;
                         .icon {
@@ -54,7 +54,7 @@
                                         content: "\f080";
                                     }
                                 }
-                                &.task-fix {
+                                &.qa-fix {
                                     &:before {
                                         content: "\f0e4";
                                     }
@@ -68,12 +68,12 @@
                     }
                 }
             }
-            .weekly-task-details-title {
+            .weekly-qa-details-title {
                 font-size: 16px;
             }
         }
-        .weekly-task-details-list {
-            .weekly-task-details-list-item {
+        .weekly-qa-details-list {
+            .weekly-qa-details-list-item {
                 display: flex;
                 padding-left: 6px;
                 padding-right: 6px;
@@ -85,7 +85,7 @@
                 border-color: #e3e7e8;
                 border-left-style: none;
                 border-right-style: none;
-                .weekly-task-details-list-item-title {
+                .weekly-qa-details-list-item-title {
                     display: flex;
                     align-items: center;
                     width: 60px;
@@ -93,14 +93,14 @@
                         text-align: center;
                     }
                 }
-                .weekly-task-details-list-item-graph {
+                .weekly-qa-details-list-item-graph {
                     width: 8px;
                     border-radius: 4px;
                 }
                 .delay-status {
-                    background: color($colors, task-delay-color);
+                    background: color($colors, qa-overdue-color);
                 }
-                .weekly-task-details-list-item-content {
+                .weekly-qa-details-list-item-content {
                     padding-left: 6px;
                     .label-content {
                         margin: 0;
@@ -111,17 +111,17 @@
                 }
             }
         }
-        .task-title {
+        .qa-title {
             border: 0;
             font-size: 18px;
             padding: 0;
-            .task-title-name {
+            .qa-title-name {
                 font-weight: bold;
             }
-            .task-title-detail {
+            .qa-title-detail {
                 font-size: 16px;
                 text-align: right;
-                .task-title-detail-name {
+                .qa-title-detail-name {
                     display: inline-block;
                     line-height: 0.8;
                 }
@@ -141,13 +141,13 @@
                 margin: 0;
             }
         }
-        .task-canvas {
+        .qa-canvas {
             padding: 0;
             .item-inner {
                 border: none;
                 padding-right: 0;
             }
-            .task-canvas-title {
+            .qa-canvas-title {
                 float: left;
                 font-size: 12px;
                 margin: 0;
@@ -167,11 +167,11 @@
                     }
                 }
             }
-            .task-canvas-area {
+            .qa-canvas-area {
                 margin: 0;
                 width: 100%;
                 margin-left: 8px;
-                .task-canvas {
+                .qa-canvas {
                     float: right;
                     width: 100%;
                     .canvas {

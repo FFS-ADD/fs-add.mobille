@@ -11,31 +11,31 @@
              {
                  "date": "2/10",
                  "onSchedule": 22,
-                 "delay": 4,
-                 "closed": 3,
-                 "pending": 1
+                 "delay": 40,
+                 "closed": 18,
+                 "pending": 70
              },
 
              {
                  "date": "2/11",
                  "onSchedule": 22,
-                 "delay": 4,
-                 "closed": 3,
-                 "pending": 1
+                 "delay": 40,
+                 "closed": 60,
+                 "pending": 28
              },
              {
                  "date": "2/11",
-                 "onSchedule": 22,
-                 "delay": 4,
-                 "closed": 3,
-                 "pending": 1
+                 "onSchedule": 32,
+                 "delay": 50,
+                 "closed": 40,
+                 "pending": 28
              },
              {
                  "date": "2/12",
-                 "onSchedule": 22,
-                 "delay": 4,
-                 "closed": 3,
-                 "pending": 1
+                 "onSchedule": 12,
+                 "delay": 40,
+                 "closed": 8,
+                 "pending": 90
              }
          ],
          "delayTaskList": [{
