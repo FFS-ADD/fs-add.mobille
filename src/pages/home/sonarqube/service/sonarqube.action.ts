@@ -10,13 +10,40 @@ export default class SonarqubeAction {
   }
 
   public init() {
-    let observable = this.httpService.get(this.config.webapiSonarQuality, {});
-    observable.subscribe(
+    let observableQuality = this.httpService.get(this.config.webapiSonarQuality, {});
+    observableQuality.subscribe(
        response => {
-        if (response.data.status === 1) {
-          this.dispatcher.dispatch(SonarqubeActionType.INIT, response.data)
+        if (response.status === 1) {
+          this.dispatcher.dispatch(SonarqubeActionType.QUALITY, response.data)
         }
     });
+
+    let observableLoc = this.httpService.get(this.config.webapiSonarLoc, {});
+    observableLoc.subscribe(
+      response => {
+        if (response.status === 1) {
+          this.dispatcher.dispatch(SonarqubeActionType.LOC, response.data);
+        }  
+      }
+    )
+
+    let observableCoverage = this.httpService.get(this.config.webapiSonarCoverage, {});
+    observableCoverage.subscribe(
+      response => {
+        if (response.status === 1) {
+          this.dispatcher.dispatch(SonarqubeActionType.COVERAGE, response.data);
+        }  
+      }
+    )
+
+    let observableDuplication = this.httpService.get(this.config.webapiSonarDuplication, {});
+    observableDuplication.subscribe(
+      response => {
+        if (response.status === 1) {
+          this.dispatcher.dispatch(SonarqubeActionType.DUPLICATION, response.data);
+        }  
+      }
+    )
   }
 }
 
