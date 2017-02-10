@@ -23,20 +23,20 @@
         <ion-row>
           <ion-col width-33>
             <div>
-              <div>Vulneralilities</div>
-              <div class="estimate-value">1111</div>
+              <div>Initial Estimate</div>
+              <div class="estimate-value">{{state?.screen?.backLogResponse?.initValue}}</div>
             </div>
           </ion-col>
           <ion-col width-33 center class="estimate-value-border">
             <div>
-              <div>Bugs</div>
-              <div class="estimate-value">2222</div>
+              <div>Planed Estimate</div>
+              <div class="estimate-value">{{state?.screen?.backLogResponse?.planedValue}}</div>
             </div>
           </ion-col>
           <ion-col width-33>
             <div>
-              <div>Code Smells</div>
-              <div class="estimate-value">4444</div>
+              <div>Time Reported</div>
+              <div class="estimate-value">{{state?.screen?.backLogResponse?.reportedValue}}</div>
             </div>
           </ion-col>
         </ion-row>
@@ -44,16 +44,16 @@
       <ion-item>
         <ion-label>
           <div>
-            <label>Completion Degree</label>
+            <label class="degree-title">Completion Degree</label>
           </div>
           <div>
-            <label>268 of 460</label>
+            <label class="degree-content">{{state?.screen?.backLogResponse?.completed}} of {{state?.screen?.backLogResponse?.backLogTotal}}</label>
           </div>
           <div>
-            <label>Backlogs Completed</label>
+            <label class="degree-content">Backlogs Completed</label>
           </div>
         </ion-label>
-        <ion-label class="bug-canvas-area" *ngIf="state != null && state.screen != null">
+        <ion-label class="backlog-canvas-area" *ngIf="state != null && state.screen != null">
           <canvas baseChart class="canvas"
                   [chartType]="state?.screen?.chartType"
                   [datasets]="state?.screen?.dataSets"

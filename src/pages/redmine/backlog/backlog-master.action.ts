@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
-import {Dispatcher} from "../../../../core/Dispatcher";
-import {HttpService} from "../../../../core/HttpService";
+import {Dispatcher} from "../../../core/Dispatcher";
+import {HttpService} from "../../../core/HttpService";
 import {BackLogMasterActionType} from "./backlog-master.action.type";
 
 @Injectable()
@@ -12,11 +12,12 @@ export default class BackLogMasterAction {
     let data = {
       "status": "SUCCESS",
       "result": {
-        "new": 15,
-        "inProgress": 9,
-        "fixed": 6,
-        "retesting": 3,
-        "close": 8
+        "completed": 238,
+        "backLogTotal": 460,
+        "initValue": 10955,
+        "planedValue": 5000,
+        "reportedValue": 5490,
+        "balanceStatus": false
       }
     };
     // let observable = this.httpService.get('./data/bug-init.json', {});

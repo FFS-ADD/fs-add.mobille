@@ -1,8 +1,8 @@
 import {Injectable}from "@angular/core";
-import {Dispatcher}from "../../../../core/Dispatcher";
+import {Dispatcher}from "../../../core/Dispatcher";
 import {BackLogMasterState}from "./backlog-master.state";
 import {BackLogMasterActionType}from "./backlog-master.action.type";
-import {BugResponseInterface, BugScreenDataSet, BugScreenInterface} from "./backlog-master.interface";
+import {BackLogResponseInterface, BackLogScreenInterface, BackLogScreenDataSet} from "./backlog-master.interface";
 
 @Injectable()
 export class BackLogMasterStore {
@@ -42,27 +42,26 @@ export class BackLogMasterStore {
     },
   };
 
-  private DATA_SET_LABELS = ["New","In Progress","Fixed","ReTesting","Closed"];
+  private DATA_SET_LABELS = ["completed","unCompleted"];
 
-  private colors = [{backgroundColor: ["#efb14e", "#6e3c78", "#2d578b", "#3f99ec", "#00060e"]}];
+  private colors = [{backgroundColor: ["#efb14e", "#CCCCCC"]}];
 
   public init(data) {
-    console.log("BugStore#init");
+    console.log("BackLogStore#init");
     console.log(data);
-    let response: BugResponseInterface = data.result;
-    let totalBugs: number = response.new + response.inProgress + response.fixed + response.retesting + response.close;
-    let dataSets: BugScreenDataSet = {
+    let response: BackLogResponseInterface = data.result;
+    console.log(response);
+    let dataSets: BackLogScreenDataSet = {
       labels: this.DATA_SET_LABELS,
-      data: [response.new, response.inProgress, response.fixed, response.retesting, response.close]
+      data: [response.completed, response.backLogTotal - response.completed]
     };
-    let screenResponse: BugScreenInterface = {
+    let screenResponse: BackLogScreenInterface = {
       chartType: this.chartType,
       dataSets: [dataSets],
-      bugResponse: response,
+      backLogResponse: response,
       colors : this.colors,
       options: this.CHART_OPTIONS
     };
-    this.state.totalBugs = totalBugs;
     this.state.screen = screenResponse;
   }
 }

@@ -3,7 +3,7 @@ import {NavController} from "ionic-angular";
 import {BackLogMasterState} from "./backlog-master.state";
 import {BackLogMasterStore} from "./backlog-master.store";
 import BackLogMasterAction from "./backlog-master.action";
-import {BackLogDetailComponent} from "../detail/backlog-detail";
+import {BackLogDetailComponent} from "../backlogDetails/backlog-detail";
 
 @Component({
   selector: "backlog",

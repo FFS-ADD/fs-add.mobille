@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
-import {Dispatcher} from "../../../../core/Dispatcher";
-import {HttpService} from "../../../../core/HttpService";
+import {Dispatcher} from "../../../core/Dispatcher";
+import {HttpService} from "../../../core/HttpService";
 import {BackLogDetailActionType} from "./backlog-detail.action.type";
 
 @Injectable()
