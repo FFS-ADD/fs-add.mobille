@@ -34,6 +34,46 @@
       }
     }
 
+    .weekly-task-details-list {
+      .weekly-task-details-list-item {
+        display: flex;
+        padding-left: 6px;
+        padding-right: 6px;
+        border-style: solid;
+        font-size: 14px;
+        border-width: 1px;
+        margin-top: 4px;
+        margin-bottom: -1px;
+        border-color: #e3e7e8;
+        border-left-style: none;
+        border-right-style: none;
+        .weekly-task-details-list-item-title {
+          display: flex;
+          align-items: center;
+          width: 60px;
+          .label-title {
+            text-align: center;
+          }
+        }
+        .weekly-task-details-list-item-graph {
+          width: 8px;
+          border-radius: 4px;
+        }
+        .delay-status {
+          background: color($colors, task-delay-color);
+        }
+        .weekly-task-details-list-item-content {
+          padding-left: 6px;
+          .label-content {
+            margin: 0;
+          }
+        }
+        &:nth-child(even) {
+          background-color: #e3e7e8;
+        }
+      }
+    }
+
     .weekly-bug-details {
       background-color: color($colors, light-blue-color);
       height: 22px;
@@ -64,13 +104,13 @@
 
                 &.details {
                   &:before {
-                    content: "\f080";
+                    content: "\f201";
                   }
                 }
 
                 &.bug-fix {
                   &:before {
-                    content: "\f201";
+                    content: "\f0e4";
                   }
                 }
 
