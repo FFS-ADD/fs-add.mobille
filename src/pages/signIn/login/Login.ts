@@ -25,7 +25,6 @@ export class Login implements OnInit {
     console.debug("login before");
     let observable = this.action.login(this.form);
     observable.subscribe((data) => {
-      // this.navCtrl.push(HomePage);
       this.navCtrl.push(DataSetting, {"perPage" : "login"});
     });
 

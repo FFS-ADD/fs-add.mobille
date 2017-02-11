@@ -1,4 +1,4 @@
-export interface DataSettingRequestInterface {
+export interface DataSettingInterface {
   backlog: boolean;
   task: boolean;
   bug: boolean;

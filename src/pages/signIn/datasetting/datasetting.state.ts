@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
-import {DataSettingRequestInterface} from './datasetting.interface';
+import {DataSettingInterface} from './datasetting.interface';
 
 @Injectable()
 export class DataSettingState {
-  response:DataSettingRequestInterface;
+  response:DataSettingInterface;
   success:boolean;
 }

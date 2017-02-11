@@ -10,16 +10,14 @@ export class DataSettingAction {
   }
 
   public init(form) {
-    console.log('init');
-   // let observable = this.httpService.get('datasetting-init.json', form);
-    let observable = this.httpService.getFakeData('datasetting-init.json', form);
+    console.debug("init");
+    let observable = this.httpService.getFakeData('/assets/data/signIn/datasetting-init.json', form);
     observable.subscribe( (data) => this.dispatcher.dispatch(DataSettingActionType.INIT, data));
     return observable;
   }
 
   public save(form) {
     console.debug("toggle");
-    //let observable = this.httpService.post('/auth/mail/password', form);
     let observable = this.httpService.getFakeData('/assets/data/signIn/datasetting-ok.json', form);
     observable.subscribe(
       (data) => {

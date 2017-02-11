@@ -23,7 +23,7 @@ export class DataSettingStore {
     console.debug("datasettingStore init");
     if (data.status === "SUCCESS") {
       this.state.success = true;
-      this.state.response = data;
+      this.state.response = data.result;
     } else {
       this.state.success = false;
     }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NavController, NavParams } from 'ionic-angular';
-import { DataSettingRequestInterface } from "./datasetting.interface";
+import { DataSettingInterface } from "./datasetting.interface";
 import { DataSettingAction } from "./datasetting.action";
 import { DataSettingState } from "./datasetting.state";
 import { DataSettingStore } from "./datasetting.store";
@@ -11,7 +11,7 @@ import { HomePage } from "../../home/home"
   templateUrl: "datasetting.html"
 })
 export class DataSetting implements OnInit {
-  private form : DataSettingRequestInterface;
+  private form : DataSettingInterface;
   constructor(public navCtrl: NavController, private action:DataSettingAction,
               private state:DataSettingState, private store:DataSettingStore, public navParams: NavParams ) {
 
@@ -40,7 +40,10 @@ export class DataSetting implements OnInit {
         coverage: false,
         duplication: false
       }
-      this.action.init(this.form);
+      let observable = this.action.init(this.form); 
+      observable.subscribe((data) =>  {
+          this.form = this.state.response;
+      })
     } else {
        this.form = {
         backlog: false,
