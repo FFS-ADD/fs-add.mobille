@@ -1,9 +1,9 @@
 import {Injectable} from "@angular/core";
-import {BackLogDetailScreenInterface} from "./backlog-detail.interface";
+import {BackLogDetailScreenInterface, BackLogCanvasInterface} from "./backlog-detail.interface";
 
 @Injectable()
 export class BackLogDetailState {
   screen: BackLogDetailScreenInterface;
-  totalBugs: number;
+  taskHistoryCanvas: BackLogCanvasInterface;
   success: boolean;
 }

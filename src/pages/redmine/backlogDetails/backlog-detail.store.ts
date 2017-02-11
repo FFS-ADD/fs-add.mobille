@@ -2,6 +2,7 @@ import {Injectable}from "@angular/core";
 import {Dispatcher}from "../../../core/Dispatcher";
 import {BackLogDetailActionType} from "./backlog-detail.action.type";
 import {BackLogDetailState} from "./backlog-detail.state";
+import {TaskDetailsScreenDataSet, TaskReport, BackLogCanvasInterface} from "./backlog-detail.interface";
 
 @Injectable()
 export class BackLogDetailStore {
@@ -13,52 +14,104 @@ export class BackLogDetailStore {
     });
   }
 
-  private CHART_OPTIONS = {
+  private BAR_CHART_OPTIONS = {
     responsive: true,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
+    legend: {
+      display: true,
+      position: "bottom",
+      onClick: null,
+      labels: {
+        boxWidth: 13
+      }
+    },
+    scales: {
+      xAxes: [{
+        stacked: true,
+        categoryPercentage: 0.7,
+        gridLines: {
+          drawTicks: false
+        }
+      }],
+      yAxes: [{
+        stacked: true,
+        gridLines: {
+          drawTicks: false
+        }
+      }]
+    },
     tooltips: {
       display: true,
       enabled: true,
-      callbacks: {
-        beforeTitle: function(tooltipItems, data) {
-          let item = tooltipItems[0];
-          let labels = data.datasets[item.datasetIndex].labels;
-
-          return labels[item.index];
-        },
-        label: function(tooltipItem, data) {
-          let item = tooltipItem;
-          let datasets = data.datasets[item.datasetIndex].data;
-          let sum: number = 0;
-          for (let i = 0; i < datasets.length; i++) {
-            sum = sum + datasets[i];
-          }
-          return Math.floor(datasets[item.index] * 100 / sum) + '%';
-        }
-      }
+      mode: 'label',
     },
   };
 
-  private DATA_SET_LABELS = ["New","In Progress","Fixed","ReTesting","Closed"];
-
-  private colors = [{backgroundColor: ["#efb14e", "#6e3c78", "#2d578b", "#3f99ec", "#00060e"]}];
+  private BAR_CHART_COLORS = [
+    { backgroundColor: ["#259b24", "#259b24", "#259b24", "#259b24", "#259b24", "#259b24", "#259b24"] },
+    { backgroundColor: ["#e51c23", "#e51c23", "#e51c23", "#e51c23", "#e51c23", "#e51c23", "#e51c23"] },
+    { backgroundColor: ["#607d8b", "#607d8b", "#607d8b", "#607d8b", "#607d8b", "#607d8b", "#607d8b"] },
+    { backgroundColor: ["#ff9800", "#ff9800", "#ff9800", "#ff9800", "#ff9800", "#ff9800", "#ff9800"] }];
 
   public init(data) {
-    console.log("BugStore#init");
-    // console.log(data);
-    // let response: BugResponseInterface = data.result;
-    // let totalBugs: number = response.new + response.inProgress + response.fixed + response.retesting + response.close;
-    // let dataSets: BugScreenDataSet = {
-    //   labels: this.DATA_SET_LABELS,
-    //   data: [response.new, response.inProgress, response.fixed, response.retesting, response.close]
-    // };
-    // let screenResponse: BugScreenInterface = {
-    //   dataSets: [dataSets],
-    //   bugResponse: response,
-    //   colors : this.colors,
-    //   options: this.CHART_OPTIONS
-    // };
-    // this.state.totalBugs = totalBugs;
-    // this.state.screen = screenResponse;
+    console.log("BackLogDetailStore#init");
+    console.log(data.result);
+    this.state.screen = data.result;
+    this.state.taskHistoryCanvas = this.getTaskHistory(this.state.screen.taskHistory);
+  }
+
+
+  private getTaskHistory(taskHistory: TaskReport[]): BackLogCanvasInterface {
+    let dataSets: TaskDetailsScreenDataSet[] = new Array();
+
+    let onScheduleData = new Array(7);
+    let delayData = new Array(7);
+    let closedData = new Array(7);
+    let pendingData = new Array(7);
+    let dateData = new Array(7);
+    let index = 0;
+    taskHistory.forEach((task) => {
+      onScheduleData[index] = task.onSchedule;
+      delayData[index] = task.delay;
+      closedData[index] = task.closed;
+      pendingData[index] = task.pending;
+      dateData[index] = task.date;
+      index++;
+    });
+
+    let onScheduleDataSet: TaskDetailsScreenDataSet = {
+      label: "OnSchedule",
+      data: onScheduleData
+    };
+
+    let delayDataSet: TaskDetailsScreenDataSet = {
+      label: "Delay",
+      data: delayData
+    };
+
+    let closedDataSet: TaskDetailsScreenDataSet = {
+      label: "Closed",
+      data: closedData
+    };
+
+    let pendingDataSet: TaskDetailsScreenDataSet = {
+      label: "Pending",
+      data: pendingData
+    };
+
+    dataSets.push(onScheduleDataSet);
+    dataSets.push(delayDataSet);
+    dataSets.push(closedDataSet);
+    dataSets.push(pendingDataSet);
+
+    let result: BackLogCanvasInterface = {
+      chartType: "bar",
+      labels: dateData,
+      dataSets: dataSets,
+      options: this.BAR_CHART_OPTIONS,
+      colors: this.BAR_CHART_COLORS
+    };
+
+    return result;
   }
 }

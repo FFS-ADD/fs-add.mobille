@@ -9,23 +9,10 @@ export default class BackLogDetailAction {
   }
 
   public init() {
-    let data = {
-      "status": "SUCCESS",
-      "result": {
-        "new": 15,
-        "inProgress": 9,
-        "fixed": 6,
-        "retesting": 3,
-        "close": 8
-      }
-    };
-    // let observable = this.httpService.get('./data/bug-init.json', {});
-    // observable.subscribe(
-    //   data => {
-        if (data.status === "SUCCESS") {
-          this.dispatcher.dispatch(BackLogDetailActionType.INIT, data)
-        }
-    //   }
-    // );
+    let observable = this.httpService.getFakeData('/assets/data/redmine/backLogDetails.json', {});
+    observable.subscribe(
+      (data) => this.dispatcher.dispatch(BackLogDetailActionType.INIT, data)
+    );
+    return observable;
   }
 }

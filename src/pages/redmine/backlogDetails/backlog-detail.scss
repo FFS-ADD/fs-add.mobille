@@ -60,8 +60,13 @@
           border-radius: 4px;
         }
         .delay-status {
-          background: color($colors, task-delay-color);
+          background: color($colors, red-color);
         }
+
+        .normal-status {
+          background: color($colors, green-color);
+        }
+
         .weekly-task-details-list-item-content {
           padding-left: 6px;
           .label-content {

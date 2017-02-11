@@ -24,18 +24,27 @@
     </ion-label>
   </ion-item>
   <ion-list class="weekly-task-details-list">
-    <div class="weekly-task-details-list-item" *ngFor="let item of state.screen?.delayTaskList">
-      <div class="weekly-task-details-list-item-title">
-        <ion-label class="label-title">
-          <p>{{item.taskId}}</p>
-        </ion-label>
-      </div>
-      <div class="weekly-task-details-list-item-graph delay-status"></div>
+    <div class="weekly-task-details-list-item" *ngFor="let item of state.screen?.backLogList">
+      <div class="weekly-task-details-list-item-graph normal-status" *ngIf="item.status"></div>
+      <div class="weekly-task-details-list-item-graph delay-status" *ngIf="!item.status"></div>
       <div class="weekly-task-details-list-item-content">
         <ion-label class="label-content">
-          <p>Tiket: {{item.tiket}}</p>
-          <p>Owner: {{item.owner}}</p>
-          <p>Planed End Date: {{item.planedEndDate}}</p>
+          <p>{{item.backLogId}} {{item.ticket}}</p>
+          <p>Progress: </p>
+          <p>Stage:{{item.stage}}</p>
+          <p>StartDay:{{item.startDay}}</p>
+          <p>Estimate:{{item.estimate}}</p>
+          <p>Difference:{{item.difference}}</p>
+        </ion-label>
+      </div>
+      <div class="weekly-task-details-list-item-content">
+        <ion-label class="label-content">
+          <p>{{item.owner}}</p>
+          <p><progress max="100" value="{{item.progress}}"></progress> {{item.progress}}%</p>
+          <p>Priority:{{item.priority}}</p>
+          <p>EndDay:{{item.endDay}}</p>
+          <p>Reported:{{item.reported}}</p>
+          <p></p>
         </ion-label>
       </div>
     </div>

@@ -1,4 +1,4 @@
 export const BackLogDetailActionType = {
-    INIT: 'BUG_DETAILS_ACTION.INIT'
+    INIT: 'BACKLOG_DETAILS_ACTION.INIT'
 };
 

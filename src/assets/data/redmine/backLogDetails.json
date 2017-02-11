@@ -1,0 +1,71 @@
+ {
+     "status": 1,
+     "result": {
+         "taskHistory": [{
+                 "date": "2/9",
+                 "onSchedule": 10,
+                 "delay": 20,
+                 "closed": 40,
+                 "pending": 80
+             },
+             {
+                 "date": "2/10",
+                 "onSchedule": 22,
+                 "delay": 40,
+                 "closed": 18,
+                 "pending": 70
+             },
+
+             {
+                 "date": "2/11",
+                 "onSchedule": 22,
+                 "delay": 40,
+                 "closed": 60,
+                 "pending": 28
+             },
+             {
+                 "date": "2/11",
+                 "onSchedule": 32,
+                 "delay": 50,
+                 "closed": 40,
+                 "pending": 28
+             },
+             {
+                 "date": "2/12",
+                 "onSchedule": 12,
+                 "delay": 40,
+                 "closed": 8,
+                 "pending": 90
+             }
+         ],
+         "backLogList": [{
+                 "backLogId": "2019",
+                 "ticket": "Coding UserController a",
+                 "owner": "Wei.Zhang",
+                 "progress": 50,
+                 "stage":"develop",
+                 "priority":"High",
+                 "startDay":"2016/01/20",
+                 "endDay":"2016/01/28",
+                 "estimate":"45H",
+                 "reported":"23H",
+                 "difference":"22H",
+                 "status":true
+             },
+           {
+             "backLogId": "2018",
+             "ticket": "Coding UserController B",
+             "owner": "Wei.Zhang.A",
+             "progress": 70,
+             "stage":"develop",
+             "priority":"low",
+             "startDay":"2016/01/02",
+             "endDay":"2016/01/25",
+             "estimate":"42H",
+             "reported":"21H",
+             "difference":"20H",
+             "status":false
+           }
+         ]
+     }
+ }
