@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Dispatcher } from "../../../core/Dispatcher";
 import { HttpService } from "../../../core/HttpService";
-import { DataSettingActionType } from './datasettingActionType';
+import { DataSettingActionType } from './datasetting.action.type';
 
 @Injectable()
 export class DataSettingAction {

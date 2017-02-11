@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Dispatcher } from "../../../core/Dispatcher";
-import { DataSettingState } from "./datasettingState";
-import { DataSettingActionType } from "./datasettingActionType";
+import { DataSettingState } from "./datasetting.state";
+import { DataSettingActionType } from "./datasetting.action.type";
 
 @Injectable()
 export class DataSettingStore {

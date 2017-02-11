@@ -5,7 +5,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import {Login} from "../pages/signIn/login/Login";
 // import {BugComponent} from "../pages/redmine/bug/bug";
 import { HomePage } from '../pages/home/home';
-import { DataSetting } from '../pages/signIn/displaydatasetting/datasetting.component';
+import { DataSetting } from '../pages/signIn/datasetting/datasetting.component';
 
 @Component({
   templateUrl: 'app.html'

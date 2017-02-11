@@ -5,7 +5,7 @@ import { LoginState } from "./login.state";
 import { LoginStore } from "./login.store";
 import { LoginRequestInterface } from './login.interface';
 import { HomePage } from '../../home/home';
-import { DataSetting } from '../displaydatasetting/datasetting.component';
+import { DataSetting } from '../datasetting/datasetting.component';
 
 @Component({
   providers: [LoginAction, LoginState, LoginStore],

@@ -1,14 +1,14 @@
 import { Component, OnInit } from "@angular/core";
 import { NavController, NavParams } from 'ionic-angular';
-import { DataSettingRequestInterface } from "./datasettingInterface";
-import { DataSettingAction } from "./datasettingAction";
-import { DataSettingState } from "./datasettingState";
-import { DataSettingStore } from "./datasettingStore";
+import { DataSettingRequestInterface } from "./datasetting.interface";
+import { DataSettingAction } from "./datasetting.action";
+import { DataSettingState } from "./datasetting.state";
+import { DataSettingStore } from "./datasetting.store";
 import { HomePage } from "../../home/home"
 
 @Component({
   providers:[DataSettingAction, DataSettingState, DataSettingStore],
-  templateUrl: "displaydatasetting.html"
+  templateUrl: "datasetting.html"
 })
 export class DataSetting implements OnInit {
   private form : DataSettingRequestInterface;

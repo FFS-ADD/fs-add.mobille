@@ -14,7 +14,7 @@ import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
 import { BugDetailsComponent } from "../pages/redmine/bugDetails/bug-details";
 import { SonarqubeComponent } from '../pages/home/sonarqube/sonarqube';
 import { SonarqubeDetailPage } from '../pages/home/sonarqube/sonarqube-detail/sonarqube-detail'
-import { DataSetting } from '../pages/signIn/displaydatasetting/datasetting.component';
+import { DataSetting } from '../pages/signIn/datasetting/datasetting.component';
 import { BackLogComponent } from "../pages/redmine/backlog/backlog-master";
 import { BackLogDetailComponent } from "../pages/redmine/backlogDetails/backlog-detail";
 import {TaskComponent} from "../pages/redmine/task/task";
