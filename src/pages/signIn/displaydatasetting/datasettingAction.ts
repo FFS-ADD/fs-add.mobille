@@ -17,13 +17,13 @@ export class DataSettingAction {
     return observable;
   }
 
-  public ok(form) {
-    console.debug("DataSettingAction");
+  public save(form) {
+    console.debug("toggle");
     //let observable = this.httpService.post('/auth/mail/password', form);
     let observable = this.httpService.getFakeData('/assets/data/signIn/datasetting-ok.json', form);
     observable.subscribe(
       (data) => {
-        this.dispatcher.dispatch(DataSettingActionType.OK, data);
+        this.dispatcher.dispatch(DataSettingActionType.SAVE, data);
       }
     );
     return observable;

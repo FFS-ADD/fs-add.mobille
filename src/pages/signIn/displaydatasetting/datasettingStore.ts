@@ -13,9 +13,9 @@ export class DataSettingStore {
     })
 
     this.dispatcher.bindActions({
-      type: DataSettingActionType.OK,
+      type: DataSettingActionType.SAVE,
       instance: this,
-      handler: this.ok
+      handler: this.save
     });
   }
 
@@ -29,7 +29,7 @@ export class DataSettingStore {
     }
   }
 
-  public ok(data) {
+  public save(data) {
     console.debug("datasettingStore ok");
     if (data.status === "SUCCESS") {
       this.state.success = true;
