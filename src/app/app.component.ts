@@ -10,7 +10,7 @@ import { DataSetting } from '../pages/signIn/datasetting/datasetting.component';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  @ViewChild('myNav') nav;
+  @ViewChild('content') nav;
   rootPage = Login;
   //rootPage = HomePage;
 
