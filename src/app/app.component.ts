@@ -23,11 +23,15 @@ export class MyApp {
     });
   }
 
-  public openPage() {
+  public logout() {
   
   }
 
-  public datasetting() {
+  public userSetting() {
+  
+  }
+
+  public dataSetting() {
     this.nav.push(DataSetting, {"perPage" : "setting"});
   }
 }
