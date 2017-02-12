@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { Login } from "../pages/signIn/login/Login";
 import { HomePage } from '../pages/home/home';
 import { DataSetting } from '../pages/signIn/datasetting/datasetting.component';
@@ -24,11 +24,15 @@ export class MyApp {
   }
 
   public logout() {
-  
+    this.nav.popToRoot();
   }
 
   public userSetting() {
   
+  }
+
+  public passwordReset() {
+
   }
 
   public dataSetting() {
