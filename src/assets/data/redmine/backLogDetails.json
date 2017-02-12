@@ -1,0 +1,39 @@
+ {
+     "status": 1,
+     "result": {
+         "backLogCanvasData": {
+           "planed": [65, 59, 80, 81, 56, 55, 40],
+           "actual": [25, 45, 38, 41, 26, 45, 49]
+         },
+         "bugDetailsHistoryData": [{
+                 "backLogId": "2019",
+                 "ticket": "Coding UserController a",
+                 "owner": "Wei.Zhang",
+                 "progress": 50,
+                 "stage":"develop",
+                 "priority":"High",
+                 "startDay":"2016/01/20",
+                 "endDay":"2016/01/28",
+                 "estimate":"45H",
+                 "reported":"23H",
+                 "difference":"22H",
+                 "status":true
+             },
+           {
+             "backLogId": "2018",
+             "ticket": "Coding UserController B",
+             "owner": "Wei.Zhang.A",
+             "progress": 70,
+             "stage":"develop",
+             "priority":"low",
+             "startDay":"2016/01/02",
+             "endDay":"2016/01/25",
+             "estimate":"42H",
+             "reported":"21H",
+             "difference":"20H",
+             "status":false
+           }
+         ],
+       "historyDate": ["1/1","1/2","1/3","1/4","1/5","1/6","1/7"]
+     }
+ }

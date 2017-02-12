@@ -12,35 +12,35 @@
     </div>
     <div class="sonarqube-detail-chart">
         <canvas baseChart height="200px"
-                [datasets]="vbc.lineChartData"
-                [labels]="vbc.lineChartLabels"
-                [options]="vbc.lineChartOptions"
-                [colors]="vbc.lineChartColors"
+                [datasets]="state?.screen?.sonarqubeVBCHistoryResponse?.datas"
+                [labels]="state?.screen?.sonarqubeVBCHistoryResponse?.labels"
+                [options]="state?.screen?.sonarqubeVBCHistoryResponse?.options"
+                [colors]="state?.screen?.sonarqubeVBCHistoryResponse?.colors"
                 legend="true"
-                chartType="line"></canvas>
+                chartType="line" *ngIf="state?.screen?.sonarqubeVBCHistoryResponse"></canvas>
     </div>
     <div class="sonarqube-detail-title">
         <ion-icon name="logo-buffer"></ion-icon><div>Weekly LOC History</div>
     </div>
     <div class="sonarqube-detail-chart">
         <canvas baseChart height="200px"
-                [datasets]="loc.lineChartData"
-                [labels]="loc.lineChartLabels"
-                [options]="loc.lineChartOptions"
-                [colors]="loc.lineChartColors"
+                [datasets]="state?.screen?.sonarqubeLocHistoryResponse?.datas"
+                [labels]="state?.screen?.sonarqubeLocHistoryResponse?.labels"
+                [options]="state?.screen?.sonarqubeLocHistoryResponse?.options"
+                [colors]="state?.screen?.sonarqubeLocHistoryResponse?.colors"
                 legend="true"
-                chartType="line"></canvas>
+                chartType="line" *ngIf="state?.screen?.sonarqubeLocHistoryResponse"></canvas>
     </div>
     <div class="sonarqube-detail-title">
         <ion-icon name="logo-buffer"></ion-icon><div>Weekly Coverage History</div>
     </div>
     <div class="sonarqube-detail-chart">
         <canvas baseChart height="200px"
-                [datasets]="coverage.lineChartData"
-                [labels]="coverage.lineChartLabels"
-                [options]="coverage.lineChartOptions"
-                [colors]="coverage.lineChartColors"
+                [datasets]="state?.screen?.sonarqubeCoverageHistoryResponse?.datas"
+                [labels]="state?.screen?.sonarqubeCoverageHistoryResponse?.labels"
+                [options]="state?.screen?.sonarqubeCoverageHistoryResponse?.options"
+                [colors]="state?.screen?.sonarqubeCoverageHistoryResponse?.colors"
                 legend="true"
-                chartType="line"></canvas>
+                chartType="line" *ngIf="state?.screen?.sonarqubeCoverageHistoryResponse"></canvas>
     </div>
 </ion-content>

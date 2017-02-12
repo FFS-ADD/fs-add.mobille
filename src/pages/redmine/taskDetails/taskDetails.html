@@ -16,35 +16,15 @@
         </ion-label>
     </ion-item>
     <ion-item class="task-canvas">
-        <ion-label class="task-canvas-title">
-            <div>
-                <label>Total tasks : {{state?.totalTasks}}</label>
-            </div>
-            <div>
-                <p class="task-new-title"></p>
-                <label>New : {{state?.screen?.taskResponse?.new}}</label>
-            </div>
-            <div>
-                <p class="task-in-progress-title"></p>
-                <label>In Progress : {{state?.screen?.taskResponse?.inProgress}}</label>
-            </div>
-            <div>
-                <p class="task-fixed-title"></p>
-                <label>Fixed : {{state?.screen?.taskResponse?.fixed}}</label>
-            </div>
-            <div>
-                <p class="task-retesting-title"></p>
-                <label>ReTesting : {{state?.screen?.taskResponse?.retesting}}</label>
-            </div>
-            <div>
-                <p class="task-closed-title"></p>
-                <label>Closed : {{state?.screen?.taskResponse?.close}}</label>
-            </div>
-        </ion-label>
-        <ion-label class="task-canvas-area" *ngIf="state.screen && state.screen.dataSets">
-            <canvas baseChart class="canvas" [chartType]="chartType" [datasets]="state?.screen?.dataSets" [options]="state?.screen?.options" [colors]="state?.screen?.colors">
+        <ion-row class="task-canvas-area" *ngIf="state.taskHistoryCanvas && state.taskHistoryCanvas.dataSets">
+            <canvas baseChart class="canvas"
+                    [labels]="state?.taskHistoryCanvas?.labels"
+                    [chartType]="state?.taskHistoryCanvas?.chartType"
+                    [datasets]="state?.taskHistoryCanvas?.dataSets"
+                    [options]="state?.taskHistoryCanvas?.options"
+                    [colors]="state?.taskHistoryCanvas?.colors">
             </canvas>
-        </ion-label>
+        </ion-row>
     </ion-item>
     <ion-item class="weekly-task-details">
         <ion-label class="weekly-task-details-label">
@@ -61,12 +41,12 @@
                     <p>{{item.taskId}}</p>
                 </ion-label>
             </div>
-            <div class="weekly-task-details-list-item-graph"></div>
+            <div class="weekly-task-details-list-item-graph delay-status"></div>
             <div class="weekly-task-details-list-item-content">
                 <ion-label class="label-content">
-                    <p>Tiket: Coding UserController</p>
-                    <p>Owner: Wei.Zhang</p>
-                    <p>Planed End Date: 2015/06/17</p>
+                    <p>Tiket: {{item.tiket}}</p>
+                    <p>Owner: {{item.owner}}</p>
+                    <p>Planed End Date: {{item.planedEndDate}}</p>
                 </ion-label>
             </div>
         </div>

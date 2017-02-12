@@ -1,0 +1,9 @@
+ {
+   "status": 1,
+   "result": {
+     "new": 22,
+     "inProgress": 10,
+     "overdue": 30,
+     "closed": 40
+   }
+ }

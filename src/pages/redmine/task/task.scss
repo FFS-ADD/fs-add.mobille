@@ -1,108 +1,85 @@
 //---------------------------------------- taskComponent用 ----------------------------------------
-.task-content {
-  border-radius: 5px;
-  border-bottom: 1px solid #aaaaaa;
-  margin: 3px;
-
-  .scroll-content {
-    padding: 0 10px;
-
+.task-card {
+    padding: 0 10px 15px 10px;
     .task-title {
-      border: 0;
-      font-size: 18px;
-      padding: 0;
-
-      .task-title-name {
-        font-weight: bold;
-      }
-
-      .task-title-detail {
-        font-size: 16px;
-        text-align: right;
-
-        .task-title-detail-name {
-          display: inline-block;
-          line-height: 0.8;
-        }
-
-        ion-icon {
-          width: 10px;
-        }
-      }
-
-      .item-inner {
+        border: 0;
+        font-size: 18px;
         padding: 0;
-        border: none;
-      }
-      img {
-        height: 100%;
-        width: 100%;
-      }
-      .label {
-        margin: 0;
-      }
+        .task-title-name {
+            font-weight: bold;
+        }
+        .task-title-detail {
+            font-size: 16px;
+            text-align: right;
+            .task-title-detail-name {
+                display: inline-block;
+                line-height: 0.8;
+            }
+            ion-icon {
+                width: 10px;
+            }
+        }
+        .item-inner {
+            padding: 0;
+            border: none;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+        }
+        .label {
+            margin: 0;
+        }
     }
-
     .task-canvas {
-      padding: 0;
-
-      .item-inner {
-        border: none;
-        padding-right: 0;
-      }
-
-      .task-canvas-title {
-        float: left;
-        font-size: 12px;
-        margin: 0;
-        width: 40%;
-
-        div {
-          height: 28px;
-          padding: 6px 0;
-          border-bottom: 1px solid #aaaaaa;
-          width: 90%;
-
-          p {
-            display: inline-flex;
-            margin-right: 10px;
-            height: 16px;
-            width: 16px;
-            border-radius: 3px;
-            border: 1px solid #aaaaaa;
-
-            &.task-on-schedule-title {
-              background: color($colors, task-on-schedule-color);
-            }
-
-            &.task-delay-title {
-              background: color($colors, task-delay-color);
-            }
-
-            &.task-closed-title {
-              background: color($colors, task-closed-color);
-            }
-
-            &.task-pending-title {
-              background: color($colors, task-pending-color);
-            }
-          }
+        padding: 0;
+        .item-inner {
+            border: none;
+            padding-right: 0;
         }
-      }
-      .task-canvas-area {
-        margin: 0;
-        width: 60%;
-
-        .task-canvas {
-          float: right;
-          width: 100%;
-
-          .canvas {
-            float: right;
-            width: 280px;
-          }
+        .task-canvas-title {
+            float: left;
+            font-size: 12px;
+            margin: 0;
+            width: 40%;
+            div {
+                height: 28px;
+                padding: 6px 0;
+                border-bottom: 1px solid color($colors, gray-color);
+                width: 90%;
+                p {
+                    display: inline-flex;
+                    margin-right: 10px;
+                    height: 16px;
+                    width: 16px;
+                    border-radius: 3px;
+                    border: 1px solid color($colors, gray-color);
+                    &.task-on-schedule-title {
+                        background: color($colors, task-on-schedule-color);
+                    }
+                    &.task-delay-title {
+                        background: color($colors, task-delay-color);
+                    }
+                    &.task-closed-title {
+                        background: color($colors, task-closed-color);
+                    }
+                    &.task-pending-title {
+                        background: color($colors, task-pending-color);
+                    }
+                }
+            }
         }
-      }
+        .task-canvas-area {
+            margin: 0;
+            width: 60%;
+            .task-canvas {
+                float: right;
+                width: 100%;
+                .canvas {
+                    float: right;
+                    width: 280px;
+                }
+            }
+        }
     }
-  }
 }

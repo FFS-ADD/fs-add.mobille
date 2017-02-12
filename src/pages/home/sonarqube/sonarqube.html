@@ -1,18 +1,31 @@
 <div class="sonarqube-page">
     <div class="sonarqube-title">
-        <ion-icon name="logo-buffer"></ion-icon><div>Sonarqube</div>
+        <div class="title">
+            <ion-icon name="logo-buffer"></ion-icon><div>Sonarqube</div>
+        </div>
+        <div></div>
+        <div class="icon">
+            <ion-icon name="refresh" (click)="refresh()"></ion-icon>
+        </div>
     </div>
     <div class="sonarqube-subtitle">
         The following data is obtained from sonarqube.
     </div>
     <!--Quality Gate-->
-    <ion-card>
-        <ion-card-header>
+    <ion-card *ngIf="state?.qualityLoading">
+        <ion-card-content>
+            <div class="sonarqube-loading">
+                <ion-spinner name="circles"></ion-spinner><span>Loding Quality Gate Data</span>
+            </div>
+        </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="!state?.qualityLoading">
+        <ion-card-header class="sonarqube-quality">
             <ion-grid class="sonarqube-quality-title">
                 <div>Quality Gate</div>
                 <div>
-                    <button ion-button color="danger" round small>
-                        Failed
+                    <button ion-button [color]="state?.screen?.sonarqubeResponse?.qualityGateStatus === 'success' ? 'secondary' : 'danger'" round small>
+                        {{state?.screen?.sonarqubeResponse?.qualityGateStatus}}
                     </button>
                 </div>
                 <div>
@@ -29,19 +42,19 @@
                     <ion-col width-33>
                         <div>
                             <div>Vulneralilities</div>
-                            <div class="sonarqube-value">{{state?.screen?.sonarqubeResponse?.vulneralilities}}</div>
+                            <div class="sonarqube-value">{{state?.screen?.sonarqubeResponse?.vulneralilities | numberFormat}}</div>
                         </div>
                     </ion-col>
                     <ion-col width-33 center class="sonarqube-value-border">
                         <div>
                             <div>Bugs</div>
-                            <div class="sonarqube-value">{{state?.screen?.sonarqubeResponse?.bugs}}</div>
+                            <div class="sonarqube-value">{{state?.screen?.sonarqubeResponse?.bugs | numberFormat}}</div>
                         </div>
                     </ion-col>
                     <ion-col width-33>
                         <div>
                             <div>Code Smells</div>
-                            <div class="sonarqube-value">{{state?.screen?.sonarqubeResponse?.code}}</div>
+                            <div class="sonarqube-value">{{state?.screen?.sonarqubeResponse?.codeSmells | numberFormat}}</div>
                         </div>
                     </ion-col>
                 </ion-row>
@@ -50,12 +63,19 @@
     </ion-card>
 
     <!--LOC -->
-    <ion-card>
+    <ion-card *ngIf="state?.locLoading">
+        <ion-card-content>
+            <div class="sonarqube-loading">
+                <ion-spinner name="circles"></ion-spinner><span>Loding LOC Data</span>
+            </div>
+        </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="!state?.locLoading">
         <ion-card-header>
             <ion-grid class="sonarqube-loc-title">
                 <div>LOC</div>
                 <div class="second-title">Lines of Code</div>
-                <div class="thrid-title">19K</div>
+                <div class="thrid-title">{{state?.screen?.sonarqubeLocResponse?.codeLines | numberFormat}}</div>
             </ion-grid>
         </ion-card-header>
         <ion-card-content>
@@ -64,19 +84,19 @@
                     <ion-col width-33>
                         <div>
                             <div>Line</div>
-                            <div class="sonarqube-value">359.2K</div>
+                            <div class="sonarqube-value">{{state?.screen?.sonarqubeLocResponse?.line | numberFormat}}</div>
                         </div>
                     </ion-col>
                     <ion-col width-33 center class="sonarqube-value-border">
                         <div>
                             <div>Statement</div>
-                            <div class="sonarqube-value">912K</div>
+                            <div class="sonarqube-value">{{state?.screen?.sonarqubeLocResponse?.statement | numberFormat}}</div>
                         </div>
                     </ion-col>
                     <ion-col width-33>
                         <div>
                             <div>File</div>
-                            <div class="sonarqube-value">1.1K</div>
+                            <div class="sonarqube-value">{{state?.screen?.sonarqubeLocResponse?.file | numberFormat}}</div>
                         </div>
                     </ion-col>
                 </ion-row>
@@ -85,11 +105,18 @@
     </ion-card>
 
     <!--Coverage -->
-    <ion-card>
+    <ion-card *ngIf="state?.coverageLoading">
+        <ion-card-content>
+            <div class="sonarqube-loading">
+                <ion-spinner name="circles"></ion-spinner><span>Loding Coverage Data</span>
+            </div>
+        </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="!state?.coverageLoading">
         <ion-card-header>
             <ion-grid class="sonarqube-coverage-title">
                 <div>Coverage</div>
-                <div class="sonarqube-coverage-value">87.1%</div>
+                <div class="sonarqube-coverage-value">{{state?.screen?.sonarqubeCoverageResponse?.coverage | numberFormat}}</div>
             </ion-grid>
         </ion-card-header>
         <ion-card-content>
@@ -98,19 +125,19 @@
                     <ion-col width-33>
                         <div>
                             <div>Tests</div>
-                            <div class="sonarqube-value">300</div>
+                            <div class="sonarqube-value">{{state?.screen?.sonarqubeCoverageResponse?.tests | numberFormat}}</div>
                         </div>
                     </ion-col>
                     <ion-col width-33 center class="sonarqube-value-border">
                         <div>
                             <div>Sucess</div>
-                            <div class="sonarqube-value">214</div>
+                            <div class="sonarqube-value">{{state?.screen?.sonarqubeCoverageResponse?.success | numberFormat}}</div>
                         </div>
                     </ion-col>
                     <ion-col width-33>
                         <div>
                             <div>Failures</div>
-                            <div class="sonarqube-value">86</div>
+                            <div class="sonarqube-value">{{state?.screen?.sonarqubeCoverageResponse?.failures | numberFormat}}</div>
                         </div>
                     </ion-col>
                 </ion-row>
@@ -119,11 +146,18 @@
     </ion-card>
 
     <!--Duplication -->
-    <ion-card>
+    <ion-card *ngIf="state?.duplicationLoading">
+        <ion-card-content>
+            <div class="sonarqube-loading">
+                <ion-spinner name="circles"></ion-spinner><span>Loding Duplication Data</span>
+            </div>
+        </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="!state?.duplicationLoading">
         <ion-card-header>
             <ion-grid class="sonarqube-duplication-title">
                 <div>Duplication</div>
-                <span class="sonarqube-duplication-value">12.1%</span>
+                <span class="sonarqube-duplication-value">{{state?.screen?.sonarqubeDuplicationResponse?.duplication | numberFormat}}</span>
             </ion-grid>
         </ion-card-header>
         <ion-card-content>
@@ -132,19 +166,19 @@
                     <ion-col width-33>
                         <div>
                             <div>Line</div>
-                            <div class="sonarqube-value">369.7K</div>
+                            <div class="sonarqube-value">{{state?.screen?.sonarqubeDuplicationResponse?.line | numberFormat}}</div>
                         </div>
                     </ion-col>
                     <ion-col width-33 center class="sonarqube-value-border">
                         <div>
                             <div>Blocks</div>
-                            <div class="sonarqube-value">1.3K</div>
+                            <div class="sonarqube-value">{{state?.screen?.sonarqubeDuplicationResponse?.blocks | numberFormat}}</div>
                         </div>
                     </ion-col>
                     <ion-col width-33>
                         <div>
                             <div>File</div>
-                            <div class="sonarqube-value">317</div>
+                            <div class="sonarqube-value">{{state?.screen?.sonarqubeDuplicationResponse?.file | numberFormat}}</div>
                         </div>
                     </ion-col>
                 </ion-row>

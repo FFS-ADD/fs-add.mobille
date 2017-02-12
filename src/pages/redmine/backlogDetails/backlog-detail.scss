@@ -1,0 +1,161 @@
+.backlog-detail-content {
+
+  .scroll-content {
+
+    ion-navbar {
+      .toolbar-background {
+        background-color: color($colors, narbar-color);
+      }
+
+      .back-button {
+        color: color($colors, black-color);
+        margin: 0;
+        padding: 0;
+        width: 44px;
+      }
+
+      .toolbar-content {
+        .title {
+          &.title-ios {
+            padding: 0 60px 1px;
+          }
+
+          &.title-md {
+            text-align: center;
+            width: calc(100% - 44px);
+          }
+
+          .toolbar-title {
+            color: color($colors, light);
+            font-size: 18px;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+
+    .weekly-backlog-details-list {
+      .weekly-backlog-details-list-item {
+        display: flex;
+        padding-left: 6px;
+        padding-right: 6px;
+        border-style: solid;
+        font-size: 14px;
+        border-width: 1px;
+        margin-top: 4px;
+        margin-bottom: -1px;
+        border-color: #e3e7e8;
+        border-left-style: none;
+        border-right-style: none;
+        .weekly-backlog-details-list-item-title {
+          display: flex;
+          align-items: center;
+          width: 60px;
+          .label-title {
+            text-align: center;
+          }
+        }
+        .weekly-backlog-details-list-item-graph {
+          width: 8px;
+          border-radius: 4px;
+        }
+        .delay-status {
+          background: color($colors, red-color);
+        }
+
+        .normal-status {
+          background: color($colors, green-color);
+        }
+
+        .weekly-backlog-details-list-item-content {
+          padding-left: 6px;
+          .label-content {
+            margin: 0;
+          }
+        }
+        &:nth-child(even) {
+          background-color: #e3e7e8;
+        }
+      }
+    }
+
+    .backlog-details-history-canvas {
+      margin: 10px 0;
+      padding: 0 10px;
+      width: 100%;
+
+      .item-inner {
+        border-bottom: 0;
+        padding: 0;
+
+        .label-md {
+          margin: 0;
+
+          .backlog-details-history-canvas-area {
+            display: flex;
+            margin: 0;
+            width: 100%;
+
+            .canvas {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .weekly-backlog-details {
+      background-color: color($colors, light-blue-color);
+      height: 22px;
+      padding: 0;
+      min-height: 22px;
+
+      p {
+        color: color($colors, black-color);
+        padding-left: 5px;
+        margin: 0;
+      }
+
+      .item-inner {
+        min-height: 22px;
+        height: 22px;
+
+        .input-wrapper {
+          height: 22px;
+
+          .weekly-backlog-details-label {
+            display: inline-flex;
+            margin: 0;
+
+            .icon {
+
+              .history {
+                font: normal normal normal 14px/1 FontAwesome2;
+
+                &.details {
+                  &:before {
+                    content: "\f201";
+                  }
+                }
+
+                &.backlog-status {
+                  &:before {
+                    content: "\f0e4";
+                  }
+                }
+
+                &:before {
+                  box-sizing: border-box;
+                  font-size: 19px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .weekly-backlog-details-title {
+        font-size: 16px;
+      }
+    }
+  }
+}

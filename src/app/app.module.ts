@@ -14,11 +14,14 @@ import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
 import { BugDetailsComponent } from "../pages/redmine/bugDetails/bug-details";
 import { SonarqubeComponent } from '../pages/home/sonarqube/sonarqube';
 import { SonarqubeDetailPage } from '../pages/home/sonarqube/sonarqube-detail/sonarqube-detail'
-import { DataSetting } from '../pages/signIn/displaydatasetting/datasetting.component';
-import { BackLogComponent } from "../pages/redmine/backlog/master/backlog-master";
-import { BackLogDetailComponent } from "../pages/redmine/backlog/detail/backlog-detail";
+import { DataSetting } from '../pages/signIn/datasetting/datasetting.component';
+import { BackLogComponent } from "../pages/redmine/backlog/backlog-master";
+import { BackLogDetailComponent } from "../pages/redmine/backlogDetails/backlog-detail";
 import {TaskComponent} from "../pages/redmine/task/task";
 import {TaskDetailsComponent} from "../pages/redmine/taskDetails/taskDetails";
+import {QaComponent} from "../pages/redmine/qa/qa";
+import {QaDetailsComponent} from "../pages/redmine/qaDetails/qaDetails";
+import { NumberFormatPipe } from '../providers/pipes';
 import { BarometerComponent } from '../pages/home/barometer/barometer.component';
 import { BarometerDetailPage } from '../pages/home/barometer/barometer-detail/barometer-detail';
 
@@ -37,6 +40,9 @@ import { BarometerDetailPage } from '../pages/home/barometer/barometer-detail/ba
     BackLogDetailComponent,
     TaskComponent,
     TaskDetailsComponent,
+    QaComponent,
+    QaDetailsComponent,
+    NumberFormatPipe,
     BarometerComponent,
     BarometerDetailPage
   ],
@@ -60,6 +66,8 @@ import { BarometerDetailPage } from '../pages/home/barometer/barometer-detail/ba
     BackLogDetailComponent,
     TaskComponent,
     TaskDetailsComponent,
+    QaComponent,
+    QaDetailsComponent,
     BarometerComponent,
     BarometerDetailPage
   ],

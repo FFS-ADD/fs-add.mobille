@@ -1,0 +1,41 @@
+//---------------------------------------- header用 ----------------------------------------
+ion-header {
+    .setting-title {
+        .title {
+            background: #03a9f4;
+            line-height: 41px;
+            overflow: auto;
+            .backbutton {
+              color:#ffffff;
+            }
+            .page-subtitle {
+                font-size: 16px;
+               // font-weight: 400;
+                white-space: nowrap;
+                color: #ffffff;
+            }
+
+        }
+        .toolbar-title {
+          overflow: visible !important;
+        }
+        .backbutton {
+            color: black;
+        }
+    }
+}
+
+//---------------------------------------- content用 ----------------------------------------
+.setting-content {
+  .list-ios {
+    margin-bottom: 10px !important;
+  }
+  .button-area {
+    margin-top: -10px;
+    text-align: center;
+    button {
+      width: 300px;
+    }
+  }
+
+}

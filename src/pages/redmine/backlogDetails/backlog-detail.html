@@ -1,0 +1,63 @@
+<ion-content class="backlog-detail-content">
+  <ion-navbar #ionNavbar>
+    <button ion-button menuToggle >
+      <ion-icon name="md-arrow-back"></ion-icon>
+    </button>
+    <ion-title>
+      BackLog History
+    </ion-title>
+  </ion-navbar>
+  <ion-item class="weekly-backlog-details">
+    <ion-label class="weekly-backlog-details-label">
+      <p class="icon">
+        <i class="history details"></i>
+      </p>
+      <p class="weekly-backlog-details-title">Burndown Chart</p>
+    </ion-label>
+  </ion-item>
+  <ion-item class="backlog-details-history-canvas">
+    <ion-row class="backlog-details-history-canvas-area" *ngIf="state.screen && state.screen.backLogCanvas">
+      <canvas baseChart class="canvas"
+              [labels]="state?.screen?.backLogCanvas?.labels"
+              [chartType]="state?.screen?.backLogCanvas?.chartType"
+              [datasets]="state?.screen?.backLogCanvas?.dataSets"
+              [options]="state?.screen?.backLogCanvas?.options"
+              [colors]="state?.screen?.backLogCanvas?.colors">
+      </canvas>
+    </ion-row>
+  </ion-item>
+  <ion-item class="weekly-backlog-details">
+    <ion-label class="weekly-backlog-details-label">
+      <p class="icon">
+        <i class="history backlog-status"></i>
+      </p>
+      <p class="weekly-backlog-details-title">BackLog Status List</p>
+    </ion-label>
+  </ion-item>
+  <ion-list class="weekly-backlog-details-list">
+    <div class="weekly-backlog-details-list-item" *ngFor="let item of state.screen?.backLogList">
+      <div class="weekly-backlog-details-list-item-graph normal-status" *ngIf="item.status"></div>
+      <div class="weekly-backlog-details-list-item-graph delay-status" *ngIf="!item.status"></div>
+      <div class="weekly-backlog-details-list-item-content">
+        <ion-label class="label-content">
+          <p>{{item.backLogId}} {{item.ticket}}</p>
+          <p>Progress: </p>
+          <p>Stage:{{item.stage}}</p>
+          <p>StartDay:{{item.startDay}}</p>
+          <p>Estimate:{{item.estimate}}</p>
+          <p>Difference:{{item.difference}}</p>
+        </ion-label>
+      </div>
+      <div class="weekly-backlog-details-list-item-content">
+        <ion-label class="label-content">
+          <p>{{item.owner}}</p>
+          <p><progress max="100" value="{{item.progress}}"></progress> {{item.progress}}%</p>
+          <p>Priority:{{item.priority}}</p>
+          <p>EndDay:{{item.endDay}}</p>
+          <p>Reported:{{item.reported}}</p>
+          <p></p>
+        </ion-label>
+      </div>
+    </div>
+  </ion-list>
+</ion-content>

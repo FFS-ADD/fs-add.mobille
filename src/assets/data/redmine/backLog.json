@@ -1,0 +1,11 @@
+ {
+   "status": 1,
+   "result": {
+     "completed": 238,
+     "backLogTotal": 460,
+     "initValue": 10955,
+     "planedValue": 5000,
+     "reportedValue": 5490,
+     "balanceStatus": false
+   }
+ }

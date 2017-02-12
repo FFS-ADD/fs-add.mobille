@@ -1,0 +1,49 @@
+<ion-content class="qa-details-content">
+    <ion-navbar #ionNavbar>
+        <button ion-button menuToggle>
+      <ion-icon name="md-arrow-back"></ion-icon>
+    </button>
+        <ion-title>
+            Weekly QA History
+        </ion-title>
+    </ion-navbar>
+    <ion-item class="weekly-qa-details">
+        <ion-label class="weekly-qa-details-label">
+            <p class="icon">
+                <i class="history details"></i>
+            </p>
+            <p class="weekly-qa-details-title">Weekly History</p>
+        </ion-label>
+    </ion-item>
+    <ion-item class="qa-canvas">
+        <ion-row class="qa-canvas-area" *ngIf="state.qaHistoryCanvas && state.qaHistoryCanvas.dataSets">
+            <canvas baseChart class="canvas" [labels]="state?.qaHistoryCanvas?.labels" [chartType]="state?.qaHistoryCanvas?.chartType" [datasets]="state?.qaHistoryCanvas?.dataSets" [options]="state?.qaHistoryCanvas?.options" [colors]="state?.qaHistoryCanvas?.colors">
+            </canvas>
+        </ion-row>
+    </ion-item>
+    <ion-item class="weekly-qa-details">
+        <ion-label class="weekly-qa-details-label">
+            <p class="icon">
+                <i class="history qa-fix"></i>
+            </p>
+            <p class="weekly-qa-details-title">Overdue QA List</p>
+        </ion-label>
+    </ion-item>
+    <ion-list class="weekly-qa-details-list">
+        <div class="weekly-qa-details-list-item" *ngFor="let item of state.screen?.delayQaList">
+            <div class="weekly-qa-details-list-item-title">
+                <ion-label class="label-title">
+                    <p>{{item.qaId}}</p>
+                </ion-label>
+            </div>
+            <div class="weekly-qa-details-list-item-graph delay-status"></div>
+            <div class="weekly-qa-details-list-item-content">
+                <ion-label class="label-content">
+                    <p>QA: {{item.tiket}}</p>
+                    <p>Owner: {{item.owner}}</p>
+                    <p>Excepted Answer Date: {{item.planedEndDate}}</p>
+                </ion-label>
+            </div>
+        </div>
+    </ion-list>
+</ion-content>

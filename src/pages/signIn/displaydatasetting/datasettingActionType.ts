@@ -1,5 +1,0 @@
-export const DataSettingActionType = {
-  INIT: 'DATA_SETTING_ACTION.INIT',
-  OK: 'DATA_SETTING_ACTION.OK',
-  RESET: 'DATA_SETTING_ACTION.RESET'
-};

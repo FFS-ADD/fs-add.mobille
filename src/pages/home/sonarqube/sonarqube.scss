@@ -8,17 +8,35 @@
         padding: 0;
     }
 
+    .sonarqube-loading {
+        margin: 10px 10px;
+        display: flex;
+        align-items: center;
+        span {
+            margin-left: 5px;
+        }
+    }
+
     .sonarqube-title {
         display: flex;
+        flex-direction: row;
         height: 30px;
         background-color: #33C6D8;
         line-height: 30px;
-        ion-icon {
-            margin-left: 10px;
+        justify-content: space-between;
+        .title {
+            display: flex;
+            flex-direction: row;
+            ion-icon {
+                margin-left: 10px;
+            }
+            div {
+                margin-left: 10px;
+                vertical-align: middle;
+            }
         }
-        div {
-            margin-left: 10px;
-            vertical-align: middle;
+        .icon {
+            margin-right: 5px;
         }
     }
 
@@ -30,13 +48,16 @@
         margin-left: 10px;
     }
 
+    .sonarqube-quality {
+        ion-grid {
+            align-items: center;
+        }
+    }
+
     .sonarqube-quality-title {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        .right {
-            //margin-right:10px;
-        }
     }
 
     .sonarqube-loc-title {

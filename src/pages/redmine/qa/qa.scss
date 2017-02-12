@@ -1,0 +1,88 @@
+//---------------------------------------- qaComponent用 ----------------------------------------
+.qa-card {
+    padding: 0 10px 15px 10px;
+    .qa-title {
+        border: 0;
+        font-size: 18px;
+        padding: 0;
+        .qa-title-name {
+            font-weight: bold;
+        }
+        .qa-title-detail {
+            font-size: 16px;
+            text-align: right;
+            .qa-title-detail-name {
+                display: inline-block;
+                line-height: 0.8;
+            }
+            ion-icon {
+                width: 10px;
+            }
+        }
+        .item-inner {
+            padding: 0;
+            border: none;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+        }
+        .label {
+            margin: 0;
+        }
+    }
+    .qa-canvas {
+        padding: 0;
+        align-items: flex-start;
+        .item-inner {
+            border: none;
+            padding-right: 0;
+        }
+        .qa-canvas-title {
+            float: left;
+            font-size: 12px;
+            margin: 0;
+            width: 40%;
+            div {
+                height: 28px;
+                padding: 6px 0;
+                border-bottom: 1px solid color($colors, gray-color);
+                width: 90%;
+                p {
+                    display: inline-flex;
+                    margin-right: 10px;
+                    height: 16px;
+                    width: 16px;
+                    border-radius: 3px;
+                    border: 1px solid color($colors, gray-color);
+                    &.qa-new-title {
+                        background: color($colors, qa-new-color);
+                    }
+                    &.qa-in-progress-title {
+                        background: color($colors, qa-in-progress-color);
+                    }
+                    &.qa-overdue-title {
+                      background: color($colors, qa-overdue-color);
+                    }
+                    &.qa-closed-title {
+                        background: color($colors, qa-closed-color);
+                    }
+                }
+            }
+        }
+        .qa-canvas-area {
+            margin: 0;
+            margin-top: 16px;
+            margin-bottom: -10px;
+            width: 60%;
+            .qa-canvas {
+                float: right;
+                width: 100%;
+                .canvas {
+                    float: right;
+                    width: 280px;
+                }
+            }
+        }
+    }
+}
