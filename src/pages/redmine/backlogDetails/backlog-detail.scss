@@ -34,8 +34,8 @@
       }
     }
 
-    .weekly-task-details-list {
-      .weekly-task-details-list-item {
+    .weekly-backlog-details-list {
+      .weekly-backlog-details-list-item {
         display: flex;
         padding-left: 6px;
         padding-right: 6px;
@@ -47,7 +47,7 @@
         border-color: #e3e7e8;
         border-left-style: none;
         border-right-style: none;
-        .weekly-task-details-list-item-title {
+        .weekly-backlog-details-list-item-title {
           display: flex;
           align-items: center;
           width: 60px;
@@ -55,7 +55,7 @@
             text-align: center;
           }
         }
-        .weekly-task-details-list-item-graph {
+        .weekly-backlog-details-list-item-graph {
           width: 8px;
           border-radius: 4px;
         }
@@ -67,7 +67,7 @@
           background: color($colors, green-color);
         }
 
-        .weekly-task-details-list-item-content {
+        .weekly-backlog-details-list-item-content {
           padding-left: 6px;
           .label-content {
             margin: 0;
@@ -79,7 +79,32 @@
       }
     }
 
-    .weekly-bug-details {
+    .backlog-details-history-canvas {
+      margin: 10px 0;
+      padding: 0 10px;
+      width: 100%;
+
+      .item-inner {
+        border-bottom: 0;
+        padding: 0;
+
+        .label-md {
+          margin: 0;
+
+          .backlog-details-history-canvas-area {
+            display: flex;
+            margin: 0;
+            width: 100%;
+
+            .canvas {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .weekly-backlog-details {
       background-color: color($colors, light-blue-color);
       height: 22px;
       padding: 0;
@@ -98,7 +123,7 @@
         .input-wrapper {
           height: 22px;
 
-          .weekly-bug-details-label {
+          .weekly-backlog-details-label {
             display: inline-flex;
             margin: 0;
 
@@ -113,7 +138,7 @@
                   }
                 }
 
-                &.bug-fix {
+                &.backlog-status {
                   &:before {
                     content: "\f0e4";
                   }
@@ -128,111 +153,8 @@
           }
         }
       }
-
-      .weekly-bug-details-title {
+      .weekly-backlog-details-title {
         font-size: 16px;
-      }
-    }
-
-    .bug-title {
-      border: 0;
-      font-size: 18px;
-      padding: 0;
-
-      .bug-title-name {
-        font-weight: bold;
-      }
-
-      .bug-title-detail {
-        font-size: 16px;
-        text-align: right;
-
-        .bug-title-detail-name {
-          display: inline-block;
-          line-height: 0.8;
-        }
-
-        ion-icon {
-          width: 10px;
-        }
-      }
-
-      .item-inner {
-        padding: 0;
-        border: none;
-      }
-      img {
-        height: 100%;
-        width: 100%;
-      }
-      .label {
-        margin: 0;
-      }
-    }
-
-    .bug-canvas {
-      padding: 0;
-
-      .item-inner {
-        border: none;
-        padding-right: 0;
-      }
-
-      .bug-canvas-title {
-        float: left;
-        font-size: 12px;
-        margin: 0;
-        width: 40%;
-
-        div {
-          height: 28px;
-          padding: 6px 0;
-          border-bottom: 1px solid #aaaaaa;
-          width: 90%;
-
-          p {
-            display: inline-flex;
-            margin-right: 10px;
-            height: 16px;
-            width: 16px;
-            border-radius: 3px;
-            border: 1px solid #aaaaaa;
-
-            &.bug-new-title {
-              background: color($colors, orange-color);
-            }
-
-            &.bug-in-progress-title {
-              background: color($colors, violet-color);
-            }
-
-            &.bug-fixed-title {
-              background: color($colors, darkblue-color);
-            }
-
-            &.bug-retesting-title {
-              background: color($colors, lightblue-color);
-            }
-
-            &.bug-closed-title {
-              background: color($colors, black-color);
-            }
-          }
-        }
-      }
-      .bug-canvas-area {
-        margin: 0;
-        width: 60%;
-
-        .bug-canvas {
-          float: right;
-          width: 100%;
-
-          .canvas {
-            float: right;
-            width: 280px;
-          }
-        }
       }
     }
   }

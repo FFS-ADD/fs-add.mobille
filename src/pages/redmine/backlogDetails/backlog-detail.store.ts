@@ -2,7 +2,10 @@ import {Injectable}from "@angular/core";
 import {Dispatcher}from "../../../core/Dispatcher";
 import {BackLogDetailActionType} from "./backlog-detail.action.type";
 import {BackLogDetailState} from "./backlog-detail.state";
-import {TaskDetailsScreenDataSet, TaskReport, BackLogCanvasInterface} from "./backlog-detail.interface";
+import {
+  BackLogCanvasInterface,
+  BackLogDetailDataSet, BackLogDetailsResponse, BackLogDetailScreenInterface
+} from "./backlog-detail.interface";
 
 @Injectable()
 export class BackLogDetailStore {
@@ -14,7 +17,7 @@ export class BackLogDetailStore {
     });
   }
 
-  private BAR_CHART_OPTIONS = {
+  private LINE_CHART_OPTIONS = {
     responsive: true,
     maintainAspectRatio: true,
     legend: {
@@ -27,16 +30,16 @@ export class BackLogDetailStore {
     },
     scales: {
       xAxes: [{
-        stacked: true,
-        categoryPercentage: 0.7,
         gridLines: {
           drawTicks: false
         }
       }],
       yAxes: [{
-        stacked: true,
         gridLines: {
           drawTicks: false
+        },
+        ticks: {
+          suggestedMin: 0
         }
       }]
     },
@@ -47,69 +50,51 @@ export class BackLogDetailStore {
     },
   };
 
-  private BAR_CHART_COLORS = [
-    { backgroundColor: ["#259b24", "#259b24", "#259b24", "#259b24", "#259b24", "#259b24", "#259b24"] },
-    { backgroundColor: ["#e51c23", "#e51c23", "#e51c23", "#e51c23", "#e51c23", "#e51c23", "#e51c23"] },
-    { backgroundColor: ["#607d8b", "#607d8b", "#607d8b", "#607d8b", "#607d8b", "#607d8b", "#607d8b"] },
-    { backgroundColor: ["#ff9800", "#ff9800", "#ff9800", "#ff9800", "#ff9800", "#ff9800", "#ff9800"] }];
+  private LINE_CHART_COLORS = [
+    {backgroundColor: "#51a7f8", borderColor: "#436078", pointBackgroundColor: '#FFF', pointBorderColor: '#51a7f8', pointBorderWidth: 2},
+    {backgroundColor: "#fae02b", borderColor: "#C1D1DE", pointBackgroundColor: '#FFF', pointBorderColor: '#fae02b', pointBorderWidth: 2}];
 
   public init(data) {
     console.log("BackLogDetailStore#init");
     console.log(data.result);
-    this.state.screen = data.result;
-    this.state.taskHistoryCanvas = this.getTaskHistory(this.state.screen.taskHistory);
+    let response: BackLogDetailsResponse = data.result;
+
+    let screenResponse: BackLogDetailScreenInterface = {
+      backLogCanvas: this.getBackLogCanvas(response),
+      backLogList: response.bugDetailsHistoryData
+    };
+
+    this.state.screen = screenResponse;
+    console.info(this.state);
   }
 
 
-  private getTaskHistory(taskHistory: TaskReport[]): BackLogCanvasInterface {
-    let dataSets: TaskDetailsScreenDataSet[] = new Array();
+  private getBackLogCanvas(response: BackLogDetailsResponse): BackLogCanvasInterface {
+    let dataSets: BackLogDetailDataSet[] = new Array();
 
-    let onScheduleData = new Array(7);
-    let delayData = new Array(7);
-    let closedData = new Array(7);
-    let pendingData = new Array(7);
-    let dateData = new Array(7);
-    let index = 0;
-    taskHistory.forEach((task) => {
-      onScheduleData[index] = task.onSchedule;
-      delayData[index] = task.delay;
-      closedData[index] = task.closed;
-      pendingData[index] = task.pending;
-      dateData[index] = task.date;
-      index++;
-    });
-
-    let onScheduleDataSet: TaskDetailsScreenDataSet = {
-      label: "OnSchedule",
-      data: onScheduleData
+    let planedDataSet: BackLogDetailDataSet = {
+      label: "planed",
+      fill: false,
+      lineTension: 0,
+      data: response.backLogCanvasData.planed
     };
 
-    let delayDataSet: TaskDetailsScreenDataSet = {
-      label: "Delay",
-      data: delayData
+    let actualDataSet: BackLogDetailDataSet = {
+      label: "actual",
+      fill: false,
+      lineTension: 0,
+      data: response.backLogCanvasData.actual
     };
 
-    let closedDataSet: TaskDetailsScreenDataSet = {
-      label: "Closed",
-      data: closedData
-    };
-
-    let pendingDataSet: TaskDetailsScreenDataSet = {
-      label: "Pending",
-      data: pendingData
-    };
-
-    dataSets.push(onScheduleDataSet);
-    dataSets.push(delayDataSet);
-    dataSets.push(closedDataSet);
-    dataSets.push(pendingDataSet);
+    dataSets.push(planedDataSet);
+    dataSets.push(actualDataSet);
 
     let result: BackLogCanvasInterface = {
-      chartType: "bar",
-      labels: dateData,
+      chartType: "line",
+      labels: response.historyDate,
       dataSets: dataSets,
-      options: this.BAR_CHART_OPTIONS,
-      colors: this.BAR_CHART_COLORS
+      options: this.LINE_CHART_OPTIONS,
+      colors: this.LINE_CHART_COLORS
     };
 
     return result;

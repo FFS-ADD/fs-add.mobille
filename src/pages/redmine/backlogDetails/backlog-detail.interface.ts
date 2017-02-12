@@ -1,27 +1,32 @@
 export interface BackLogDetailScreenInterface {
-  taskHistory: TaskReport[];
+  backLogCanvas: BackLogCanvasInterface;
   backLogList: BackLogDetails[];
 }
 
 export interface BackLogCanvasInterface {
   chartType: string,
   labels: string[];
-  dataSets: TaskDetailsScreenDataSet[];
+  dataSets: BackLogDetailDataSet[];
   options: any;
   colors: any;
 }
 
-export interface TaskDetailsScreenDataSet {
+export interface BackLogDetailDataSet {
   label: string;
   data: number[];
+  fill: boolean;
+  lineTension: number;
 }
 
-export interface TaskReport {
-  date: string;
-  onSchedule: number;
-  delay: number;
-  closed: number;
-  pending: number;
+export interface BackLogDetailsResponse {
+  bugDetailsHistoryData: BackLogDetails[];
+  backLogCanvasData: BackLogCanvasDataInterface;
+  historyDate: string[];
+}
+
+export interface BackLogCanvasDataInterface {
+  planed: number[];
+  actual: number[];
 }
 
 export interface BackLogDetails {
