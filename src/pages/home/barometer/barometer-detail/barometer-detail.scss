@@ -1,0 +1,24 @@
+.detail-3col-list {
+    padding-top: 15px;
+
+    ion-row ion-col{
+        text-align: center;
+        border-right: 1px gray dashed;
+        height: 30px;
+
+        ion-icon {
+            height: 20px;
+        }
+
+        div {
+            width: 100%;
+        }
+
+        &:last-child {
+            padding-left: 10px; 
+            text-align: left;
+            border-right-width: 0;
+        }
+        
+    }
+}

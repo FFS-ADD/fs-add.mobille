@@ -19,6 +19,8 @@ import { BackLogComponent } from "../pages/redmine/backlog/master/backlog-master
 import { BackLogDetailComponent } from "../pages/redmine/backlog/detail/backlog-detail";
 import {TaskComponent} from "../pages/redmine/task/task";
 import {TaskDetailsComponent} from "../pages/redmine/taskDetails/taskDetails";
+import { BarometerComponent } from '../pages/home/barometer/barometer.component';
+import { BarometerDetailPage } from '../pages/home/barometer/barometer-detail/barometer-detail';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import {TaskDetailsComponent} from "../pages/redmine/taskDetails/taskDetails";
     BackLogComponent,
     BackLogDetailComponent,
     TaskComponent,
-    TaskDetailsComponent
+    TaskDetailsComponent,
+    BarometerComponent,
+    BarometerDetailPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -55,7 +59,9 @@ import {TaskDetailsComponent} from "../pages/redmine/taskDetails/taskDetails";
     BackLogComponent,
     BackLogDetailComponent,
     TaskComponent,
-    TaskDetailsComponent
+    TaskDetailsComponent,
+    BarometerComponent,
+    BarometerDetailPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, { provide: APP_CONFIG, useValue: AppConfig },
     ResourceService,
