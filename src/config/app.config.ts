@@ -8,6 +8,7 @@ export interface IAppConfig {
   webapiSonarLoc: string;
   webapiSonarCoverage: string;
   webapiSonarDuplication: string;
+  webapiSonarHistory: string;
 }
 
 export const AppConfig:IAppConfig = {
@@ -16,5 +17,6 @@ export const AppConfig:IAppConfig = {
   webapiSonarQuality: '/sonardashboard/getQualityDate',
   webapiSonarLoc: '/sonardashboard/getLoc',
   webapiSonarCoverage: '/sonardashboard/getCoverage',
-  webapiSonarDuplication: '/sonardashboard/getDuplication'
+  webapiSonarDuplication: '/sonardashboard/getDuplication',
+  webapiSonarHistory: '/sonardashboard/getHist'
 }

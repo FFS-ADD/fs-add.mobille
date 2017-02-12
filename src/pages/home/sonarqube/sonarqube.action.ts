@@ -1,7 +1,7 @@
 import { Injectable, Inject } from "@angular/core";
-import {Dispatcher} from "../../../../core/Dispatcher";
-import {HttpService} from "../../../../core/HttpService";
-import { APP_CONFIG, IAppConfig } from '../../../../config/app.config';
+import {Dispatcher} from "../../../core/Dispatcher";
+import {HttpService} from "../../../core/HttpService";
+import { APP_CONFIG, IAppConfig } from '../../../config/app.config';
 import { SonarqubeActionType } from './sonarqube.action.type';
 
 @Injectable()

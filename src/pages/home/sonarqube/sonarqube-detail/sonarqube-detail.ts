@@ -1,20 +1,28 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import SonarqubeDetailAction from "./sonarqube-detail.action";
+import { SonarqubeDetailState } from "./sonarqube-detail.state";
+import { SonarqubeDetailStore } from "./sonarqube-detail.store";
 
 @Component({
-    templateUrl: 'sonarqube-detail.html'
+    templateUrl: 'sonarqube-detail.html',
+    providers: [SonarqubeDetailAction, SonarqubeDetailState, SonarqubeDetailStore]
 })
 export class SonarqubeDetailPage {
 
-    public vbc: any;
-    public loc: any;
-    public coverage: any;
-    constructor(public nav: NavController) {
-        this.vbc = this.getVBCData();
-        this.loc = this.getLOCData();
-        this.coverage = this.getCoverageData();
+    // public vbc: any;
+    // public loc: any;
+    // public coverage: any;
+    constructor(public nav: NavController, 
+                private action: SonarqubeDetailAction, 
+                private state: SonarqubeDetailState,
+                private store: SonarqubeDetailStore) {
+        // this.vbc = this.getVBCData();
+        // this.loc = this.getLOCData();
+        // this.coverage = this.getCoverageData();
+        this.action.init();
     }
-
+    /**
     // vbc
     getVBCData() {
         var lineChartData: Array<any> = [
@@ -100,4 +108,5 @@ export class SonarqubeDetailPage {
             lineChartColors: lineChartColors
         }
     }
+     */
 }

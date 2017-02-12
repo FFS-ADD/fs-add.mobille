@@ -1,5 +1,5 @@
 import {Injectable}from "@angular/core";
-import {Dispatcher}from "../../../../core/Dispatcher";
+import {Dispatcher}from "../../../core/Dispatcher";
 import { SonarqubeState }from "./sonarqube.state";
 import { SonarqubeActionType }from "./sonarqube.action.type";
 import { SonarqubeResponseInterface, 
@@ -44,6 +44,7 @@ export class SonarqubeStore {
         // let screenResponse: SonarqubeScreenInterface = {
         //     sonarqubeResponse: response
         // };
+        this.state.qualityLoading = false;
         this.state.screen.sonarqubeResponse = response;
     }
 
@@ -52,6 +53,7 @@ export class SonarqubeStore {
         let screenResponse: SonarqubeScreenInterface = {
             sonarqubeLocResponse: response
         };
+        this.state.locLoading = false;
         this.state.screen.sonarqubeLocResponse = response;
     }
 
@@ -60,6 +62,7 @@ export class SonarqubeStore {
         let screenResponse: SonarqubeScreenInterface = {
             sonarqubeCoverageResponse: response
         };
+        this.state.coverageLoading = false;
         this.state.screen.sonarqubeCoverageResponse = response;
     }
 
@@ -68,6 +71,7 @@ export class SonarqubeStore {
         let screenResponse: SonarqubeScreenInterface = {
             sonarqubeDuplicationResponse: response
         };
+        this.state.duplicationLoading = false;
         this.state.screen.sonarqubeDuplicationResponse = response;
     }
 }

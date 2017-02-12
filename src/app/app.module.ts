@@ -21,6 +21,7 @@ import {TaskComponent} from "../pages/redmine/task/task";
 import {TaskDetailsComponent} from "../pages/redmine/taskDetails/taskDetails";
 import {QaComponent} from "../pages/redmine/qa/qa";
 import {QaDetailsComponent} from "../pages/redmine/qaDetails/qaDetails";
+import { NumberFormatPipe } from '../providers/pipes';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {QaDetailsComponent} from "../pages/redmine/qaDetails/qaDetails";
     TaskComponent,
     TaskDetailsComponent,
     QaComponent,
-    QaDetailsComponent
+    QaDetailsComponent,
+    NumberFormatPipe
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
