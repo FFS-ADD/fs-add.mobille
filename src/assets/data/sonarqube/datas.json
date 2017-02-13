@@ -6,3 +6,127 @@
         "code": "3.9k"
     }
 }
+
+
+/**
+db.sonardashboard.insert({
+    projectKey:'ibank',
+    createDate:'20170207215337',
+    qualityGateStatus:'success',
+    vulneralilities:'60',
+    bugs:'20',
+    codeSmells:'21000',
+    codeLines:'20000',
+    line:'200000',
+    statement:'100000',
+    file:'30000',
+    coverage:'99%',
+    tests:'200',
+    success:'198',
+    failures:'2',
+    duplication:'12.1%',
+    dLine:'200000',
+    blocks:'19000',
+    dFile:'20'
+})
+
+db.sonardashboard.insert({
+    projectKey:'ibank',
+    createDate:'20170208215337',
+    qualityGateStatus:'success',
+    vulneralilities:'30',
+    bugs:'40',
+    codeSmells:'41000',
+    codeLines:'20000',
+    line:'500000',
+    statement:'100000',
+    file:'30000',
+    coverage:'99%',
+    tests:'200',
+    success:'198',
+    failures:'2',
+    duplication:'12.1%',
+    dLine:'200000',
+    blocks:'19000',
+    dFile:'20'
+})
+db.sonardashboard.insert({
+    projectKey:'ibank',
+    createDate:'20170209215337',
+    qualityGateStatus:'success',
+    vulneralilities:'40',
+    bugs:'50',
+    codeSmells:'61000',
+    codeLines:'20000',
+    line:'200000',
+    statement:'100000',
+    file:'30000',
+    coverage:'99%',
+    tests:'200',
+    success:'198',
+    failures:'2',
+    duplication:'12.1%',
+    dLine:'100000',
+    blocks:'19000',
+    dFile:'20'
+})
+db.sonardashboard.insert({
+    projectKey:'ibank',
+    createDate:'20170210215337',
+    qualityGateStatus:'success',
+    vulneralilities:'50',
+    bugs:'60',
+    codeSmells:'71000',
+    codeLines:'20000',
+    line:'300000',
+    statement:'100000',
+    file:'30000',
+    coverage:'99%',
+    tests:'200',
+    success:'198',
+    failures:'2',
+    duplication:'12.1%',
+    dLine:'800000',
+    blocks:'19000',
+    dFile:'20'
+})
+db.sonardashboard.insert({
+    projectKey:'ibank',
+    createDate:'20170211215337',
+    qualityGateStatus:'success',
+    vulneralilities:'60',
+    bugs:'70',
+    codeSmells:'81000',
+    codeLines:'20000',
+    line:'100000',
+    statement:'100000',
+    file:'30000',
+    coverage:'99%',
+    tests:'200',
+    success:'198',
+    failures:'2',
+    duplication:'12.1%',
+    dLine:'300000',
+    blocks:'19000',
+    dFile:'20'
+})
+db.sonardashboard.insert({
+    projectKey:'ibank',
+    createDate:'20170212215337',
+    qualityGateStatus:'success',
+    vulneralilities:'70',
+    bugs:'80',
+    codeSmells:'101000',
+    codeLines:'20000',
+    line:'70000',
+    statement:'100000',
+    file:'30000',
+    coverage:'99%',
+    tests:'200',
+    success:'198',
+    failures:'2',
+    duplication:'12.1%',
+    dLine:'900000',
+    blocks:'19000',
+    dFile:'20'
+})*/
