@@ -9,16 +9,17 @@
                 <img class="barometer-img" src="../../../assets/images/barometer/qing_160_140.png">
             </div>
             <div class=" barometer-img-box2">
-                <img class="barometer-img" src="../../../assets/images/barometer/yin_160_140.png"> 
+                <img class="barometer-img" src="../../../assets/images/barometer/yin_160_140.png">
             </div>
             <div class=" barometer-img-box3">
                 <img class="barometer-img" src="../../../assets/images/barometer/yu_160_140.png">
             </div>
         </div>
         <div>
-            <label class="status-notice">
-                <ion-icon name="md-happy" class="notice-status-icon-good"></ion-icon>
-                <span class="notice-date">2017/12/17</span><span class="notice-text">test schedule delay</span>
+            <label class="status-notice" [class.fs-color-warning]="'2'===lastStatus.statusColor" [class.fs-color-normal]="'1'===lastStatus.statusColor"
+                   [class.fs-color-dangerous]="'3'===lastStatus.statusColor">
+                <ion-icon [name]="lastStatus.faceIcon"></ion-icon>
+                <span class="notice-date">{{lastStatus.updateData}}</span><span class="notice-text">{{lastStatus.infoText}}</span>
             </label>
         </div>
         <div>

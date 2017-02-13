@@ -24,7 +24,7 @@
 .barometer-img-box2 {
     -webkit-box-flex: 1;
     box-sizing: border-box;
-    -webkit-box-flex: 1; 
+    -webkit-box-flex: 1;
     -webkit-box-sizing: border-box;
     text-align: center
 }
@@ -46,11 +46,10 @@
 
     span {
         font-weight: bold;
-        color: red;
         margin-left: 10px;
 
         &.notice-text {
-            margin-left: 30px; 
+            margin-left: 30px;
         }
     }
 
@@ -79,5 +78,11 @@
 }
 
 .content-padding {
-    padding: 0 15px; 
+    padding: 0 15px;
 }
+
+.fs-color-normal {color: black}
+
+.fs-color-warning {color: yellow}
+
+.fs-color-dangerous {color: red}
