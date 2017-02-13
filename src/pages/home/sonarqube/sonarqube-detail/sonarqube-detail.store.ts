@@ -4,7 +4,9 @@ import Rx from 'rxjs/Rx';
 import { SonarqubeDetailState }from "./sonarqube-detail.state";
 import { SonarqubeDetailActionType }from "./sonarqube-detail.action.type";
 import { SonarqubeDetailScreenInterface, 
-         SonarqubeVBCHistoryResponseInterface,
+         SonarqubeVulneralilitiesHistoryResponseInterface,
+         SonarqubeBugsHistoryResponseInterface,
+         SonarqubeCodeSmellsHistoryResponseInterface,
          SonarqubeLocHistoryResponseInterface,
          SonarqubeCoverageHistoryResponseInterface } from "./sonarqube-detail.interface";
 
@@ -16,30 +18,28 @@ export class SonarqubeDetailStore {
         'responsive': true,
         'scales': {
             yAxes: [{
-                display: true,
-                ticks: {
-                    beginAtZero: true,
-                    steps: 10,
-                    stepValue: 5,
-                    max: 100
-                }
+                display: true
             }]
         }
     };
 
-    private VBC_CHART_COLORS: Array<any> = [{
+    private V_CHART_COLORS: Array<any> = [{
         backgroundColor: '#FFF',
         borderColor: '#1EAAF2',
         pointBackgroundColor: '#FFF',
         pointBorderColor: '#1EAAF2',
         fill: false
-    }, {
+    }];
+
+    private B_CHART_COLORS: Array<any> = [{
         backgroundColor: '#FFF',
         borderColor: '#51D969',
         pointBackgroundColor: '#FFF',
         pointBorderColor: '#51D969',
         fill: false
-    }, {
+    }];
+
+    private C_CHART_COLORS: Array<any> = [{
         backgroundColor: '#FFF',
         borderColor: '#F3E253',
         pointBackgroundColor: '#FFF',
@@ -111,28 +111,49 @@ export class SonarqubeDetailStore {
         });
         count.subscribe((c: any) => {
             // var vmax = Math.max.apply(null, c.vArray) < 100 ? 100 : c.vCount;
-            var vArray = c.vArray.map(function(d, i) {
-                return (100 * parseInt(d, 10) / c.vCount) | 0;
-            });
-            var bArray = c.bArray.map(function(d, i) {
-                return (100 * parseInt(d, 10) / c.bCount) | 0;
-            });
-            var cArray = c.cArray.map(function(d, i) {
-                return (100 * parseInt(d, 10) / c.cCount) | 0;
-            });
+            // var vArray = c.vArray.map(function(d, i) {
+            //     return (100 * parseInt(d, 10) / c.vCount) | 0;
+            // });
+            // var bArray = c.bArray.map(function(d, i) {
+            //     return (100 * parseInt(d, 10) / c.bCount) | 0;
+            // });
+            // var cArray = c.cArray.map(function(d, i) {
+            //     return (100 * parseInt(d, 10) / c.cCount) | 0;
+            // });
 
-            // Vulneralilities&bug&Code Smells
-            var vbcDatas: Array<any> = [
-                {data: vArray, label: 'Vulneralilities'},
-                {data: bArray, label: 'Bugs'},
-                {data: cArray, label: 'Code Smells'}
+            // Vulneralilities
+            var vDatas: Array<any> = [
+                {data: c.vArray, label: 'Vulneralilities'}
             ];
-            let vbcResponse: SonarqubeVBCHistoryResponseInterface = {
-                colors: this.VBC_CHART_COLORS,
+            let vResponse: SonarqubeVulneralilitiesHistoryResponseInterface = {
+                colors: this.V_CHART_COLORS,
                 options: this.VBC_CHART_OPTIONS,
                 labels: c.dates.reverse(),
-                datas: vbcDatas
+                datas: vDatas
             };
+
+            // bugs
+            var bugsDatas: Array<any> = [
+                {data: c.bArray, label: 'Bugs'}
+            ];
+            let bugsResponse: SonarqubeBugsHistoryResponseInterface = {
+                colors: this.B_CHART_COLORS,
+                options: this.VBC_CHART_OPTIONS,
+                labels: c.dates.reverse(),
+                datas: bugsDatas
+            };
+
+            // CodeSmells
+            var codeSmellsDatas: Array<any> = [
+                {data: c.cArray, label: 'Code Smells'}
+            ];
+            let codeSmellsResponse: SonarqubeCodeSmellsHistoryResponseInterface = {
+                colors: this.C_CHART_COLORS,
+                options: this.VBC_CHART_OPTIONS,
+                labels: c.dates.reverse(),
+                datas: bugsDatas
+            };
+
             // loc
             var locDatas: Array<any> = [
                 {data: c.locLineArray, label: 'Line'}
@@ -155,7 +176,9 @@ export class SonarqubeDetailStore {
             };
 
             let response: SonarqubeDetailScreenInterface = {
-                sonarqubeVBCHistoryResponse: vbcResponse,
+                sonarqubeVulneralilitiesHistoryResponse: vResponse,
+                sonarqubeBugsHistoryResponse: bugsResponse,
+                sonarqubeCodeSmellsHistoryResponse: codeSmellsResponse,
                 sonarqubeLocHistoryResponse: locResponse,
                 sonarqubeCoverageHistoryResponse: coverageResponse
             }

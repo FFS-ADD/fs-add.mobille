@@ -8,16 +8,40 @@
 
 <ion-content class="sonarqube-detail-page">
     <div class="sonarqube-detail-title">
-        <ion-icon name="logo-buffer"></ion-icon><div>Weekly VBC History</div>
+        <ion-icon name="logo-buffer"></ion-icon><div>Weekly Vulneralilities History</div>
     </div>
     <div class="sonarqube-detail-chart">
         <canvas baseChart height="200px"
-                [datasets]="state?.screen?.sonarqubeVBCHistoryResponse?.datas"
-                [labels]="state?.screen?.sonarqubeVBCHistoryResponse?.labels"
-                [options]="state?.screen?.sonarqubeVBCHistoryResponse?.options"
-                [colors]="state?.screen?.sonarqubeVBCHistoryResponse?.colors"
+                [datasets]="state?.screen?.sonarqubeVulneralilitiesHistoryResponse?.datas"
+                [labels]="state?.screen?.sonarqubeVulneralilitiesHistoryResponse?.labels"
+                [options]="state?.screen?.sonarqubeVulneralilitiesHistoryResponse?.options"
+                [colors]="state?.screen?.sonarqubeVulneralilitiesHistoryResponse?.colors"
                 legend="true"
-                chartType="line" *ngIf="state?.screen?.sonarqubeVBCHistoryResponse"></canvas>
+                chartType="line" *ngIf="state?.screen?.sonarqubeVulneralilitiesHistoryResponse"></canvas>
+    </div>
+    <div class="sonarqube-detail-title">
+        <ion-icon name="logo-buffer"></ion-icon><div>Weekly Bugs History</div>
+    </div>
+    <div class="sonarqube-detail-chart">
+        <canvas baseChart height="200px"
+                [datasets]="state?.screen?.sonarqubeBugsHistoryResponse?.datas"
+                [labels]="state?.screen?.sonarqubeBugsHistoryResponse?.labels"
+                [options]="state?.screen?.sonarqubeBugsHistoryResponse?.options"
+                [colors]="state?.screen?.sonarqubeBugsHistoryResponse?.colors"
+                legend="true"
+                chartType="line" *ngIf="state?.screen?.sonarqubeBugsHistoryResponse"></canvas>
+    </div>
+    <div class="sonarqube-detail-title">
+        <ion-icon name="logo-buffer"></ion-icon><div>Weekly Code Smells History</div>
+    </div>
+    <div class="sonarqube-detail-chart">
+        <canvas baseChart height="200px"
+                [datasets]="state?.screen?.sonarqubeCodeSmellsHistoryResponse?.datas"
+                [labels]="state?.screen?.sonarqubeCodeSmellsHistoryResponse?.labels"
+                [options]="state?.screen?.sonarqubeCodeSmellsHistoryResponse?.options"
+                [colors]="state?.screen?.sonarqubeCodeSmellsHistoryResponse?.colors"
+                legend="true"
+                chartType="line" *ngIf="state?.screen?.sonarqubeCodeSmellsHistoryResponse"></canvas>
     </div>
     <div class="sonarqube-detail-title">
         <ion-icon name="logo-buffer"></ion-icon><div>Weekly LOC History</div>
