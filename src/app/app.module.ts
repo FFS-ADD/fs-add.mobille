@@ -8,6 +8,7 @@ import { APP_CONFIG, AppConfig } from '../config/app.config';
 import { ResourceService } from '../providers/resource.service';
 import { Dispatcher } from "../core/Dispatcher";
 import { HttpService } from "../core/HttpService";
+import { UserService } from "../core/UserService";
 import { BugComponent } from "../pages/redmine/bug/bug";
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
@@ -24,6 +25,7 @@ import {QaDetailsComponent} from "../pages/redmine/qaDetails/qaDetails";
 import { NumberFormatPipe } from '../providers/pipes';
 import { BarometerComponent } from '../pages/home/barometer/barometer.component';
 import { BarometerDetailPage } from '../pages/home/barometer/barometer-detail/barometer-detail';
+import {LocalStorageService} from "../core/LocalStorageService";
 
 @NgModule({
   declarations: [
@@ -74,7 +76,9 @@ import { BarometerDetailPage } from '../pages/home/barometer/barometer-detail/ba
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, { provide: APP_CONFIG, useValue: AppConfig },
     ResourceService,
     Dispatcher,
-    HttpService
+    HttpService,
+    UserService,
+    LocalStorageService
   ]
 })
 export class AppModule { }
