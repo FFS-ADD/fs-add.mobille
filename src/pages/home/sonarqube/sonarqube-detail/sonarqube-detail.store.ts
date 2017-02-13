@@ -79,11 +79,18 @@ export class SonarqubeDetailStore {
         });
     }
 
+    private formatDate(time) {
+        var getMonthAndDay = time.substring(4, 8);
+        var getMonth = getMonthAndDay.substring(0, 2);
+        var getDay = getMonthAndDay.substring(2);
+        return parseInt(getMonth, 10) + '/' + parseInt(getDay, 10);
+    }
+
     public init(data) {
         var source = Rx.Observable.from(data.sonardashboardlList);
-        var count = source.map(function(value: any) {
+        var count = source.map((value: any) => {
             return {
-                'dates': value.createDate.substring(5, 8),
+                'dates': this.formatDate(value.createDate),
                 'vNumber': parseInt(value.vulneralilities, 10),
                 'bNumber': parseInt(value.bugs, 10),
                 'cNumber': parseInt(value.codeSmells, 10),
