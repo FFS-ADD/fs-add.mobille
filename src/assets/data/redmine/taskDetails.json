@@ -39,38 +39,38 @@
              }
          ],
          "delayTaskList": [{
-                 "taskId": "2019",
-                 "tiket": "Coding UserController a",
+                 "id": "2019",
+                 "ticket": "Coding UserController a",
                  "owner": "Wei.Zhang",
                  "planedEndDate": "2017/01/20"
              },
              {
-                 "taskId": "2020",
-                 "tiket": "Coding UserController b",
+                 "id": "2020",
+                 "ticket": "Coding UserController b",
                  "owner": "Dehua.liu",
                  "planedEndDate": "2017/01/21"
              },
              {
-                 "taskId": "2021",
-                 "tiket": "Coding UserController c",
+                 "id": "2021",
+                 "ticket": "Coding UserController c",
                  "owner": "Xueyou.zhang",
                  "planedEndDate": "2017/01/22"
              },
              {
-                 "taskId": "2069",
-                 "tiket": "Coding UserController",
+                 "id": "2069",
+                 "ticket": "Coding UserController",
                  "owner": "Wei.Zhang",
                  "planedEndDate": "2017/01/15"
              },
              {
-                 "taskId": "2019",
-                 "tiket": "Coding UserController",
+                 "id": "2019",
+                 "ticket": "Coding UserController",
                  "owner": "Wei.Zhang",
                  "planedEndDate": "2017/01/21"
              },
              {
-                 "taskId": "2019",
-                 "tiket": "Coding UserController",
+                 "id": "2019",
+                 "ticket": "Coding UserController",
                  "owner": "Wei.Zhang",
                  "planedEndDate": "2017/01/21"
              }

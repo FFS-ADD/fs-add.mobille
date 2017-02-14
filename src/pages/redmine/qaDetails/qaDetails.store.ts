@@ -63,45 +63,46 @@ export class QaDetailsStore {
   private getQaHistory(qaHistory: QaReport[]): QaCanvasInterface {
     let dataSets: QaDetailsScreenDataSet[] = new Array();
 
-    let onScheduleData = new Array(7);
-    let delayData = new Array(7);
+    let newData = new Array(7);
+    let inProgressData = new Array(7);
+    let overdueData = new Array(7);
     let closedData = new Array(7);
-    let pendingData = new Array(7);
     let dateData = new Array(7);
     let index = 0;
     qaHistory.forEach((qa) => {
-      onScheduleData[index] = qa.onSchedule;
-      delayData[index] = qa.delay;
+      newData[index] = qa.new;
+      inProgressData[index] = qa.inProgress;
+      overdueData[index] = qa.overdue;
       closedData[index] = qa.closed;
-      pendingData[index] = qa.pending;
       dateData[index] = qa.date;
       index++;
     });
 
-    let onScheduleDataSet: QaDetailsScreenDataSet = {
+    let newDataSet: QaDetailsScreenDataSet = {
       label: "New",
-      data: onScheduleData
+      data: newData
     };
 
-    let delayDataSet: QaDetailsScreenDataSet = {
+    let inProgressDataSet: QaDetailsScreenDataSet = {
       label: "In Progress",
-      data: delayData
+      data: inProgressData
+    };
+
+    let overdueDataSet: QaDetailsScreenDataSet = {
+      label: "Overdue",
+      data: overdueData
     };
 
     let closedDataSet: QaDetailsScreenDataSet = {
-      label: "Overdue",
+      label: "Closed",
       data: closedData
     };
 
-    let pendingDataSet: QaDetailsScreenDataSet = {
-      label: "Closed",
-      data: pendingData
-    };
 
-    dataSets.push(onScheduleDataSet);
-    dataSets.push(delayDataSet);
+    dataSets.push(newDataSet);
+    dataSets.push(inProgressDataSet);
+    dataSets.push(overdueDataSet);
     dataSets.push(closedDataSet);
-    dataSets.push(pendingDataSet);
 
     let result: QaCanvasInterface = {
       chartType: "bar",

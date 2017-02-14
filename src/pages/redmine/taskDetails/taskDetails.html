@@ -17,12 +17,7 @@
     </ion-item>
     <ion-item class="task-canvas">
         <ion-row class="task-canvas-area" *ngIf="state.taskHistoryCanvas && state.taskHistoryCanvas.dataSets">
-            <canvas baseChart class="canvas"
-                    [labels]="state?.taskHistoryCanvas?.labels"
-                    [chartType]="state?.taskHistoryCanvas?.chartType"
-                    [datasets]="state?.taskHistoryCanvas?.dataSets"
-                    [options]="state?.taskHistoryCanvas?.options"
-                    [colors]="state?.taskHistoryCanvas?.colors">
+            <canvas baseChart class="canvas" [labels]="state?.taskHistoryCanvas?.labels" [chartType]="state?.taskHistoryCanvas?.chartType" [datasets]="state?.taskHistoryCanvas?.dataSets" [options]="state?.taskHistoryCanvas?.options" [colors]="state?.taskHistoryCanvas?.colors">
             </canvas>
         </ion-row>
     </ion-item>
@@ -38,13 +33,13 @@
         <div class="weekly-task-details-list-item" *ngFor="let item of state.screen?.delayTaskList">
             <div class="weekly-task-details-list-item-title">
                 <ion-label class="label-title">
-                    <p>{{item.taskId}}</p>
+                    <p>{{item.id}}</p>
                 </ion-label>
             </div>
             <div class="weekly-task-details-list-item-graph delay-status"></div>
             <div class="weekly-task-details-list-item-content">
                 <ion-label class="label-content">
-                    <p>Tiket: {{item.tiket}}</p>
+                    <p>Ticket: {{item.ticket}}</p>
                     <p>Owner: {{item.owner}}</p>
                     <p>Planed End Date: {{item.planedEndDate}}</p>
                 </ion-label>

@@ -1,6 +1,6 @@
 export interface QaDetailsScreenInterface {
   qaHistory: QaReport[];
-  delayQaList: QaDetails[];
+  overdueQaList: QaDetails[];
 }
 
 export interface QaCanvasInterface {
@@ -18,15 +18,15 @@ export interface QaDetailsScreenDataSet {
 
 export interface QaReport {
   date: string;
-  onSchedule: number;
-  delay: number;
+  new: number;
+  inProgress: number;
   closed: number;
-  pending: number;
+  overdue: number;
 }
 
 export interface QaDetails {
-  qaId: string;
-  tiket: string;
+  id: string;
+  ticket: string;
   owner: string;
-  planedEndDate: string;
+  exceptedAnswerDate: string;
 }

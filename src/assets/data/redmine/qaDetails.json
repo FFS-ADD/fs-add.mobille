@@ -2,76 +2,76 @@
      "status": 1,
      "result": {
          "qaHistory": [{
-           "date": "2/9",
-           "onSchedule": 10,
-           "delay": 20,
-           "closed": 40,
-           "pending": 80
-         },
-           {
-             "date": "2/10",
-             "onSchedule": 22,
-             "delay": 40,
-             "closed": 18,
-             "pending": 70
-           },
-           {
-             "date": "2/11",
-             "onSchedule": 22,
-             "delay": 40,
-             "closed": 60,
-             "pending": 28
-           },
-           {
-             "date": "2/11",
-             "onSchedule": 32,
-             "delay": 50,
-             "closed": 40,
-             "pending": 28
-           },
-           {
-             "date": "2/12",
-             "onSchedule": 12,
-             "delay": 40,
-             "closed": 8,
-             "pending": 90
-           }
+                 "date": "2/9",
+                 "new": 10,
+                 "inProgress": 20,
+                 "closed": 40,
+                 "overdue": 80
+             },
+             {
+                 "date": "2/10",
+                 "new": 22,
+                 "inProgress": 40,
+                 "closed": 18,
+                 "overdue": 70
+             },
+             {
+                 "date": "2/11",
+                 "new": 22,
+                 "inProgress": 40,
+                 "closed": 60,
+                 "overdue": 28
+             },
+             {
+                 "date": "2/11",
+                 "new": 32,
+                 "inProgress": 50,
+                 "closed": 40,
+                 "overdue": 28
+             },
+             {
+                 "date": "2/12",
+                 "new": 12,
+                 "inProgress": 40,
+                 "closed": 8,
+                 "overdue": 90
+             }
          ],
-         "delayQaList": [{
-                 "qaId": "2019",
+         "overdueQaList": [{
+                 "id": "2019",
                  "tiket": "Coding UserController a",
                  "owner": "Wei.Zhang",
-                 "planedEndDate": "2017/01/20"
+                 "exceptedAnswerDate": "2017/01/20"
              },
              {
-                 "qaId": "2020",
+                 "id": "2020",
                  "tiket": "Coding UserController b",
                  "owner": "Dehua.liu",
-                 "planedEndDate": "2017/01/21"
+                 "exceptedAnswerDate": "2017/01/21"
              },
              {
-                 "qaId": "2021",
+                 "id": "2021",
                  "tiket": "Coding UserController c",
                  "owner": "Xueyou.zhang",
-                 "planedEndDate": "2017/01/22"
+                 "exceptedAnswerDate": "2017/01/22"
              },
              {
-                 "qaId": "2069",
+                 "id": "2069",
                  "tiket": "Coding UserController",
                  "owner": "Wei.Zhang",
-                 "planedEndDate": "2017/01/15"
+                 "exceptedAnswerDate": "2017/01/15"
              },
              {
-                 "qaId": "2019",
+                 "id": "2019",
                  "tiket": "Coding UserController",
                  "owner": "Wei.Zhang",
-                 "planedEndDate": "2017/01/21"
+                 "exceptedAnswerDate": "2017/01/21"
              },
              {
-                 "qaId": "2019",
+                 "id": "2019",
                  "tiket": "Coding UserController",
                  "owner": "Wei.Zhang",
-                 "planedEndDate": "2017/01/21"
+                 "exceptedAnswerDate": "2017/01/21"
              }
          ]
      }

@@ -30,18 +30,18 @@
         </ion-label>
     </ion-item>
     <ion-list class="weekly-qa-details-list">
-        <div class="weekly-qa-details-list-item" *ngFor="let item of state.screen?.delayQaList">
+        <div class="weekly-qa-details-list-item" *ngFor="let item of state.screen?.overdueQaList">
             <div class="weekly-qa-details-list-item-title">
                 <ion-label class="label-title">
-                    <p>{{item.qaId}}</p>
+                    <p>{{item.id}}</p>
                 </ion-label>
             </div>
-            <div class="weekly-qa-details-list-item-graph delay-status"></div>
+            <div class="weekly-qa-details-list-item-graph overdue-status"></div>
             <div class="weekly-qa-details-list-item-content">
                 <ion-label class="label-content">
-                    <p>QA: {{item.tiket}}</p>
+                    <p>QA: {{item.ticket}}</p>
                     <p>Owner: {{item.owner}}</p>
-                    <p>Excepted Answer Date: {{item.planedEndDate}}</p>
+                    <p>Excepted Answer Date: {{item.exceptedAnswerDate}}</p>
                 </ion-label>
             </div>
         </div>

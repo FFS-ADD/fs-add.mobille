@@ -25,8 +25,8 @@ export interface TaskReport {
 }
 
 export interface TaskDetails {
-  taskId: string;
-  tiket: string;
+  id: string;
+  ticket: string;
   owner: string;
   planedEndDate: string;
 }
