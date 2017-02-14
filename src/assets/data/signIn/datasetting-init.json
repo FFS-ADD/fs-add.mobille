@@ -2,9 +2,9 @@
   "status": "SUCCESS",
   "result": {
     "backlog" : true,
-    "task" : false,
-    "bug" : false,
-    "qa" : false,
+    "task" : true,
+    "bug" : true,
+    "qa" : true,
     "qualitygate" : true,
     "loc" : false,
     "duplication" : false
