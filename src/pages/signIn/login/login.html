@@ -11,21 +11,13 @@
             <img src="../../../assets/images/signIn/welcome.jpeg">
         </ion-item>
         <ion-item class="login-item item-input">
-            <label class="item-input-wrapper input-label">
-                <ion-icon name="mail-outline"></ion-icon>
-                <input type="text" [(ngModel)]="form.email" placeholder="please input your email" autocomplete="off"/>                
-             </label>
+            <ion-input type="text" class="login-email-icon" [(ngModel)]="form.email" placeholder="please input your email"></ion-input>
         </ion-item>
         <ion-item class="login-item item-input">
-            <label class="item-input-wrapper input-label">
-                <ion-icon name="key-outline"></ion-icon>
-                <input type="password" [(ngModel)]="form.password" placeholder="please input your password" autocomplete="off">
-                <ion-icon name="eye-outline"></ion-icon>
-            </label>
+            <ion-input type="password" class="login-password-before-icon login-password-after-icon" [(ngModel)]="form.password" placeholder="please input your password"></ion-input>
         </ion-item>
         <div class="login-button">
             <button class="button round-button" (click)="login()">
-                <ion-icon name="arrow-round-forward"></ion-icon>
                 <span>Login</span>
             </button>
         </div>
