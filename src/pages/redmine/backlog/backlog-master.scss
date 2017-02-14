@@ -1,12 +1,49 @@
 .backlog-page {
-  border-radius: 5px;
-  border-bottom: 1px solid #aaaaaa;
-  margin: 3px;
+  padding: 10px 0 10px 0;
+  .redmine-title {
+    display: flex;
+    height: 30px;
+    background-color: #33C6D8;
+    line-height: 30px;
+    ion-icon {
+      margin-left: 10px;
+    }
+    div {
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+  }
 
+  .redmine-subtitle {
+    display: box;
+    display: -webkit-box;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    font-style: italic;
+    margin-left: 10px;
+
+    .logo{
+      text-align: left;
+      width:20%;
+    }
+    .title{
+      text-align: right;
+      p {
+        color: color($colors, black-color);
+        padding-left: 5px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.backlog-card {
+  padding: 0px 10px 10px 10px;
   .backlog-title {
     border: 0;
     font-size: 18px;
-    padding: 5px;
+    padding: 0px;
 
     .backlog-title-name {
       font-weight: bold;
@@ -35,34 +72,6 @@
     padding: 0;
   }
 
-  .redmine-title {
-    display: flex;
-    height: 30px;
-    background-color: #33C6D8;
-    line-height: 30px;
-    ion-icon {
-      margin-left: 10px;
-    }
-    div {
-      margin-left: 10px;
-      vertical-align: middle;
-    }
-  }
-
-  .redmine-subtitle {
-    height: 40px;
-    line-height: 40px;
-    font-weight: bold;
-    font-style: italic;
-    margin-left: 10px;
-
-    p {
-      color: color($colors, black-color);
-      padding-left: 5px;
-      margin: 0;
-    }
-  }
-
   .estimate-value {
     font-size: 22px;
   }
@@ -77,7 +86,7 @@
     font-weight: bold;
   }
 
-  .degree-content{
+  .degree-content {
     font-size: 14px;
   }
 }
