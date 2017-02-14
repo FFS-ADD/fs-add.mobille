@@ -8,63 +8,18 @@
 
 <ion-content class="sonarqube-detail-page">
     <div class="sonarqube-detail-title">
-        <ion-icon name="logo-buffer"></ion-icon><div>Issue log</div> 
+        <ion-icon name="logo-buffer"></ion-icon><div>Issue log</div>
     </div>
     <div class="content-padding detail-3col-list">
-        <ion-row center>
-            
-            <ion-col width-10><div><ion-icon name="notifications"></ion-icon></div></ion-col>
-            <ion-col width-33><div>2017/01/05</div></ion-col>
+        <ion-row center *ngFor="let barometerDetail of barometerDetailLists">
+
+            <ion-col width-10><div><ion-icon [name]="barometerDetail.detailStatusIcon"></ion-icon></div></ion-col>
+            <ion-col width-33><div>{{barometerDetail.detailData}}</div></ion-col>
             <ion-col>
-            <div>
-                bug occurred
+            <div [style.color]="barometerDetail.detailStatusColor">
+                {{barometerDetail.detailText}}
             </div>
             </ion-col>
-            
-        </ion-row>
-        <ion-row center>
-            
-            <ion-col width-10><div><ion-icon name="notifications"></ion-icon></div></ion-col>
-            <ion-col width-33><div>2017/01/05</div></ion-col>
-            <ion-col>
-            <div>
-                bug occurred
-            </div>
-            </ion-col>
-            
-        </ion-row>
-        <ion-row center>
-            
-            <ion-col width-10><div><ion-icon name="notifications"></ion-icon></div></ion-col>
-            <ion-col width-33><div>2017/01/05</div></ion-col>
-            <ion-col>
-            <div>
-                bug occurred
-            </div>
-            </ion-col>
-            
-        </ion-row>
-        <ion-row center>
-            
-            <ion-col width-10><div><ion-icon name="notifications"></ion-icon></div></ion-col>
-            <ion-col width-33><div>2017/01/05</div></ion-col>
-            <ion-col>
-            <div>
-                bug occurred
-            </div>
-            </ion-col>
-            
-        </ion-row>
-        <ion-row center>
-            
-            <ion-col width-10><div><ion-icon name="notifications"></ion-icon></div></ion-col>
-            <ion-col width-33><div>2017/01/05</div></ion-col>
-            <ion-col>
-            <div>
-                bug occurred
-            </div>
-            </ion-col>
-            
         </ion-row>
     </div>
 
