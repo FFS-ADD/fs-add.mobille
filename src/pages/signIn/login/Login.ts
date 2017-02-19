@@ -6,6 +6,7 @@ import { LoginStore } from "./login.store";
 import { LoginRequestInterface } from './login.interface';
 import { HomePage } from '../../home/home';
 import { DataSetting } from '../datasetting/datasetting.component';
+import { UserService } from "../../../core/UserService";
 
 @Component({
   providers: [LoginAction, LoginState, LoginStore],
@@ -13,7 +14,7 @@ import { DataSetting } from '../datasetting/datasetting.component';
 })
 export class Login implements OnInit {
   private form: LoginRequestInterface;
-  constructor(public navCtrl: NavController, private action: LoginAction, private state: LoginState, private store: LoginStore) {
+  constructor(public navCtrl: NavController, private action: LoginAction, private state: LoginState, private store: LoginStore, private userService: UserService) {
 
   }
 
@@ -25,7 +26,11 @@ export class Login implements OnInit {
     console.debug("login before");
     let observable = this.action.login(this.form);
     observable.subscribe((data) => {
-      this.navCtrl.push(DataSetting, {"perPage" : "login"});
+      if (this.userService.getLastLoginTime() == null) {
+        this.navCtrl.push(DataSetting, {"perPage" : "login"});
+      } else {
+        this.navCtrl.push(HomePage);
+      }
     });
 
   }

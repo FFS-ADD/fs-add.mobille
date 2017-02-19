@@ -4,7 +4,7 @@ import { DataSettingInterface } from "./datasetting.interface";
 import { DataSettingAction } from "./datasetting.action";
 import { DataSettingState } from "./datasetting.state";
 import { DataSettingStore } from "./datasetting.store";
-import { HomePage } from "../../home/home"
+import { HomePage } from "../../home/home";
 
 @Component({
   providers:[DataSettingAction, DataSettingState, DataSettingStore],

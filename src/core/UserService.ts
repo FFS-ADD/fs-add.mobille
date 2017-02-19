@@ -12,6 +12,7 @@ export interface TokenInterface {
 export interface UserInterface {
   mail: string;
   name: string;
+  lastLoginTime: string;
 }
 
 @Injectable()
@@ -26,7 +27,8 @@ export class UserService {
 
   private user: UserInterface = {
     mail: null,
-    name: null
+    name: null,
+    lastLoginTime: null
   };
 
   constructor(private storageService: LocalStorageService) {
@@ -35,7 +37,6 @@ export class UserService {
     this.token = t ? t : this.token;
     this.user = u ? u : this.user;
   }
-
 
   public storeToken() {
     this.storageService.store('token', this.token);
@@ -99,5 +100,13 @@ export class UserService {
 
   public getName(): string {
     return this.user.name;
+  }
+
+  public setLastLoginTime(lastLoginTime) {
+    this.user.lastLoginTime = lastLoginTime;
+  }
+
+  public getLastLoginTime(): string {
+    return this.user.lastLoginTime;
   }
 }
