@@ -24,7 +24,7 @@ export class DataSetting implements OnInit {
         task: false,
         bug: false,
         qa: false,
-        qualityGate: false,
+        qualitygate: false,
         loc: false,
         coverage: false,
         duplication: false
@@ -35,7 +35,7 @@ export class DataSetting implements OnInit {
         task: false,
         bug: false,
         qa: false,
-        qualityGate: false,
+        qualitygate: false,
         loc: false,
         coverage: false,
         duplication: false
@@ -50,7 +50,7 @@ export class DataSetting implements OnInit {
         task: false,
         bug: false,
         qa: false,
-        qualityGate: false,
+        qualitygate: false,
         loc: false,
         coverage: false,
         duplication: false

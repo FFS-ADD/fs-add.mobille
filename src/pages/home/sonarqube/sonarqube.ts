@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Input, AfterViewInit} from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SonarqubeDetailPage } from './sonarqube-detail/sonarqube-detail'
 import SonarqubeAction from "./sonarqube.action";
@@ -11,6 +11,10 @@ import { SonarqubeStore } from "./sonarqube.store";
     templateUrl: 'sonarqube.html',
 })
 export class SonarqubeComponent {
+    private qualityDisplayFlg:boolean;
+    private locDisplayFlg:boolean;
+    private coverageDisplayFlg:boolean;
+    private dupDisplayFlg:boolean;
     
     constructor(public nav: NavController, 
                 private action: SonarqubeAction, 
@@ -18,6 +22,17 @@ export class SonarqubeComponent {
                 private store: SonarqubeStore) {
         this.action.init();
     }
+
+     public setDisplayFlg(qualityDisplayFlg:boolean,locDisplayFlg:boolean,coverageDisplayFlg:boolean,dupDisplayFlg:boolean) {
+        this.qualityDisplayFlg = qualityDisplayFlg;
+        this.locDisplayFlg = locDisplayFlg;
+        this.coverageDisplayFlg = coverageDisplayFlg;
+        this.dupDisplayFlg = dupDisplayFlg;
+    }
+
+    private covertToBoolean(s){
+       return s==='true'? true:false;
+    }     
 
     detail() {
         this.nav.push(SonarqubeDetailPage);

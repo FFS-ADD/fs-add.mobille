@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component,Input} from "@angular/core";
 import {NavController} from "ionic-angular";
 import {BackLogMasterState} from "./backlog-master.state";
 import {BackLogMasterStore} from "./backlog-master.store";
@@ -11,10 +11,13 @@ import {BackLogDetailComponent} from "../backlogDetails/backlog-detail";
   templateUrl: "backlog-master.html",
 })
 export class BackLogComponent {
-
+  private displayFlg: string;
   constructor(private action: BackLogMasterAction, private state: BackLogMasterState, private store: BackLogMasterStore, public navCtrl: NavController) {
     this.action.init();
-    console.info(this.state);
+  }
+
+  public setDisplayFlg(displayFlg){
+    this.displayFlg = displayFlg; 
   }
 
   public goBackLogDetails() {

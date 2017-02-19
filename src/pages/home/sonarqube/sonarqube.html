@@ -1,4 +1,4 @@
-<div class="sonarqube-page">
+<div class="sonarqube-page" *ngIf="qualityDisplayFlg || locDisplayFlg || coverageDisplayFlg || dupDisplayFlg">
     <div class="sonarqube-title">
         <div class="title">
             <ion-icon name="logo-buffer"></ion-icon><div>Sonarqube</div>
@@ -12,14 +12,14 @@
         The following data is obtained from sonarqube.
     </div>
     <!--Quality Gate-->
-    <ion-card *ngIf="state?.qualityLoading">
+    <ion-card *ngIf="state?.qualityLoading && qualityDisplayFlg">
         <ion-card-content>
             <div class="sonarqube-loading">
                 <ion-spinner name="circles"></ion-spinner><span>Loading Quality Gate Data</span>
             </div>
         </ion-card-content>
     </ion-card>
-    <ion-card *ngIf="!state?.qualityLoading">
+    <ion-card *ngIf="!state?.qualityLoading && qualityDisplayFlg">
         <ion-card-header class="sonarqube-quality">
             <ion-grid class="sonarqube-quality-title">
                 <div>Quality Gate</div>
@@ -61,16 +61,15 @@
             </ion-grid>
         </ion-card-content>
     </ion-card>
-
     <!--LOC -->
-    <ion-card *ngIf="state?.locLoading">
+    <ion-card *ngIf="state?.locLoading && locDisplayFlg">
         <ion-card-content>
             <div class="sonarqube-loading">
                 <ion-spinner name="circles"></ion-spinner><span>Loading LOC Data</span>
             </div>
         </ion-card-content>
     </ion-card>
-    <ion-card *ngIf="!state?.locLoading">
+    <ion-card *ngIf="!state?.locLoading && locDisplayFlg">
         <ion-card-header>
             <ion-grid class="sonarqube-loc-title">
                 <div>LOC</div>
@@ -105,14 +104,14 @@
     </ion-card>
 
     <!--Coverage -->
-    <ion-card *ngIf="state?.coverageLoading">
+    <ion-card *ngIf="state?.coverageLoading && coverageDisplayFlg">
         <ion-card-content>
             <div class="sonarqube-loading">
                 <ion-spinner name="circles"></ion-spinner><span>Loading Coverage Data</span>
             </div>
         </ion-card-content>
     </ion-card>
-    <ion-card *ngIf="!state?.coverageLoading">
+    <ion-card *ngIf="!state?.coverageLoading && coverageDisplayFlg">
         <ion-card-header>
             <ion-grid class="sonarqube-coverage-title">
                 <div>Coverage</div>
@@ -146,14 +145,14 @@
     </ion-card>
 
     <!--Duplication -->
-    <ion-card *ngIf="state?.duplicationLoading">
+    <ion-card *ngIf="state?.duplicationLoading && dupDisplayFlg">
         <ion-card-content>
             <div class="sonarqube-loading">
                 <ion-spinner name="circles"></ion-spinner><span>Loading Duplication Data</span>
             </div>
         </ion-card-content>
     </ion-card>
-    <ion-card *ngIf="!state?.duplicationLoading">
+    <ion-card *ngIf="!state?.duplicationLoading && dupDisplayFlg">
         <ion-card-header>
             <ion-grid class="sonarqube-duplication-title">
                 <div>Duplication</div>

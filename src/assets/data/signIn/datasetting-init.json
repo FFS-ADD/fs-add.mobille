@@ -1,10 +1,11 @@
 {
   "status": "SUCCESS",
   "result": {
-    "backlog" : true,
+    "backlog" : false,
     "task" : true,
     "bug" : true,
     "qa" : true,
+    "coverage" : true,
     "qualitygate" : true,
     "loc" : false,
     "duplication" : false

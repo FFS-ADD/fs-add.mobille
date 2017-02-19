@@ -11,7 +11,8 @@
       </div>
   </div>
 </div>
-<ion-card class="backlog-card">
+
+<ion-card class="backlog-card" *ngIf="displayFlg" >
   <ion-item class="backlog-title">
     <ion-label class="backlog-title-name">BackLog</ion-label>
     <ion-label class="backlog-title-detail" (click)="goBackLogDetails()">

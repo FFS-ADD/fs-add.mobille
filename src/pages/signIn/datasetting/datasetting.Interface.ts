@@ -3,7 +3,7 @@ export interface DataSettingInterface {
   task: boolean;
   bug: boolean;
   qa: boolean;
-  qualityGate: boolean;
+  qualitygate: boolean;
   loc: boolean;
   coverage: boolean;
   duplication: boolean;
