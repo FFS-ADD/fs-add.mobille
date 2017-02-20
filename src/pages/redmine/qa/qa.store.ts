@@ -49,11 +49,11 @@ export class QaStore {
 
   private colors = [{ backgroundColor: ["#5677fc", "#259b24", "#ffff00", "#ff9800"] }];
 
-  public init(data) {
+  public init(httpResponse) {
     console.log("QAStore#init");
-    console.log(data);
+    console.log(httpResponse);
 
-    let response: QaResponseInterface = data.result;
+    let response: QaResponseInterface = httpResponse.data;
     let dataSets: QaScreenDataSet = {
       backgroundColor:this.colors,
       data: [response.new, response.inProgress, response.overdue, response.closed]

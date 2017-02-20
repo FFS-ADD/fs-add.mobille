@@ -92,10 +92,10 @@ export class BugDetailsStore {
     {backgroundColor: "#61b066", borderColor: "#61b066", pointBackgroundColor: '#FFF', pointBorderColor: '#61b066', pointBorderWidth: 2},
     {backgroundColor: "#fae02b", borderColor: "#fae02b", pointBackgroundColor: '#FFF', pointBorderColor: '#fae02b', pointBorderWidth: 2}];
 
-  public init(data) {
+  public init(httpResponse) {
     console.log("BugDetailsStore#init");
-    console.log(data);
-    let response: BugDetailsResponse = data.result;
+    console.log(httpResponse);
+    let response: BugDetailsResponse = httpResponse.data;
 
     let bugDetailsHistory: BugDetailsCanvasInterface = this.getBugDetailsHistory(response);
 
