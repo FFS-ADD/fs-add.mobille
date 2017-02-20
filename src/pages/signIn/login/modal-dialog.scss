@@ -1,0 +1,10 @@
+//---------------------------------------- content ----------------------------------------
+.modal-dialog {
+    height: 100px;
+    background: #f4f4f4;
+    top: calc(50% - 100px /2);
+    margin-left: 8px;
+    margin-right: 8px;
+    width: calc(100% - 16px);
+    border-radius: 4px;
+}

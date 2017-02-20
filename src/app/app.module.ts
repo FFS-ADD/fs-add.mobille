@@ -4,6 +4,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Login } from '../pages/signIn/login/Login';
+import { ModalDialogComponent } from '../pages/signIn/login/modalDialog.component';
 import { APP_CONFIG, AppConfig } from '../config/app.config';
 import { ResourceService } from '../providers/resource.service';
 import { Dispatcher } from "../core/Dispatcher";
@@ -46,7 +47,8 @@ import {LocalStorageService} from "../core/LocalStorageService";
     QaDetailsComponent,
     NumberFormatPipe,
     BarometerComponent,
-    BarometerDetailPage
+    BarometerDetailPage,
+    ModalDialogComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -71,7 +73,8 @@ import {LocalStorageService} from "../core/LocalStorageService";
     QaComponent,
     QaDetailsComponent,
     BarometerComponent,
-    BarometerDetailPage
+    BarometerDetailPage,
+    ModalDialogComponent
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, { provide: APP_CONFIG, useValue: AppConfig },
     ResourceService,
