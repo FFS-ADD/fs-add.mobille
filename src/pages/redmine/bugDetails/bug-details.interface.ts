@@ -38,7 +38,7 @@ export interface BugDetailsResponse {
 }
 
 export interface BugDetailsHistoryDataInterface {
-  new: number[];
+  news: number[];
   inProgress: number[];
   fixed: number[];
   reTesting: number[];
@@ -47,6 +47,6 @@ export interface BugDetailsHistoryDataInterface {
 
 export interface BugFixHistoryDataInterface {
   inProgress: number[];
-  new: number[];
+  news: number[];
   fixed: number[];
 }

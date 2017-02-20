@@ -50,10 +50,10 @@ export class BugStore {
     console.log("BugStore#init");
     console.log(data);
     let response: BugResponseInterface = data.result;
-    let totalBugs: number = response.new + response.inProgress + response.fixed + response.retesting + response.close;
+    let totalBugs: number = response.news + response.inProgress + response.fixed + response.retesting + response.close;
     let dataSets: BugScreenDataSet = {
       labels: this.DATA_SET_LABELS,
-      data: [response.new, response.inProgress, response.fixed, response.retesting, response.close]
+      data: [response.news, response.inProgress, response.fixed, response.retesting, response.close]
     };
     let screenResponse: BugScreenInterface = {
       chartType: this.chartType,

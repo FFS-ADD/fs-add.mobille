@@ -115,7 +115,7 @@ export class BugDetailsStore {
 
     let newDataSet: BugDetailsScreenDataSet = {
       label: "New",
-      data: response.bugDetailsHistoryData.new
+      data: response.bugDetailsHistoryData.news
     };
 
     let inProgressDataSet: BugDetailsScreenDataSet = {
@@ -168,7 +168,7 @@ export class BugDetailsStore {
       label: "New",
       fill: false,
       lineTension: 0,
-      data: response.bugFixHistoryData.new
+      data: response.bugFixHistoryData.news
     };
 
     let fixedDataSet: BugFixDataSet = {

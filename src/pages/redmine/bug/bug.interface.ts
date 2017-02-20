@@ -12,7 +12,7 @@ export interface BugScreenDataSet {
 }
 
 export interface BugResponseInterface {
-  new: number;
+  news: number;
   inProgress: number;
   fixed: number;
   retesting: number;
