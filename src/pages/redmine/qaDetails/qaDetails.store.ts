@@ -53,10 +53,10 @@ export class QaDetailsStore {
     { backgroundColor: ["#ffff00", "#ffff00", "#ffff00", "#ffff00", "#ffff00", "#ffff00", "#ffff00"] },
     { backgroundColor: ["#ff9800", "#ff9800", "#ff9800", "#ff9800", "#ff9800", "#ff9800", "#ff9800"] }];
 
-  public init(data) {
+  public init(response) {
     console.log("QaDetailStore#init");
-    console.log(data.result)
-    this.state.screen = data.result;
+    console.log(response.data)
+    this.state.screen = response.data;
     this.state.qaHistoryCanvas = this.getQaHistory(this.state.screen.qaHistory);
   }
 

@@ -46,10 +46,10 @@ export class BugStore {
 
   private colors = [{backgroundColor: ["#efb14e", "#6e3c78", "#2d578b", "#3f99ec", "#00060e"]}];
 
-  public init(data) {
+  public init(httpResponse) {
     console.log("BugStore#init");
-    console.log(data);
-    let response: BugResponseInterface = data.result;
+    console.log(httpResponse);
+    let response: BugResponseInterface = httpResponse.data;
     let totalBugs: number = response.news + response.inProgress + response.fixed + response.retesting + response.close;
     let dataSets: BugScreenDataSet = {
       labels: this.DATA_SET_LABELS,
