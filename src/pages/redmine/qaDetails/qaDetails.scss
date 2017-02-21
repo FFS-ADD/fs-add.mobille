@@ -89,12 +89,14 @@
                     display: flex;
                     align-items: center;
                     width: 60px;
+                    min-width: 60px;
                     .label-title {
                         text-align: center;
                     }
                 }
                 .weekly-qa-details-list-item-graph {
                     width: 8px;
+                    min-width: 8px;
                     border-radius: 4px;
                 }
                 .overdue-status {
@@ -102,8 +104,15 @@
                 }
                 .weekly-qa-details-list-item-content {
                     padding-left: 6px;
+                    padding-right: 6px;
+                    width: calc(100% - 68px);
                     .label-content {
                         margin: 0;
+                        p {
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
                     }
                 }
                 &:nth-child(even) {
