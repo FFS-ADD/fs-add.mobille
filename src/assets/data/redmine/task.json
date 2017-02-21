@@ -1,6 +1,6 @@
  {
    "status": 1,
-   "result": {
+   "data": {
      "onSchedule": 22,
      "delay": 4,
      "closed": 3,

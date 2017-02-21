@@ -53,10 +53,10 @@ export class TaskDetailsStore {
     { backgroundColor: ["#607d8b", "#607d8b", "#607d8b", "#607d8b", "#607d8b", "#607d8b", "#607d8b"] },
     { backgroundColor: ["#ff9800", "#ff9800", "#ff9800", "#ff9800", "#ff9800", "#ff9800", "#ff9800"] }];
 
-  public init(data) {
+  public init(httpResponse) {
     console.log("TaskDetailStore#init");
-    console.log(data.result)
-    this.state.screen = data.result;
+    console.log(httpResponse.data)
+    this.state.screen = httpResponse.data;
     this.state.taskHistoryCanvas = this.getTaskHistory(this.state.screen.taskHistory);
   }
 

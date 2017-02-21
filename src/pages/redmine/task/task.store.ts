@@ -46,8 +46,8 @@ export class TaskStore {
 
   private colors = [{ backgroundColor: ["#259b24", "#e51c23", "#607d8b", "#ff9800"] }];
 
-  public init(data) {
-    let response: TaskResponseInterface = data.result;
+  public init(httpResponse) {
+    let response: TaskResponseInterface = httpResponse.data;
     let dataSets: TaskScreenDataSet = {
       labels: this.DATA_SET_LABELS,
       data: [response.onSchedule, response.delay, response.closed, response.pending]

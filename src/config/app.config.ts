@@ -13,6 +13,10 @@ export interface IAppConfig {
   webapiQaDetail:string;
   webapiIssueOverview:string;
   webapiIssueDetail:string;
+  webapiTaskOverview:string;
+  webapiTaskDetail:string;
+  webapiBacklogOverview:string;
+  webapiBacklogDetail:string;
 }
 
 export const AppConfig:IAppConfig = {
@@ -26,5 +30,9 @@ export const AppConfig:IAppConfig = {
   webapiQaOverview: '/qa/overview',
   webapiQaDetail: '/qa/detail',
   webapiIssueOverview:'/issue/overview',
-  webapiIssueDetail:'/issue/detail'
+  webapiIssueDetail:'/issue/detail',
+  webapiTaskOverview:'/task/overview',
+  webapiTaskDetail:'/task/detail',
+  webapiBacklogOverview:'/backlog/overview',
+  webapiBacklogDetail:'/backlog/detail'
 }

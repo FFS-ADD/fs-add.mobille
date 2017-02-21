@@ -1,6 +1,6 @@
 {
   "status": 1,
-  "result": {
+  "data": {
     "news": 15,
     "inProgress": 9,
     "fixed": 6,

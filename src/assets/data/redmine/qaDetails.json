@@ -1,6 +1,6 @@
  {
      "status": 1,
-     "result": {
+     "data": {
          "qaHistory": [{
                  "date": "2/9",
                  "new": 10,
