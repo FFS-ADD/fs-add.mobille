@@ -46,10 +46,10 @@ export class BackLogMasterStore {
 
   private colors = [{backgroundColor: ["#efb14e", "#CCCCCC"]}];
 
-  public init(data) {
+  public init(httpResponse) {
     console.log("BackLogStore#init");
-    console.log(data);
-    let response: BackLogResponseInterface = data.result;
+    console.log(httpResponse);
+    let response: BackLogResponseInterface = httpResponse.data;
     console.log(response);
     let dataSets: BackLogScreenDataSet = {
       labels: this.DATA_SET_LABELS,

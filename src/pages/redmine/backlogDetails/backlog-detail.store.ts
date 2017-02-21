@@ -54,10 +54,10 @@ export class BackLogDetailStore {
     {backgroundColor: "#51a7f8", borderColor: "#436078", pointBackgroundColor: '#FFF', pointBorderColor: '#51a7f8', pointBorderWidth: 2},
     {backgroundColor: "#fae02b", borderColor: "#C1D1DE", pointBackgroundColor: '#FFF', pointBorderColor: '#fae02b', pointBorderWidth: 2}];
 
-  public init(data) {
+  public init(httpResponse) {
     console.log("BackLogDetailStore#init");
-    console.log(data.result);
-    let response: BackLogDetailsResponse = data.result;
+    console.log(httpResponse.data);
+    let response: BackLogDetailsResponse = httpResponse.data;
 
     let screenResponse: BackLogDetailScreenInterface = {
       backLogCanvas: this.getBackLogCanvas(response),
