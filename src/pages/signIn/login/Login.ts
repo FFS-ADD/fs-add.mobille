@@ -7,7 +7,7 @@ import {LoginRequestInterface }from './login.interface';
 import {HomePage }from '../../home/home';
 import {DataSetting }from '../datasetting/datasetting.component';
 import {UserService }from "../../../core/UserService";
-import {ModalDialogComponent }from "./modalDialog.component";
+import {ModalDialogComponent }from "./../../../core/modalDialog.component.ts";
 
 @Component( {
   providers:[LoginAction, LoginState, LoginStore],
