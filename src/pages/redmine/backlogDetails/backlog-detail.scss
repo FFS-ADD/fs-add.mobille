@@ -58,6 +58,7 @@
         .weekly-backlog-details-list-item-graph {
           width: 8px;
           border-radius: 4px;
+          margin-left: 2px;
         }
         .delay-status {
           background: color($colors, red-color);
@@ -67,12 +68,33 @@
           background: color($colors, green-color);
         }
 
-        .weekly-backlog-details-list-item-content {
+        .details-item-left {
           padding-left: 6px;
+          width: calc(70% - 68px);
+          overflow:hidden;
           .label-content {
             margin: 0;
+            p {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
           }
         }
+
+        .details-item-right {
+          padding-left: 6px;
+          width: calc(70% - 68px);
+          .label-content {
+            margin: 0;
+            p {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+
         &:nth-child(even) {
           background-color: #e3e7e8;
         }

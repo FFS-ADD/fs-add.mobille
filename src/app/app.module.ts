@@ -4,12 +4,13 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Login } from '../pages/signIn/login/Login';
-import { ModalDialogComponent } from '../pages/signIn/login/modalDialog.component';
+import { ModalDialogComponent } from '../core/modalDialog.component.ts';
 import { APP_CONFIG, AppConfig } from '../config/app.config';
 import { ResourceService } from '../providers/resource.service';
 import { Dispatcher } from "../core/Dispatcher";
 import { HttpService } from "../core/HttpService";
 import { UserService } from "../core/UserService";
+import { AddExceptionHandler } from "../core/AddExceptionHandler";
 import { BugComponent } from "../pages/redmine/bug/bug";
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
@@ -76,7 +77,7 @@ import {LocalStorageService} from "../core/LocalStorageService";
     BarometerDetailPage,
     ModalDialogComponent
   ],
-  providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, { provide: APP_CONFIG, useValue: AppConfig },
+  providers: [{ provide: ErrorHandler, useClass: AddExceptionHandler }, { provide: APP_CONFIG, useValue: AppConfig },
     ResourceService,
     Dispatcher,
     HttpService,
