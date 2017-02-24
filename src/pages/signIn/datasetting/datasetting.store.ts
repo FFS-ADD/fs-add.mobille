@@ -21,9 +21,9 @@ export class DataSettingStore {
 
   public init(data) {
     console.debug("datasettingStore init");
-    if (data.status === "SUCCESS") {
+    if (data.status === 1) {
       this.state.success = true;
-      this.state.response = data.result;
+      this.state.response = data.data;
     } else {
       this.state.success = false;
     }
@@ -31,7 +31,7 @@ export class DataSettingStore {
 
   public save(data) {
     console.debug("datasettingStore ok");
-    if (data.status === "SUCCESS") {
+    if (data.status === 1) {
       this.state.success = true;
     } else {
       this.state.success = false;

@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable , Inject} from '@angular/core';
 import { Subject, BehaviorSubject} from 'rxjs';
 import { ResourceService } from '../../providers/resource.service'
 import { HomeModel } from '../../models/home.model';
 import { HttpService } from "../../core/HttpService";
+import { APP_CONFIG, IAppConfig } from '../../config/app.config';
 
 let optionsInitialState: any[] = []
 
@@ -11,7 +12,7 @@ export class HomeService {
 
     dataList: Subject<any[]> = new BehaviorSubject<any[]>(optionsInitialState);
 
-    constructor(private resourceService: ResourceService, private httpService: HttpService) {
+    constructor(private resourceService: ResourceService, private httpService: HttpService, @Inject(APP_CONFIG) private config: IAppConfig) {
      
     }
 
@@ -21,8 +22,8 @@ export class HomeService {
         });
     }
 
-    public getInitDataSetting() {
-       let observable = this.httpService.getFakeData('/assets/data/signIn/datasetting-init.json', {});
+    public getInitDataSetting(email:string) {
+       let observable = this.httpService.get(this.config.webapiGetDataSetting, {"email": email});
        return observable;
     }
 

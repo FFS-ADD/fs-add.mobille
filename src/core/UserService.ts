@@ -91,7 +91,7 @@ export class UserService {
   }
 
   public getMail(): string {
-    return this.user.mail;
+    return "email";
   }
 
   public setName(name: string) {

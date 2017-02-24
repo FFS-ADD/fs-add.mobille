@@ -1,4 +1,5 @@
 export interface DataSettingInterface {
+  email: string;
   backlog: boolean;
   task: boolean;
   bug: boolean;

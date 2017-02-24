@@ -17,6 +17,8 @@ export interface IAppConfig {
   webapiTaskDetail:string;
   webapiBacklogOverview:string;
   webapiBacklogDetail:string;
+  webapiSaveDataSetting:string;
+  webapiGetDataSetting:string;
 }
 
 export const AppConfig:IAppConfig = {
@@ -34,5 +36,7 @@ export const AppConfig:IAppConfig = {
   webapiTaskOverview:'/task/overview',
   webapiTaskDetail:'/task/detail',
   webapiBacklogOverview:'/backlog/overview',
-  webapiBacklogDetail:'/backlog/detail'
+  webapiBacklogDetail:'/backlog/detail',
+  webapiSaveDataSetting:'/datasetting/save',
+  webapiGetDataSetting:'/datasetting/get'
 }
