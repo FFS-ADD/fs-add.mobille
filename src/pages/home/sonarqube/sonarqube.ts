@@ -1,5 +1,5 @@
 import { Component , Input, AfterViewInit} from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Events } from 'ionic-angular';
 import { SonarqubeDetailPage } from './sonarqube-detail/sonarqube-detail'
 import SonarqubeAction from "./sonarqube.action";
 import { SonarqubeState } from "./sonarqube.state";
@@ -16,11 +16,14 @@ export class SonarqubeComponent {
     private coverageDisplayFlg:boolean;
     private dupDisplayFlg:boolean;
     
-    constructor(public nav: NavController, 
+    constructor(public nav: NavController,
+                public events: Events, 
                 private action: SonarqubeAction, 
                 private state: SonarqubeState,
                 private store: SonarqubeStore) {
         this.action.init();
+
+        this.listenHomeEvents();
     }
 
      public setDisplayFlg(qualityDisplayFlg:boolean,locDisplayFlg:boolean,coverageDisplayFlg:boolean,dupDisplayFlg:boolean) {
@@ -44,5 +47,12 @@ export class SonarqubeComponent {
         this.state.coverageLoading = true;
         this.state.duplicationLoading = true;
         this.action.init();
+    }
+
+    listenHomeEvents() {
+        this.events.subscribe('home:refresh', () => {
+            this.refresh();
+            console.log('refresh sonarqube data');
+        });
     }
 }

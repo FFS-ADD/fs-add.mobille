@@ -4,6 +4,7 @@ import { QaState } from "./qa.state";
 import { QaStore } from "./qa.store";
 import { NavController } from "ionic-angular/index";
 import { QaDetailsComponent } from "../qaDetails/qaDetails";
+import { Events } from 'ionic-angular';
 
 @Component({
   selector: "qa",
@@ -12,7 +13,8 @@ import { QaDetailsComponent } from "../qaDetails/qaDetails";
 })
 export class QaComponent implements OnInit {
 
-  constructor(private action: QaAction, private state: QaState, private store: QaStore, public navCtrl: NavController) {
+  constructor(public events: Events, private action: QaAction, private state: QaState, private store: QaStore, public navCtrl: NavController) {
+    this.listenHomeEvents();
   }
 
   public ngOnInit() {
@@ -23,5 +25,12 @@ export class QaComponent implements OnInit {
 
   public goQaDetails() {
     this.navCtrl.push(QaDetailsComponent);
+  }
+
+  listenHomeEvents() {
+      this.events.subscribe('home:refresh', () => {
+          this.action.init();
+          console.log('refresh qa data');
+      });
   }
 }

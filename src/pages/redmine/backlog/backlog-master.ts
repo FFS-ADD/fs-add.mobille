@@ -1,5 +1,5 @@
 import {Component,Input} from "@angular/core";
-import {NavController} from "ionic-angular";
+import {NavController, Events} from "ionic-angular";
 import {BackLogMasterState} from "./backlog-master.state";
 import {BackLogMasterStore} from "./backlog-master.store";
 import BackLogMasterAction from "./backlog-master.action";
@@ -12,8 +12,10 @@ import {BackLogDetailComponent} from "../backlogDetails/backlog-detail";
 })
 export class BackLogComponent {
   private displayFlg: string;
-  constructor(private action: BackLogMasterAction, private state: BackLogMasterState, private store: BackLogMasterStore, public navCtrl: NavController) {
+  constructor(public events: Events, private action: BackLogMasterAction, private state: BackLogMasterState, private store: BackLogMasterStore, public navCtrl: NavController) {
     this.action.init();
+
+    this.listenHomeEvents();
   }
 
   public setDisplayFlg(displayFlg){
@@ -22,5 +24,12 @@ export class BackLogComponent {
 
   public goBackLogDetails() {
     this.navCtrl.push(BackLogDetailComponent);
+  }
+
+  listenHomeEvents() {
+      this.events.subscribe('home:refresh', () => {
+          this.action.init();
+          console.log('refresh BackLog data');
+      });
   }
 }

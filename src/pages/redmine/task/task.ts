@@ -4,6 +4,7 @@ import { TaskState } from "./task.state";
 import { TaskStore } from "./task.store";
 import { NavController } from "ionic-angular/index";
 import { TaskDetailsComponent } from "../taskDetails/taskDetails";
+import { Events } from 'ionic-angular';
 
 @Component({
   selector: "task",
@@ -12,7 +13,8 @@ import { TaskDetailsComponent } from "../taskDetails/taskDetails";
 })
 export class TaskComponent implements OnInit {
 
-  constructor(private action: TaskAction, private state: TaskState, private store: TaskStore, public navCtrl: NavController) {
+  constructor(public events: Events, private action: TaskAction, private state: TaskState, private store: TaskStore, public navCtrl: NavController) {
+    this.listenHomeEvents();
   }
 
   public ngOnInit() {
@@ -23,5 +25,12 @@ export class TaskComponent implements OnInit {
 
   public goTaskDetails() {
     this.navCtrl.push(TaskDetailsComponent);
+  }
+  
+  listenHomeEvents() {
+      this.events.subscribe('home:refresh', () => {
+          this.action.init();
+          console.log('refresh task data');
+      });
   }
 }
