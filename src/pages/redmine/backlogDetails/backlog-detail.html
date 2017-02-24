@@ -38,7 +38,7 @@
     <div class="weekly-backlog-details-list-item" *ngFor="let item of state.screen?.backLogList">
       <div class="weekly-backlog-details-list-item-graph normal-status" *ngIf="item.status"></div>
       <div class="weekly-backlog-details-list-item-graph delay-status" *ngIf="!item.status"></div>
-      <div class="weekly-backlog-details-list-item-content">
+      <div class="details-item-left">
         <ion-label class="label-content">
           <p>{{item.backLogId}} {{item.ticket}}</p>
           <p>Progress: </p>
@@ -48,7 +48,7 @@
           <p>Difference:{{item.difference}}</p>
         </ion-label>
       </div>
-      <div class="weekly-backlog-details-list-item-content">
+      <div class="details-item-right">
         <ion-label class="label-content">
           <p>{{item.owner}}</p>
           <p><progress max="100" value="{{item.progress}}"></progress> {{item.progress}}%</p>
