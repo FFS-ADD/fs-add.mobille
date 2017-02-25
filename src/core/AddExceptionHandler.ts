@@ -12,7 +12,7 @@ export class AddExceptionHandler extends IonicErrorHandler implements ErrorHandl
   }
 
   handleError(err:any):void {
-    super.handleError(err);
+    //super.handleError(err);
     console.log("AddExceptionHandler error:");
     console.log(err);
     // let modal = this.modalCtrl.create(ModalDialogComponent, {userId: 8675309});

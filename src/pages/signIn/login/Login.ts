@@ -9,32 +9,32 @@ import {DataSetting }from '../datasetting/datasetting.component';
 import {UserService }from "../../../core/UserService";
 import {ModalDialogComponent }from "./../../../core/modalDialog.component.ts";
 
-@Component( {
-  providers:[LoginAction, LoginState, LoginStore],
-  templateUrl:"login.html"
+@Component({
+  providers: [LoginAction, LoginState, LoginStore],
+  templateUrl: "login.html"
 })
 export class Login implements OnInit {
   private form:LoginRequestInterface;
-  constructor(public modalCtrl: ModalController, public navCtrl:NavController, private action:LoginAction, private state:LoginState, private store:LoginStore, private userService:UserService) {
+
+  constructor(public modalCtrl:ModalController, public navCtrl:NavController, private action:LoginAction, private state:LoginState, private store:LoginStore, private userService:UserService) {
 
   }
 
   public ngOnInit() {
-    this.form =  {email:"", password:""}
+    this.form = {email: "", password: ""}
   }
 
   public login() {
-    console.debug("login before");
-    let observable = this.action.login(this.form);
-    observable.subscribe((data) =>  {
-      if (this.userService.getLastLoginTime() == null) {
-        this.navCtrl.push(DataSetting, {"perPage" : "login"});
-      } else {
-        this.navCtrl.push(HomePage);
-      }
-      // let modal = this.modalCtrl.create(ModalDialogComponent, { userId: 8675309 });
-      // modal.present();
-    });
-
+    this.action.login(this.form).subscribe(
+      null, null,
+      () => {
+        if (this.state.success === true) {
+          if (this.userService.getLastLoginTime() === null) {
+            this.navCtrl.push(DataSetting, {"perPage": "login"});
+          } else {
+            this.navCtrl.push(HomePage);
+          }
+        }
+      });
   }
 }
