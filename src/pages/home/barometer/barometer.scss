@@ -86,3 +86,76 @@
 .fs-color-warning {color: orangered}
 
 .fs-color-dangerous {color: red}
+
+
+// common css
+
+ion-list.list {
+    ion-item {
+        background-color: white;
+    }
+    ion-list-header{   
+        background-color: cornflowerblue;
+
+        ion-label.label {
+            margin: 1px 0;
+        }
+
+        ion-thumbnail {
+            margin: 0;
+            vertical-align: middle;
+            text-align: -webkit-left;
+            align-items: flex-start;
+            align-content: center;
+            display: inline-flex;
+         img {
+            height: 52px;
+            width: auto;
+         }
+        }
+
+        div.input-wrapper {
+            font-size: large;
+            font-weight: 600;
+            color: #B3E5FC;
+            text-align: center;
+            font-style: italic;
+        }
+    }
+}
+
+ion-header ion-navbar,
+ion-header ion-toolbar{
+    button {
+            color: white;
+        }
+    ion-buttons.bar-buttons button {
+        color: white;
+    }
+
+    div.toolbar-content ion-title.title,
+     div.toolbar-content ion-title.title .toolbar-title{
+        background-color: #0288D1;
+        color: white;
+    }
+}
+
+.fs-sub-title {
+    display: inline-block;
+    background-color: cornflowerblue;
+    padding: 2px 16px;
+    font-weight: 600;
+    color: #B3E5FC;
+    font-style: italic;
+    width: 100%;
+    .sub-title-icon {
+        float: left;
+        margin-right: 10px;
+    }
+    .sub-title-text {
+        vertical-align: bottom;
+    }
+    .sub-title-icon-right {
+        float: right;
+    }
+}

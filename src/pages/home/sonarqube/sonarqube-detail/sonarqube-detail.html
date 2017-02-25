@@ -7,8 +7,8 @@
 </ion-header>
 
 <ion-content class="sonarqube-detail-page">
-    <div class="sonarqube-detail-title">
-        <ion-icon name="logo-buffer"></ion-icon><div>Weekly Vulneralilities History</div>
+    <div class="fs-sub-title">
+        <ion-icon name="logo-buffer" class="sub-title-icon"></ion-icon><div class="sub-title-text">Weekly Vulneralilities History</div>
     </div>
     <div class="sonarqube-detail-chart">
         <canvas baseChart height="200px"
@@ -19,8 +19,8 @@
                 legend="true"
                 chartType="line" *ngIf="state?.screen?.sonarqubeVulneralilitiesHistoryResponse"></canvas>
     </div>
-    <div class="sonarqube-detail-title">
-        <ion-icon name="logo-buffer"></ion-icon><div>Weekly Bugs History</div>
+    <div class="fs-sub-title">
+        <ion-icon name="logo-buffer" class="sub-title-icon"></ion-icon><div class="sub-title-text">Weekly Bugs History</div>
     </div>
     <div class="sonarqube-detail-chart">
         <canvas baseChart height="200px"
@@ -31,8 +31,8 @@
                 legend="true"
                 chartType="line" *ngIf="state?.screen?.sonarqubeBugsHistoryResponse"></canvas>
     </div>
-    <div class="sonarqube-detail-title">
-        <ion-icon name="logo-buffer"></ion-icon><div>Weekly Code Smells History</div>
+    <div class="fs-sub-title">
+        <ion-icon name="logo-buffer" class="sub-title-icon"></ion-icon><div class="sub-title-text">Weekly Code Smells History</div>
     </div>
     <div class="sonarqube-detail-chart">
         <canvas baseChart height="200px"
@@ -43,8 +43,8 @@
                 legend="true"
                 chartType="line" *ngIf="state?.screen?.sonarqubeCodeSmellsHistoryResponse"></canvas>
     </div>
-    <div class="sonarqube-detail-title">
-        <ion-icon name="logo-buffer"></ion-icon><div>Weekly LOC History</div>
+    <div class="fs-sub-title">
+        <ion-icon name="logo-buffer" class="sub-title-icon"></ion-icon><div class="sub-title-text">Weekly LOC History</div>
     </div>
     <div class="sonarqube-detail-chart">
         <canvas baseChart height="200px"
@@ -55,8 +55,8 @@
                 legend="true"
                 chartType="line" *ngIf="state?.screen?.sonarqubeLocHistoryResponse"></canvas>
     </div>
-    <div class="sonarqube-detail-title">
-        <ion-icon name="logo-buffer"></ion-icon><div>Weekly Coverage History</div>
+    <div class="fs-sub-title">
+        <ion-icon name="logo-buffer" class="sub-title-icon"></ion-icon><div class="sub-title-text">Weekly Coverage History</div>
     </div>
     <div class="sonarqube-detail-chart">
         <canvas baseChart height="200px"
