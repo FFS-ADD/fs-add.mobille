@@ -1,4 +1,4 @@
-<div class="backlog-page">
+<div class="backlog-page" *ngIf="backlogDisplayFlg || taskDisplayFlg || bugDisplayFlg || qaDisplayFlg">
     <div class="fs-sub-title">
         <ion-icon name="logo-buffer" class="sub-title-icon"></ion-icon><div class="sub-title-text">Redmine</div>
     </div>
@@ -12,7 +12,7 @@
   </div>
 </div>
 
-<ion-card class="backlog-card" *ngIf="displayFlg" >
+<ion-card class="backlog-card" *ngIf="backlogDisplayFlg" >
   <ion-item class="backlog-title">
     <ion-label class="backlog-title-name">BackLog</ion-label>
     <ion-label class="backlog-title-detail" (click)="goBackLogDetails()">

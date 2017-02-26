@@ -34,7 +34,7 @@ export class HomePage {
       (data) => {
         this.form = data.data;
         this.sq.setDisplayFlg(this.form.qualitygate,this.form.loc,this.form.coverage,this.form.duplication);
-        this.bl.setDisplayFlg(this.form.backlog);
+        this.bl.setDisplayFlg(this.form.backlog, this.form.task, this.form.bug, this.form.qa);
       });
   }
 
