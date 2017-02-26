@@ -1,24 +1,35 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar #ionNavbar>
+    <button ion-button menuToggle >
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
     <ion-title>
-      Issue Log
+      Project Overview
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="sonarqube-detail-page">
     <div class="fs-sub-title">
-        <ion-icon name="logo-buffer" class="sub-title-icon"></ion-icon><div class="sub-title-text">Issue log</div>
+        <ion-icon name="logo-buffer" class="sub-title-icon"></ion-icon><div class="sub-title-text">Project Events</div>
     </div>
     <div class="content-padding detail-3col-list">
-        <ion-row center *ngFor="let barometerDetail of barometerDetailLists">
+        <ion-row center *ngFor="let event of state?.events">
 
-            <ion-col width-10><div><ion-icon [name]="barometerDetail.detailStatusIcon"></ion-icon></div></ion-col>
-            <ion-col width-33><div>{{barometerDetail.detailData}}</div></ion-col>
+            <ion-col width-10>
+              <div>
+                <ion-icon name="happy" *ngIf="0===event.eventLevel"></ion-icon>
+                <ion-icon name="sad" *ngIf="1===event.eventLevel"></ion-icon>
+              </div>
+            </ion-col>
+            <ion-col width-33>
+              <div>{{event.eventDate}}</div>
+            </ion-col>
             <ion-col>
-            <div [style.color]="barometerDetail.detailStatusColor">
-                {{barometerDetail.detailText}}
-            </div>
+              <div [class.fs-color-normal]="0 ===event.eventLevel"
+                 [class.fs-color-dangerous]="1===event.eventLevel">
+              {{event.eventDescription}}
+             </div>
             </ion-col>
         </ion-row>
     </div>

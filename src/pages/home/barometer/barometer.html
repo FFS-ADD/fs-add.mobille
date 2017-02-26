@@ -1,37 +1,33 @@
 <div class="sonarqube-page">
     <div class="fs-sub-title">
         <ion-icon name="logo-buffer" class="sub-title-icon"></ion-icon>
-        <div class="sub-title-text">Barometer</div>
-        <div class="sub-title-text title-text-right">Last Updated Time : 2017/12/12 13:12:12</div>
+        <div class="sub-title-text">{{state?.overview?.projectName}}</div>
+        <div class="sub-title-text title-text-right">Last Updated On : {{state?.overview?.lastUpdateTime}}</div>
     </div>
     <div>
         <div class="img-bar">
-            <div class=" barometer-img-box1">
+            <div class=" barometer-img-box1" [class.project-color-shadow]="0!==state?.overview?.projectStatus">
                 <img class="barometer-img" src="../../../assets/images/barometer/qing_160_140.png">
             </div>
-            <div class=" barometer-img-box2">
+            <div class=" barometer-img-box2" [class.project-color-shadow]="1!==state?.overview?.projectStatus">
                 <img class="barometer-img" src="../../../assets/images/barometer/yin_160_140.png">
             </div>
-            <div class=" barometer-img-box3">
+            <div class=" barometer-img-box3" [class.project-color-shadow]="2!==state?.overview?.projectStatus">
                 <img class="barometer-img" src="../../../assets/images/barometer/yu_160_140.png">
             </div>
         </div>
         <div>
-            <label class="status-notice" [class.fs-color-warning]="'2'===lastStatus.statusColor" [class.fs-color-normal]="'1'===lastStatus.statusColor"
-                   [class.fs-color-dangerous]="'3'===lastStatus.statusColor">
-                <ion-icon [name]="lastStatus.faceIcon"></ion-icon>
-                <span class="notice-date">{{lastStatus.updateData}}</span><span class="notice-text">{{lastStatus.infoText}}</span>
-            </label>
-        </div>
-        <div>
-            <label class="status-notice fs-color-normal">
-                <ion-icon name="md-sad"></ion-icon>
-                <span class="notice-date">2017/12/18</span><span class="notice-text">bugfix speed is slow</span>
+            <label class="status-notice" [class.fs-color-normal]="0 ===state?.topEvent?.eventLevel"
+                   [class.fs-color-dangerous]="1===state?.topEvent?.eventLevel">
+                <ion-icon name="happy" *ngIf="0===state?.topEvent?.eventLevel"></ion-icon>
+                <ion-icon name="sad" *ngIf="1===state?.topEvent?.eventLevel"></ion-icon>
+                <span class="notice-date">{{state?.topEvent?.eventDate}}</span>
+              <span class="notice-text">{{state?.topEvent?.eventDescription}}</span>
             </label>
         </div>
         <div class="detail-bar">
             <span class="detail-bar-span">Details</span>
-            <button ion-button clear icon-only small color="dark" class="detail-bar-button" (click)="detail()">
+            <button ion-button clear icon-only small color="dark" class="detail-bar-button" (click)="goQaDetails()">
             <ion-icon name="md-more"></ion-icon>
             </button>
         </div>

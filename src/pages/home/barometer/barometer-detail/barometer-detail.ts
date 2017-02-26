@@ -1,15 +1,28 @@
-import { Component } from '@angular/core';
-import { BarometerDetailAction } from './barometer-detail.action';
+import {Component, ViewChild, OnInit} from "@angular/core";
+import {BaroMeterDetailState} from "./barometer-detail.state";
+import {BaroMeterDetailStore} from "./barometer-detail.store";
+import BarometerDetailAction from "./barometer-detail.action";
+import {Navbar} from "ionic-angular/index";
 
 @Component({
-    templateUrl: 'barometer-detail.html',
-    providers: [BarometerDetailAction]
+  selector: "barometer-detail",
+  providers: [BarometerDetailAction, BaroMeterDetailState, BaroMeterDetailStore],
+  templateUrl: "barometer-detail.html",
 })
-export class BarometerDetailPage {
+export class BaroMeterDetailsComponent implements OnInit{
 
-    public barometerDetailLists: Array<any>;
+  @ViewChild(Navbar) private navbar:Navbar;
 
-    constructor(private barometerDetail: BarometerDetailAction) {
-        this.barometerDetailLists = this.barometerDetail.Init();
-    }
+  constructor(private action: BarometerDetailAction, private state: BaroMeterDetailState, private store: BaroMeterDetailStore) {
+
+  }
+
+  public ngAfterViewInit() {
+    this.navbar.setBackButtonText("");
+  }
+
+  public ngOnInit() {
+    this.action.init();
+    console.info(this.state);
+  }
 }
