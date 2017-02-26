@@ -1,28 +1,24 @@
-import {Component, Output, EventEmitter, ViewChild }from "@angular/core"; 
-import {NavController, ViewController}from 'ionic-angular'; 
+import {Component, Output, EventEmitter, ViewChild }from "@angular/core";
+import {NavController, ViewController,NavParams }from 'ionic-angular';
 
-@Component( {
-  templateUrl:"modalDialog.html"
+@Component({
+  templateUrl: "modalDialog.html"
 })
 export class ModalDialogComponent {
-  private vm; 
-    @ViewChild("modalBackground")private backgroundElem; 
-    @Output()private submit = new EventEmitter(); 
-    private showDetail = false; 
+  private vm;
+  @ViewChild("modalBackground") private backgroundElem;
+  @Output() private submit = new EventEmitter();
+  private message;
 
-    constructor(private viewCtrl:ViewController) {
-    }
+  constructor(private viewCtrl:ViewController, private params: NavParams) {
+    this.message = this.params.get("message");
+  }
 
-      private close() {
-        this.viewCtrl.dismiss(); 
-    }
+  private close() {
+    this.viewCtrl.dismiss();
+  }
 
-    private isOutsideClicked(event) {
-      // console.debug("aaaaa");
-      //   console.debug(this.backgroundElem);
-      //   let backgroundNativeElem = this.backgroundElem.elementRef.nativeElement; 
-      //   if (event.target === backgroundNativeElem || event.target === backgroundNativeElem.firstChild) {
-            this.close(); 
-        // }
-    }
+  private isOutsideClicked(event) {
+    this.close();
+  }
 }

@@ -1,13 +1,13 @@
 import { Injectable, ErrorHandler } from "@angular/core";
 import { IonicErrorHandler } from 'ionic-angular';
-import { BusinessFailureException } from "./BusinessFailureException";
+import { ServerException } from "./ServerException";
 import {ModalDialogComponent} from "./modalDialog.component";
-import {ModalController} from "ionic-angular/index";
+import {ModalController, NavParams } from "ionic-angular";
 
 @Injectable()
 export class AddExceptionHandler extends IonicErrorHandler implements ErrorHandler {
 
-  constructor(public modalCtrl: ModalController){
+  constructor(public modalCtrl:ModalController) {
     super();
   }
 
@@ -15,7 +15,10 @@ export class AddExceptionHandler extends IonicErrorHandler implements ErrorHandl
     //super.handleError(err);
     console.log("AddExceptionHandler error:");
     console.log(err);
-    // let modal = this.modalCtrl.create(ModalDialogComponent, {userId: 8675309});
-    // modal.present();
+    if (err.message && err.message.status == 401) {
+      let message = "Invalid user.";
+      let modal = this.modalCtrl.create(ModalDialogComponent, {message: message}, {});
+      modal.present({ });
+    }
   }
 }

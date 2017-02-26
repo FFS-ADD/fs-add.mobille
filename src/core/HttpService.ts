@@ -1,14 +1,15 @@
 import { Injectable } from "@angular/core";
 import { Http, Response, URLSearchParams, Headers } from "@angular/http";
-import { BusinessFailureException } from "./BusinessFailureException";
+import { ServerException } from "./ServerException";
 import "rxjs/add/operator/map";
 import { AppConfig } from "../config/app.config";
 import {Observable} from "rxjs/Observable";
 import {Observer} from "rxjs/Observer";
+import {UserService} from "./UserService";
 
 @Injectable()
 export class HttpService {
-  constructor(private http:Http) {
+  constructor(private http:Http, private user:UserService) {
   }
 
   private getRequest(url:string, data?:Object) {
@@ -16,6 +17,8 @@ export class HttpService {
     headers.append("Content-Type", "application/json");
 
     let parameters = new URLSearchParams();
+    let accessToken = this.user.getAccessToken();
+    if (accessToken) parameters.set("access_token", accessToken);
     Object.keys(data).map((k) => {
       if (data.hasOwnProperty(k)) {
         parameters.set(k, data[k]);
@@ -36,7 +39,7 @@ export class HttpService {
         },
         (error) => {
           console.debug("error occurred.");
-          throw new BusinessFailureException(error);
+          throw new ServerException(error);
         });
     });
 
@@ -55,11 +58,18 @@ export class HttpService {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
 
+    let parameters = new URLSearchParams();
+    let accessToken = this.user.getAccessToken();
+    if (accessToken) parameters.set("access_token", accessToken);
+
     let observable = Observable.create(observer => {
       this.http.post(
         AppConfig.apiURL + url,
         JSON.stringify(data),
-        {headers: headers}
+        {
+          headers: headers,
+          search: parameters
+        }
       ).map((res:Response) => {
         console.debug("http request completed: " + url);
         return res.json();
@@ -70,7 +80,7 @@ export class HttpService {
         },
         (error) => {
           console.debug("error occurred.");
-          throw new BusinessFailureException(error);
+          throw new ServerException(error);
         });
     });
 
