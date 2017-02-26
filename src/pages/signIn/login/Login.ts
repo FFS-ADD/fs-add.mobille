@@ -29,7 +29,10 @@ export class Login implements OnInit {
       null, null,
       () => {
         if (this.state.success === true) {
-          if (this.userService.getLastLoginTime() === null) {
+          console.log(this.userService.getLastLoginTime());
+          if (this.userService.getLastLoginTime() == null
+          || this.userService.getLastLoginTime() == undefined
+          || this.userService.getLastLoginTime() == '') {
             this.navCtrl.push(DataSetting, {"perPage": "login"});
           } else {
             this.navCtrl.push(HomePage);
