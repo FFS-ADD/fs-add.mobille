@@ -30,6 +30,7 @@ export class Login implements OnInit {
 
   public login() {
     this.form.grant_type = "password";
+    this.action.clear();
     this.action.login(this.form).subscribe(
       null, null,
       () => {

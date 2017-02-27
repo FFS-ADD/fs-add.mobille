@@ -18,4 +18,8 @@ export default class LoginAction {
       });
     return observable;
   }
+
+  public clear(){
+    this.dispatcher.dispatch(LoginActionType.CLEAR, null);
+  }
 }

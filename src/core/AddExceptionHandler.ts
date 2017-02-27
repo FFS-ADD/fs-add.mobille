@@ -17,12 +17,12 @@ export class AddExceptionHandler extends IonicErrorHandler implements ErrorHandl
     //super.handleError(err);
     console.debug("AddExceptionHandler error:");
     console.debug(err);
-    if (err.message && err.message.status == 400) {
+    if (err.message && err.message.status == 401) {
       let message = "The password is incorrect";
       let modal = this.modalCtrl.create(ModalDialogComponent, {message: message}, {});
       modal.present();
-    } else if (err.message && err.message.status == 401) {
-      let message = "ClientID is invalid";
+    } else if (err.message && err.message.status == 400) {
+      let message = "Authorization failed.";
       let modal = this.modalCtrl.create(ModalDialogComponent, {message: message}, {});
       modal.present()
       // modal.present();.then((d) => {
