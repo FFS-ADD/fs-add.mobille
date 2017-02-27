@@ -24,9 +24,11 @@ export class LoginStore {
       this.userService.setRefreshToken(this.state.response.refresh_token);
       this.userService.setExpiresIn(this.state.response.expires_in);
       this.userService.setScope(this.state.response.scope);
+      this.userService.setLastLoginTime(this.state.response.lastLoginTime);
       this.userService.storeToken();
     } else {
       this.state.success = false;
+      this.userService.setAccessToken(null);
     }
   }
 }

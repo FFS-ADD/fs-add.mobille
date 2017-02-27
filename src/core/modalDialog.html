@@ -1,7 +1,15 @@
-<ion-content #modalBackground id="modal-background" class="modal-dialog modal transparent" (click)="isOutsideClicked($event)">
+<ion-content #modalBackground id="modal-background" class="modal-dialog modal transparent">
     <div class="modal-box">
         <ion-title>
-            新規イベント作成
+            Error
         </ion-title>
+    </div>
+    <div class=modal-message>
+        {{message}}
+    </div>
+    <div class="modal-button">
+        <button class="button round-button" (click)="close()">
+      <span>OK</span>
+    </button>
     </div>
 </ion-content>

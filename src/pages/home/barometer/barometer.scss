@@ -87,6 +87,8 @@
 
 .fs-color-dangerous {color: red}
 
+.project-color-shadow {filter: brightness(50%)}
+
 
 // common css
 
@@ -94,7 +96,7 @@ ion-list.list {
     ion-item {
         background-color: white;
     }
-    ion-list-header{   
+    ion-list-header{
         background-color: cornflowerblue;
 
         ion-label.label {

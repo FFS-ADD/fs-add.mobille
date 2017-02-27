@@ -24,13 +24,13 @@ export class DataSetting implements OnInit {
       this.form = {
         email: this.userService.getMail(),
         backlog: true,
-        task: false,
-        bug: false,
-        qa: false,
-        qualitygate: false,
-        loc: false,
-        coverage: false,
-        duplication: false
+        task: true,
+        bug: true,
+        qa: true,
+        qualitygate: true,
+        loc: true,
+        coverage: true,
+        duplication: true
       }
     } else if (this.navParams.get('perPage') == 'setting'){
       this.form = {

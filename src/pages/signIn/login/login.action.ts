@@ -10,8 +10,8 @@ export default class LoginAction {
 
   public login(form) {
     console.debug("login action start.");
-    //let observable = this.httpService.post('/auth/login', form);
-    let observable = this.httpService.getFakeData('/assets/data/signIn/login.json', form);
+    let observable = this.httpService.post('/oauth/token', form);
+    // let observable = this.httpService.getFakeData('/assets/data/signIn/login.json', form);
     observable.subscribe(
       (data) => {
         this.dispatcher.dispatch(LoginActionType.LOGIN, data);

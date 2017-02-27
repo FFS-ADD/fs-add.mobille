@@ -25,9 +25,9 @@ import {TaskDetailsComponent} from "../pages/redmine/taskDetails/taskDetails";
 import {QaComponent} from "../pages/redmine/qa/qa";
 import {QaDetailsComponent} from "../pages/redmine/qaDetails/qaDetails";
 import { NumberFormatPipe } from '../providers/pipes';
-import { BarometerComponent } from '../pages/home/barometer/barometer.component';
-import { BarometerDetailPage } from '../pages/home/barometer/barometer-detail/barometer-detail';
-import {LocalStorageService} from "../core/LocalStorageService";
+import { BaroMeterComponent } from '../pages/home/barometer/barometer';
+import { BaroMeterDetailsComponent } from '../pages/home/barometer/barometer-detail/barometer-detail';
+import {StorageService} from "../core/StorageService";
 
 @NgModule({
   declarations: [
@@ -47,8 +47,8 @@ import {LocalStorageService} from "../core/LocalStorageService";
     QaComponent,
     QaDetailsComponent,
     NumberFormatPipe,
-    BarometerComponent,
-    BarometerDetailPage,
+    BaroMeterComponent,
+    BaroMeterDetailsComponent,
     ModalDialogComponent
   ],
   imports: [
@@ -73,8 +73,8 @@ import {LocalStorageService} from "../core/LocalStorageService";
     TaskDetailsComponent,
     QaComponent,
     QaDetailsComponent,
-    BarometerComponent,
-    BarometerDetailPage,
+    BaroMeterComponent,
+    BaroMeterDetailsComponent,
     ModalDialogComponent
   ],
   providers: [{ provide: ErrorHandler, useClass: AddExceptionHandler }, { provide: APP_CONFIG, useValue: AppConfig },
@@ -82,7 +82,7 @@ import {LocalStorageService} from "../core/LocalStorageService";
     Dispatcher,
     HttpService,
     UserService,
-    LocalStorageService
+    StorageService
   ]
 })
 export class AppModule { }

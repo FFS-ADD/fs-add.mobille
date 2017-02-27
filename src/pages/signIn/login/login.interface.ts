@@ -4,9 +4,11 @@ export interface LoginResponseInterface {
   token_type: string;
   expires_in: number;
   scope: string;
+  lastLoginTime: string;
 }
 
 export interface LoginRequestInterface {
-    email: string;
-    password: string;
+  email: string;
+  password: string;
+  grant_type: string;
 }

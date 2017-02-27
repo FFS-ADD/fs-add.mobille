@@ -11,15 +11,21 @@ import {BackLogDetailComponent} from "../backlogDetails/backlog-detail";
   templateUrl: "backlog-master.html",
 })
 export class BackLogComponent {
-  private displayFlg: string;
+  private backlogDisplayFlg:boolean;
+  private taskDisplayFlg:boolean;
+  private bugDisplayFlg:boolean;
+  private qaDisplayFlg:boolean;
   constructor(public events: Events, private action: BackLogMasterAction, private state: BackLogMasterState, private store: BackLogMasterStore, public navCtrl: NavController) {
     this.action.init();
 
     this.listenHomeEvents();
   }
 
-  public setDisplayFlg(displayFlg){
-    this.displayFlg = displayFlg; 
+  public setDisplayFlg(backlogDisplayFlg:boolean, taskDisplayFlg:boolean, bugDisplayFlg:boolean, qaDisplayFlg:boolean){
+    this.backlogDisplayFlg = backlogDisplayFlg;
+    this.taskDisplayFlg = taskDisplayFlg; 
+    this.bugDisplayFlg = bugDisplayFlg; 
+    this.qaDisplayFlg = qaDisplayFlg;  
   }
 
   public goBackLogDetails() {

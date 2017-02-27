@@ -5,6 +5,7 @@
          "token_type": "bearer",
          "refresh_token": "126f009e-bd33-4ee5-8d16-7cbacd0907b9",
          "expires_in": 119,
-         "scope": "read write trust"
+         "scope": "read write trust",
+         "lastLoginTime": "2017-12-12 12:12:12.000"
      }
  }
