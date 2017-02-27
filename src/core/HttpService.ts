@@ -54,10 +54,23 @@ export class HttpService {
     return this.getRequest(AppConfig.apiURL + url, data);
   }
 
-  public post(url: string, data ?: any) {
+  public post(url: string, data ?: any, useJson?: boolean) {
     let headers = new Headers();
-    headers.append("Content-Type", "application/json");
     headers.append("Authorization", "Basic " + AppConfig.authKey);
+
+    let bodyData;
+    if (useJson === true) {
+      headers.append("Content-Type", "application/x-www-form-urlencoded");
+      bodyData = new URLSearchParams();
+      Object.keys(data).map((k) => {
+        if (data.hasOwnProperty(k)) {
+          bodyData.set(k, data[k]);
+        }
+      });
+    } else {
+      headers.append("Content-Type", "application/json");
+      bodyData = JSON.stringify(data);
+    }
 
     let parameters = new URLSearchParams();
     let accessToken = this.user.getAccessToken();
@@ -66,7 +79,7 @@ export class HttpService {
     let observable = Observable.create(observer => {
       this.http.post(
         AppConfig.apiURL + url,
-        JSON.stringify(data),
+        bodyData,
         {
           headers: headers,
           search: parameters

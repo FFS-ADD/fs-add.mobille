@@ -11,10 +11,10 @@
             <img src="../../../assets/images/signIn/welcome.jpeg">
         </ion-item>
         <ion-item class="login-item item-input">
-            <ion-input type="text" class="login-email-icon" [(ngModel)]="form.email" placeholder="please input your email"></ion-input>
+            <ion-input type="text" class="login-email-icon" [(ngModel)]="form.username" placeholder="please input your email"></ion-input>
         </ion-item>
         <ion-item class="login-item item-input">
-            <ion-input type="password" class="login-password-before-icon login-password-after-icon" [(ngModel)]="form.password" placeholder="please input your password"></ion-input>
+            <ion-input type="password" class="login-password-before-icon login-password-after-icon-none" [(ngModel)]="form.password" placeholder="please input your password"></ion-input>
         </ion-item>
         <div class="login-button">
             <button class="button round-button" (click)="login()">
