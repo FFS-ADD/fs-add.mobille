@@ -1,11 +1,12 @@
 import { Injectable } from "@angular/core";
 
 @Injectable()
-export class LocalStorageService {
+export class StorageService {
   private storage: any;
 
   constructor() {
-    this.storage = localStorage;
+    // this.storage = localStorage;
+    this.storage = sessionStorage;
   }
 
   public get(key: string): any {

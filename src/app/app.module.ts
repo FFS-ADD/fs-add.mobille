@@ -27,7 +27,7 @@ import {QaDetailsComponent} from "../pages/redmine/qaDetails/qaDetails";
 import { NumberFormatPipe } from '../providers/pipes';
 import { BaroMeterComponent } from '../pages/home/barometer/barometer';
 import { BaroMeterDetailsComponent } from '../pages/home/barometer/barometer-detail/barometer-detail';
-import {LocalStorageService} from "../core/LocalStorageService";
+import {StorageService} from "../core/StorageService";
 
 @NgModule({
   declarations: [
@@ -82,7 +82,7 @@ import {LocalStorageService} from "../core/LocalStorageService";
     Dispatcher,
     HttpService,
     UserService,
-    LocalStorageService
+    StorageService
   ]
 })
 export class AppModule { }

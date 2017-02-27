@@ -8,6 +8,7 @@ export interface LoginResponseInterface {
 }
 
 export interface LoginRequestInterface {
-    email: string;
-    password: string;
+  email: string;
+  password: string;
+  grant_type: string;
 }

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { LocalStorageService } from "./LocalStorageService";
+import { StorageService } from "./StorageService";
 
 export interface TokenInterface {
   accessToken: string;
@@ -31,11 +31,14 @@ export class UserService {
     lastLoginTime: null
   };
 
-  constructor(private storageService: LocalStorageService) {
+  constructor(private storageService: StorageService) {
     let t = this.storageService.get('token');
     let u = this.storageService.get('user');
     this.token = t ? t : this.token;
     this.user = u ? u : this.user;
+    console.debug("UserService.constructor")
+    console.debug(t);
+    console.debug(u);
   }
 
   public storeToken() {
@@ -91,7 +94,7 @@ export class UserService {
   }
 
   public getMail(): string {
-    return "email";
+    return this.user.mail;
   }
 
   public setName(name: string) {

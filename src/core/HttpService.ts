@@ -1,20 +1,20 @@
-import { Injectable } from "@angular/core";
-import { Http, Response, URLSearchParams, Headers } from "@angular/http";
-import { ServerException } from "./ServerException";
+import {Injectable} from "@angular/core";
+import {Http, Response, URLSearchParams, Headers} from "@angular/http";
+import {ServerException} from "./ServerException";
 import "rxjs/add/operator/map";
-import { AppConfig } from "../config/app.config";
+import {AppConfig} from "../config/app.config";
 import {Observable} from "rxjs/Observable";
-import {Observer} from "rxjs/Observer";
 import {UserService} from "./UserService";
 
 @Injectable()
 export class HttpService {
-  constructor(private http:Http, private user:UserService) {
+  constructor(private http: Http, private user: UserService) {
   }
 
-  private getRequest(url:string, data?:Object) {
+  private getRequest(url: string, data?: Object) {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
+    headers.append("Authorization", "Basic " + AppConfig.authKey);
 
     let parameters = new URLSearchParams();
     let accessToken = this.user.getAccessToken();
@@ -29,7 +29,7 @@ export class HttpService {
       this.http.get(url, {
         search: parameters,
         headers: headers
-      }).map((res:Response) => {
+      }).map((res: Response) => {
         console.debug("http request completed: " + url);
         return res.json();
       }).subscribe(
@@ -46,17 +46,18 @@ export class HttpService {
     return observable.share();
   }
 
-  public getFakeData(url:string, data ?:Object) {
+  public getFakeData(url: string, data ?: Object) {
     return this.getRequest(url, data);
   }
 
-  public get(url:string, data ?:Object) {
+  public get(url: string, data ?: Object) {
     return this.getRequest(AppConfig.apiURL + url, data);
   }
 
-  public post(url:string, data ?:any) {
+  public post(url: string, data ?: any) {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
+    headers.append("Authorization", "Basic " + AppConfig.authKey);
 
     let parameters = new URLSearchParams();
     let accessToken = this.user.getAccessToken();
@@ -70,7 +71,7 @@ export class HttpService {
           headers: headers,
           search: parameters
         }
-      ).map((res:Response) => {
+      ).map((res: Response) => {
         console.debug("http request completed: " + url);
         return res.json();
       }).subscribe(

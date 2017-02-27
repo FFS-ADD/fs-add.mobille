@@ -28,6 +28,7 @@ export class LoginStore {
       this.userService.storeToken();
     } else {
       this.state.success = false;
+      this.userService.setAccessToken(null);
     }
   }
 }

@@ -4,6 +4,7 @@ export let APP_CONFIG = new OpaqueToken("app.config");
 
 export interface IAppConfig {
   apiURL: string;
+  authKey: string;
   webapiProjectOverview:string;
   webapiProjectEventsTop:string;
   webapiProjectEventsAll:string;
@@ -26,6 +27,7 @@ export interface IAppConfig {
 
 export const AppConfig:IAppConfig = {
   //apiURL: 'http://localhost:9090/add-api',
+  authKey: "ZnMtYWRkLm1vYmlsZToxMjM0NTY3ODkw",
   apiURL: '/boot',
   webapiProjectOverview: '/project/overview',
   webapiProjectEventsTop: '/project/events/top',
