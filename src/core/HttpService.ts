@@ -59,7 +59,7 @@ export class HttpService {
     headers.append("Authorization", "Basic " + AppConfig.authKey);
 
     let bodyData;
-    if (useJson === true) {
+    if (useJson === false) {
       headers.append("Content-Type", "application/x-www-form-urlencoded");
       bodyData = new URLSearchParams();
       Object.keys(data).map((k) => {
