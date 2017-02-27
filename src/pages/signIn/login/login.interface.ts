@@ -5,6 +5,17 @@ export interface LoginResponseInterface {
   expires_in: number;
   scope: string;
   lastLoginTime: string;
+  user: UserInterface;
+}
+
+export interface UserInterface {
+  email: string;
+  role: string;
+  avatar: string;
+  firstName: string;
+  lastName: string;
+  project: string;
+  status: string;
 }
 
 export interface LoginRequestInterface {

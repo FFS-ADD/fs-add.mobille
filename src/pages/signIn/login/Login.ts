@@ -36,14 +36,14 @@ export class Login implements OnInit {
       () => {
         if (this.state.success === true) {
           this.userService.setUsername(this.form.username);
-          console.log(this.userService.getLastLoginTime());
-          if (this.userService.getLastLoginTime() == null
-            || this.userService.getLastLoginTime() == undefined
-            || this.userService.getLastLoginTime() == '') {
-            this.navCtrl.push(DataSetting, {"perPage": "login"});
-          } else {
-            this.navCtrl.push(HomePage);
-          }
+          let observable = this.action.getUser(this.form.username); 
+          observable.subscribe((data) =>  {
+              if (this.userService.getStatus() !== '1') {
+                this.navCtrl.push(DataSetting, {"perPage": "login"});
+              } else {
+                this.navCtrl.push(HomePage);
+            }
+          })
         }
       });
   }

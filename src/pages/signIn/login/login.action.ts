@@ -22,4 +22,14 @@ export default class LoginAction {
   public clear(){
     this.dispatcher.dispatch(LoginActionType.CLEAR, null);
   }
+
+  public getUser(email) {
+    let observable = this.httpService.get('/user/get', {'email' : email});
+     observable.subscribe(
+      (data) => {
+        this.dispatcher.dispatch(LoginActionType.USER, data);
+      });
+
+    return observable;
+  }
 }

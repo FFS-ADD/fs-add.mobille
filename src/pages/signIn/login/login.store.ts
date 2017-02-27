@@ -16,6 +16,11 @@ export class LoginStore {
         type: LoginActionType.CLEAR,
         instance: this,
         handler: this.clear
+      },
+      {
+        type: LoginActionType.USER,
+        instance: this,
+        handler: this.getUser
       });
   }
 
@@ -30,7 +35,6 @@ export class LoginStore {
     this.userService.setRefreshToken(this.state.response.refresh_token);
     this.userService.setExpiresIn(this.state.response.expires_in);
     this.userService.setScope(this.state.response.scope);
-    this.userService.setLastLoginTime(this.state.response.lastLoginTime);
     this.userService.storeToken();
 
   }
@@ -39,5 +43,16 @@ export class LoginStore {
     this.state.success = false;
     this.userService.setAccessToken(null);
     this.userService.storeToken();
+  }
+
+  public getUser(data) {
+    this.state.response.user = data.data;
+    this.userService.setUsername(this.state.response.user.email);
+    this.userService.setName(this.state.response.user.lastName + " " + this.state.response.user.firstName);
+    this.userService.setAvatar(this.state.response.user.avatar);
+    this.userService.setRole(this.state.response.user.role);
+    this.userService.setProject(this.state.response.user.project);
+    this.userService.setStatus(this.state.response.user.status);
+    this.userService.storeUser();
   }
 }

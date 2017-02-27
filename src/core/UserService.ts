@@ -12,7 +12,10 @@ export interface TokenInterface {
 export interface UserInterface {
   username: string;
   name: string;
-  lastLoginTime: string;
+  role: string;
+  avatar: string;
+  project: string;
+  status: string;
 }
 
 @Injectable()
@@ -28,7 +31,10 @@ export class UserService {
   private user: UserInterface = {
     username: null,
     name: null,
-    lastLoginTime: null
+    role: null,
+    avatar: null,
+    project: null,
+    status:null
   };
 
   constructor(private storageService: StorageService) {
@@ -105,11 +111,35 @@ export class UserService {
     return this.user.name;
   }
 
-  public setLastLoginTime(lastLoginTime) {
-    this.user.lastLoginTime = lastLoginTime;
+  public setRole(role) {
+    this.user.role = role;
   }
 
-  public getLastLoginTime(): string {
-    return this.user.lastLoginTime;
+  public getRole(): string {
+    return this.user.role;
+  }
+
+  public setAvatar(avatar) {
+    this.user.avatar = avatar;
+  }
+
+  public getAvatar(): string {
+    return this.user.avatar;
+  }
+
+  public setProject(project) {
+    this.user.project = project;
+  }
+
+  public getProject(): string {
+    return this.user.project;
+  }
+
+  public setStatus(status) {
+    this.user.status = status;
+  }
+
+  public getStatus(): string {
+    return this.user.status;
   }
 }
