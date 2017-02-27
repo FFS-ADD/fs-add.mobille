@@ -13,7 +13,7 @@ export class HomeService {
     dataList: Subject<any[]> = new BehaviorSubject<any[]>(optionsInitialState);
 
     constructor(private resourceService: ResourceService, private httpService: HttpService, @Inject(APP_CONFIG) private config: IAppConfig) {
-     
+
     }
 
     getImageList(): void {

@@ -35,6 +35,7 @@ export class Login implements OnInit {
       null, null,
       () => {
         if (this.state.success === true) {
+          this.userService.setUsername(this.form.username);
           console.log(this.userService.getLastLoginTime());
           if (this.userService.getLastLoginTime() == null
             || this.userService.getLastLoginTime() == undefined

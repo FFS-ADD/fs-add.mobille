@@ -10,7 +10,7 @@ export interface TokenInterface {
 }
 
 export interface UserInterface {
-  mail: string;
+  username: string;
   name: string;
   lastLoginTime: string;
 }
@@ -26,7 +26,7 @@ export class UserService {
   };
 
   private user: UserInterface = {
-    mail: null,
+    username: null,
     name: null,
     lastLoginTime: null
   };
@@ -89,12 +89,12 @@ export class UserService {
     this.token.scope = scope;
   }
 
-  public setMail(mail: string) {
-    this.user.mail = mail;
+  public setUsername(username: string) {
+    this.user.username = username;
   }
 
-  public getMail(): string {
-    return this.user.mail;
+  public getUsername(): string {
+    return this.user.username;
   }
 
   public setName(name: string) {

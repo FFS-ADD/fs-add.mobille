@@ -29,7 +29,7 @@ export class HomePage {
 
   constructor(public events: Events, public navCtrl: NavController,
     private homeService: HomeService, private userService: UserService) {
-      let observable = this.homeService.getInitDataSetting(this.userService.getMail());
+      let observable = this.homeService.getInitDataSetting(this.userService.getUsername());
       observable.subscribe(
       (data) => {
         this.form = data.data;

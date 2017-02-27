@@ -22,7 +22,7 @@ export class DataSetting implements OnInit {
   public ngOnInit() {
     if (this.navParams.get('perPage') == 'login'){
       this.form = {
-        email: this.userService.getMail(),
+        email: this.userService.getUsername(),
         backlog: true,
         task: true,
         bug: true,
@@ -34,7 +34,7 @@ export class DataSetting implements OnInit {
       }
     } else if (this.navParams.get('perPage') == 'setting'){
       this.form = {
-        email: this.userService.getMail(),
+        email: this.userService.getUsername(),
         backlog: false,
         task: false,
         bug: false,
@@ -44,13 +44,13 @@ export class DataSetting implements OnInit {
         coverage: false,
         duplication: false
       }
-      let observable = this.action.init(this.form.email); 
+      let observable = this.action.init(this.form.email);
       observable.subscribe((data) =>  {
           this.form = this.state.response;
       })
     } else {
        this.form = {
-        email: this.userService.getMail(),
+        email: this.userService.getUsername(),
         backlog: false,
         task: false,
         bug: false,
