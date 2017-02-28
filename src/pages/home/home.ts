@@ -29,6 +29,7 @@ export class HomePage {
 
   constructor(public events: Events, public navCtrl: NavController,
     private homeService: HomeService, private userService: UserService) {
+      this.events.publish('home:getuserinfo');
       let observable = this.homeService.getInitDataSetting(this.userService.getUsername());
       observable.subscribe(
       (data) => {
