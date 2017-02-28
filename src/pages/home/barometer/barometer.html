@@ -6,15 +6,24 @@
     </div>
     <div>
         <div class="img-bar">
-            <div class=" barometer-img-box1" [class.project-color-shadow]="0!==state?.overview?.projectStatus">
+            <div class=" barometer-img-box1" *ngIf="0===state?.overview?.projectStatus">
                 <img class="barometer-img" src="../../../assets/images/barometer/qing_160_140.png">
             </div>
-            <div class=" barometer-img-box2" [class.project-color-shadow]="1!==state?.overview?.projectStatus">
+          <div class=" barometer-img-box1" *ngIf ="0!==state?.overview?.projectStatus">
+            <img class="barometer-img" src="../../../assets/images/barometer/qing_160_140_false.png">
+          </div>
+          <div class=" barometer-img-box2" *ngIf="1==state?.overview?.projectStatus">
                 <img class="barometer-img" src="../../../assets/images/barometer/yin_160_140.png">
-            </div>
-            <div class=" barometer-img-box3" [class.project-color-shadow]="2!==state?.overview?.projectStatus">
+          </div>
+          <div class=" barometer-img-box2" *ngIf="1!==state?.overview?.projectStatus">
+            <img class="barometer-img" src="../../../assets/images/barometer/yin_160_140_false.png">
+          </div>
+            <div class=" barometer-img-box3" *ngIf="2===state?.overview?.projectStatus">
                 <img class="barometer-img" src="../../../assets/images/barometer/yu_160_140.png">
             </div>
+          <div class=" barometer-img-box3" *ngIf="2!==state?.overview?.projectStatus">
+            <img class="barometer-img" src="../../../assets/images/barometer/yu_160_140_false.png">
+          </div>
         </div>
         <div>
             <label class="status-notice" [class.fs-color-normal]="0 ===state?.topEvent?.eventLevel"
