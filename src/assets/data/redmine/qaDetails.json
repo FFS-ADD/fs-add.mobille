@@ -1,78 +1,219 @@
- {
-     "status": 1,
-     "data": {
-         "qaHistory": [{
-                 "date": "2/9",
-                 "new": 10,
-                 "inProgress": 20,
-                 "closed": 40,
-                 "overdue": 80
-             },
-             {
-                 "date": "2/10",
-                 "new": 22,
-                 "inProgress": 40,
-                 "closed": 18,
-                 "overdue": 70
-             },
-             {
-                 "date": "2/11",
-                 "new": 22,
-                 "inProgress": 40,
-                 "closed": 60,
-                 "overdue": 28
-             },
-             {
-                 "date": "2/11",
-                 "new": 32,
-                 "inProgress": 50,
-                 "closed": 40,
-                 "overdue": 28
-             },
-             {
-                 "date": "2/12",
-                 "new": 12,
-                 "inProgress": 40,
-                 "closed": 8,
-                 "overdue": 90
-             }
-         ],
-         "overdueQaList": [{
-                 "id": "2019",
-                 "ticket": "Coding UserController a",
-                 "owner": "Wei.Zhang",
-                 "exceptedAnswerDate": "2017/01/20"
-             },
-             {
-                 "id": "2020",
-                 "ticket": "Coding UserController b",
-                 "owner": "Dehua.liu",
-                 "exceptedAnswerDate": "2017/01/21"
-             },
-             {
-                 "id": "2021",
-                 "ticket": "Coding UserController c",
-                 "owner": "Xueyou.zhang",
-                 "exceptedAnswerDate": "2017/01/22"
-             },
-             {
-                 "id": "2069",
-                 "ticket": "Coding UserController jjjjjjjjjjjjjjjjjjj ffffffffffffffffffffffffff feeeeeeeeeeeeee",
-                 "owner": "Wei.Zhang",
-                 "exceptedAnswerDate": "2017/01/15"
-             },
-             {
-                 "id": "2019",
-                 "ticket": "Coding UserController",
-                 "owner": "Wei.Zhang",
-                 "exceptedAnswerDate": "2017/01/21"
-             },
-             {
-                 "id": "2019",
-                 "ticket": "Coding UserController",
-                 "owner": "Wei.Zhang",
-                 "exceptedAnswerDate": "2017/01/21"
-             }
-         ]
-     }
- }
+{
+  "msgList": [],
+  "status": 1,
+  "errorCause": 0,
+  "errorLocation": 0,
+  "data": {
+    "qaHistory": [
+      {
+        "day": {
+          "year": 2017,
+          "month": "FEBRUARY",
+          "dayOfMonth": 24,
+          "dayOfWeek": "FRIDAY",
+          "era": "CE",
+          "dayOfYear": 55,
+          "leapYear": false,
+          "monthValue": 2,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "date": "02/24",
+        "new": 3,
+        "inProgress": 0,
+        "overdue": 3,
+        "closed": 0
+      },
+      {
+        "day": {
+          "year": 2017,
+          "month": "FEBRUARY",
+          "dayOfMonth": 25,
+          "dayOfWeek": "SATURDAY",
+          "era": "CE",
+          "dayOfYear": 56,
+          "leapYear": false,
+          "monthValue": 2,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "date": "02/25",
+        "new": 3,
+        "inProgress": 0,
+        "overdue": 3,
+        "closed": 0
+      },
+      {
+        "day": {
+          "year": 2017,
+          "month": "FEBRUARY",
+          "dayOfMonth": 26,
+          "dayOfWeek": "SUNDAY",
+          "era": "CE",
+          "dayOfYear": 57,
+          "leapYear": false,
+          "monthValue": 2,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "date": "02/26",
+        "new": 3,
+        "inProgress": 0,
+        "overdue": 3,
+        "closed": 0
+      },
+      {
+        "day": {
+          "year": 2017,
+          "month": "FEBRUARY",
+          "dayOfMonth": 27,
+          "dayOfWeek": "MONDAY",
+          "era": "CE",
+          "dayOfYear": 58,
+          "leapYear": false,
+          "monthValue": 2,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "date": "02/27",
+        "new": 3,
+        "inProgress": 0,
+        "overdue": 3,
+        "closed": 0
+      },
+      {
+        "day": {
+          "year": 2017,
+          "month": "FEBRUARY",
+          "dayOfMonth": 28,
+          "dayOfWeek": "TUESDAY",
+          "era": "CE",
+          "dayOfYear": 59,
+          "leapYear": false,
+          "monthValue": 2,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "date": "02/28",
+        "new": 3,
+        "inProgress": 0,
+        "overdue": 3,
+        "closed": 1
+      },
+      {
+        "day": {
+          "year": 2017,
+          "month": "MARCH",
+          "dayOfMonth": 1,
+          "dayOfWeek": "WEDNESDAY",
+          "era": "CE",
+          "dayOfYear": 60,
+          "leapYear": false,
+          "monthValue": 3,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "date": "03/01",
+        "new": 0,
+        "inProgress": 0,
+        "overdue": 0,
+        "closed": 0
+      },
+      {
+        "day": {
+          "year": 2017,
+          "month": "MARCH",
+          "dayOfMonth": 2,
+          "dayOfWeek": "THURSDAY",
+          "era": "CE",
+          "dayOfYear": 61,
+          "leapYear": false,
+          "monthValue": 3,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "date": "03/02",
+        "new": 0,
+        "inProgress": 0,
+        "overdue": 0,
+        "closed": 0
+      }
+    ],
+    "overdueQaList": [
+      {
+        "expectedAnswerOn": {
+          "year": 2017,
+          "month": "FEBRUARY",
+          "dayOfMonth": 22,
+          "dayOfWeek": "WEDNESDAY",
+          "era": "CE",
+          "dayOfYear": 53,
+          "leapYear": false,
+          "monthValue": 2,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "id": 23,
+        "exceptedAnswerDate": "2017/02/22",
+        "ticket": "How to build the hybrid app",
+        "owner": "ChangSheng Liu"
+      },
+      {
+        "expectedAnswerOn": {
+          "year": 2017,
+          "month": "FEBRUARY",
+          "dayOfMonth": 23,
+          "dayOfWeek": "THURSDAY",
+          "era": "CE",
+          "dayOfYear": 54,
+          "leapYear": false,
+          "monthValue": 2,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "id": 24,
+        "exceptedAnswerDate": "2017/02/23",
+        "ticket": "How to build the hybrid app",
+        "owner": "ChangSheng Liu"
+      },
+      {
+        "expectedAnswerOn": {
+          "year": 2017,
+          "month": "FEBRUARY",
+          "dayOfMonth": 23,
+          "dayOfWeek": "THURSDAY",
+          "era": "CE",
+          "dayOfYear": 54,
+          "leapYear": false,
+          "monthValue": 2,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "id": 22,
+        "exceptedAnswerDate": "2017/02/23",
+        "ticket": "How to do the auth2 cerficicatons ",
+        "owner": "XiaoDong Deng"
+      }
+    ]
+  }
+}

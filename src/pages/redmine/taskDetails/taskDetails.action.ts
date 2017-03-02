@@ -11,8 +11,8 @@ export default class TaskDetailsAction {
   }
 
   public init() {
-    //let observable = this.httpService.getFakeData('/assets/data/redmine/taskDetails.json', {});
-    let observable = this.httpService.get(this.config.webapiTaskDetail, {});
+    let observable = this.httpService.getFakeData('/assets/data/redmine/taskDetails.json', {});
+    // let observable = this.httpService.get(this.config.webapiTaskDetail, {});
     observable.subscribe(
       (data) => this.dispatcher.dispatch(TaskDetailsActionType.INIT, data)
     );

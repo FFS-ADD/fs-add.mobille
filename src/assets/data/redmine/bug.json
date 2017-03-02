@@ -4,9 +4,10 @@
   "errorCause": 0,
   "errorLocation": 0,
   "data": {
-    "onSchedule": 0,
-    "delay": 2,
-    "pending": 0,
-    "closed": 11
+    "news": 1,
+    "inProgress": 1,
+    "fixed": 0,
+    "retesting": 0,
+    "close": 1
   }
 }

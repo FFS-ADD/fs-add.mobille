@@ -11,8 +11,8 @@ export default class QaDetailsAction {
   }
 
   public init() {
-    //let observable = this.httpService.getFakeData('/assets/data/redmine/qaDetails.json', {});
-    let observable = this.httpService.get(this.config.webapiQaDetail, {});
+    let observable = this.httpService.getFakeData('/assets/data/redmine/qaDetails.json', {});
+    // let observable = this.httpService.get(this.config.webapiQaDetail, {});
     observable.subscribe(
       (data) => this.dispatcher.dispatch(QaDetailsActionType.INIT, data)
     );

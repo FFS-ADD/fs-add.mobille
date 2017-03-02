@@ -1,11 +1,15 @@
- {
-   "status": 1,
-   "data": {
-     "completed": 238,
-     "backLogTotal": 460,
-     "initValue": 10955,
-     "planedValue": 5000,
-     "reportedValue": 5490,
-     "balanceStatus": false
-   }
- }
+{
+  "msgList": [],
+  "status": 1,
+  "errorCause": 0,
+  "errorLocation": 0,
+  "data": {
+    "plannedEstimatedHours": 184,
+    "initValue": 184,
+    "planedValue": 184,
+    "reportedValue": 184,
+    "backLogTotal": 7,
+    "completed": 5,
+    "balanceStatus": false
+  }
+}

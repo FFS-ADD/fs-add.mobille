@@ -10,8 +10,8 @@ export default class BugDetailsAction {
   }
 
   public init() {
-    //let observable = this.httpService.getFakeData('./assets/data/redmine/bugDetailsInit.json', {});
-    let observable = this.httpService.get(this.config.webapiIssueDetail, {});
+    let observable = this.httpService.getFakeData('/assets/data/redmine/bugDetails.json', {});
+    // let observable = this.httpService.get(this.config.webapiIssueDetail, {});
     observable.subscribe(
       data => {
         if (data.status === 1) {

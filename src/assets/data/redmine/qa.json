@@ -1,9 +1,12 @@
- {
-   "status": 1,
-   "data": {
-     "new": 22,
-     "inProgress": 10,
-     "overdue": 30,
-     "closed": 40
-   }
- }
+{
+  "msgList": [],
+  "status": 1,
+  "errorCause": 0,
+  "errorLocation": 0,
+  "data": {
+    "new": 3,
+    "inProgress": 0,
+    "overdue": 3,
+    "closed": 1
+  }
+}

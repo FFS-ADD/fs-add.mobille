@@ -1,79 +1,199 @@
- {
-     "status": 1,
-     "data": {
-         "taskHistory": [{
-                 "date": "2/9",
-                 "onSchedule": 10,
-                 "delay": 20,
-                 "closed": 40,
-                 "pending": 80
-             },
-             {
-                 "date": "2/10",
-                 "onSchedule": 22,
-                 "delay": 40,
-                 "closed": 18,
-                 "pending": 70
-             },
-
-             {
-                 "date": "2/11",
-                 "onSchedule": 22,
-                 "delay": 40,
-                 "closed": 60,
-                 "pending": 28
-             },
-             {
-                 "date": "2/11",
-                 "onSchedule": 32,
-                 "delay": 50,
-                 "closed": 40,
-                 "pending": 28
-             },
-             {
-                 "date": "2/12",
-                 "onSchedule": 12,
-                 "delay": 40,
-                 "closed": 8,
-                 "pending": 90
-             }
-         ],
-         "delayTaskList": [{
-                 "id": "2019",
-                 "ticket": "Coding UserController a cccccccc nnnnnnnnnnnnnnnnnnnnnppp ppppppppppppppppp  hhhhhhhhhhhhh",
-                 "owner": "Wei.Zhang",
-                 "planedEndDate": "2017/01/20"
-             },
-             {
-                 "id": "2020",
-                 "ticket": "Coding UserController b",
-                 "owner": "Dehua.liu",
-                 "planedEndDate": "2017/01/21"
-             },
-             {
-                 "id": "2021",
-                 "ticket": "Coding UserController c",
-                 "owner": "Xueyou.zhang",
-                 "planedEndDate": "2017/01/22"
-             },
-             {
-                 "id": "2069",
-                 "ticket": "Coding UserController",
-                 "owner": "Wei.Zhang",
-                 "planedEndDate": "2017/01/15"
-             },
-             {
-                 "id": "2019",
-                 "ticket": "Coding UserController",
-                 "owner": "Wei.Zhang",
-                 "planedEndDate": "2017/01/21"
-             },
-             {
-                 "id": "2019",
-                 "ticket": "Coding UserController",
-                 "owner": "Wei.Zhang",
-                 "planedEndDate": "2017/01/21"
-             }
-         ]
-     }
- }
+{
+  "msgList": [],
+  "status": 1,
+  "errorCause": 0,
+  "errorLocation": 0,
+  "data": {
+    "taskHistory": [
+      {
+        "day": {
+          "year": 2017,
+          "month": "FEBRUARY",
+          "dayOfMonth": 24,
+          "dayOfWeek": "FRIDAY",
+          "era": "CE",
+          "dayOfYear": 55,
+          "leapYear": false,
+          "monthValue": 2,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "date": "02/24",
+        "onSchedule": 0,
+        "delay": 1,
+        "closed": 0,
+        "pending": 10
+      },
+      {
+        "day": {
+          "year": 2017,
+          "month": "FEBRUARY",
+          "dayOfMonth": 25,
+          "dayOfWeek": "SATURDAY",
+          "era": "CE",
+          "dayOfYear": 56,
+          "leapYear": false,
+          "monthValue": 2,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "date": "02/25",
+        "onSchedule": 0,
+        "delay": 1,
+        "closed": 0,
+        "pending": 10
+      },
+      {
+        "day": {
+          "year": 2017,
+          "month": "FEBRUARY",
+          "dayOfMonth": 26,
+          "dayOfWeek": "SUNDAY",
+          "era": "CE",
+          "dayOfYear": 57,
+          "leapYear": false,
+          "monthValue": 2,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "date": "02/26",
+        "onSchedule": 0,
+        "delay": 1,
+        "closed": 0,
+        "pending": 10
+      },
+      {
+        "day": {
+          "year": 2017,
+          "month": "FEBRUARY",
+          "dayOfMonth": 27,
+          "dayOfWeek": "MONDAY",
+          "era": "CE",
+          "dayOfYear": 58,
+          "leapYear": false,
+          "monthValue": 2,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "date": "02/27",
+        "onSchedule": 0,
+        "delay": 1,
+        "closed": 0,
+        "pending": 10
+      },
+      {
+        "day": {
+          "year": 2017,
+          "month": "FEBRUARY",
+          "dayOfMonth": 28,
+          "dayOfWeek": "TUESDAY",
+          "era": "CE",
+          "dayOfYear": 59,
+          "leapYear": false,
+          "monthValue": 2,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "date": "02/28",
+        "onSchedule": 0,
+        "delay": 2,
+        "closed": 0,
+        "pending": 11
+      },
+      {
+        "day": {
+          "year": 2017,
+          "month": "MARCH",
+          "dayOfMonth": 1,
+          "dayOfWeek": "WEDNESDAY",
+          "era": "CE",
+          "dayOfYear": 60,
+          "leapYear": false,
+          "monthValue": 3,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "date": "03/01",
+        "onSchedule": 0,
+        "delay": 0,
+        "closed": 0,
+        "pending": 0
+      },
+      {
+        "day": {
+          "year": 2017,
+          "month": "MARCH",
+          "dayOfMonth": 2,
+          "dayOfWeek": "THURSDAY",
+          "era": "CE",
+          "dayOfYear": 61,
+          "leapYear": false,
+          "monthValue": 3,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "date": "03/02",
+        "onSchedule": 0,
+        "delay": 0,
+        "closed": 0,
+        "pending": 0
+      }
+    ],
+    "delayTaskList": [
+      {
+        "planedStartDate": {
+          "year": 2017,
+          "month": "JANUARY",
+          "dayOfMonth": 16,
+          "dayOfWeek": "MONDAY",
+          "era": "CE",
+          "dayOfYear": 16,
+          "leapYear": false,
+          "monthValue": 1,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "id": 18,
+        "planedEndDate": "2017/01/16",
+        "ticket": "Build the API architecture",
+        "owner": "ZhongPeng Zhang"
+      },
+      {
+        "planedStartDate": {
+          "year": 2017,
+          "month": "JANUARY",
+          "dayOfMonth": 16,
+          "dayOfWeek": "MONDAY",
+          "era": "CE",
+          "dayOfYear": 16,
+          "leapYear": false,
+          "monthValue": 1,
+          "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+          }
+        },
+        "id": 28,
+        "planedEndDate": "2017/01/16",
+        "ticket": "Build the API architecture",
+        "owner": "ZhongPeng Zhang"
+      }
+    ]
+  }
+}
