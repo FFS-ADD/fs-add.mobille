@@ -6,8 +6,8 @@
   "data": {
     "news": 1,
     "inProgress": 1,
-    "fixed": 0,
-    "retesting": 0,
-    "close": 1
+    "fixed": 1,
+    "retesting": 4,
+    "close": 17
   }
 }
