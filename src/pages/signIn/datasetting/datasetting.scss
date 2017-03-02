@@ -1,28 +1,28 @@
 //---------------------------------------- header用 ----------------------------------------
 ion-header {
-    .setting-title {
-        .title {
-            background: #03a9f4;
-            line-height: 41px;
-            overflow: auto;
-            .backbutton {
-              color:#ffffff;
-            }
-            .page-subtitle {
-                font-size: 16px;
-               // font-weight: 400;
-                white-space: nowrap;
-                color: #ffffff;
-            }
+  .setting-title {
+    .title {
+      background: #03a9f4;
+      line-height: 41px;
+      overflow: auto;
+      .backbutton {
+        color: #ffffff;
+      }
+      .page-subtitle {
+        font-size: 16px;
+        // font-weight: 400;
+        white-space: nowrap;
+        color: #ffffff;
+      }
 
-        }
-        .toolbar-title {
-          overflow: visible !important;
-        }
-        .backbutton {
-            color: black;
-        }
     }
+    .toolbar-title {
+      overflow: visible !important;
+    }
+    .backbutton {
+      color: black;
+    }
+  }
 }
 
 //---------------------------------------- content用 ----------------------------------------
@@ -35,6 +35,14 @@ ion-header {
     text-align: center;
     button {
       width: 300px;
+    }
+  }
+  .datasetting-footer {
+    position: fixed;
+    .save-button {
+      padding-top: 0;
+      padding-bottom: 0;
+      margin: 0;
     }
   }
 

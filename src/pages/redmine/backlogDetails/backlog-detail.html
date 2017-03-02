@@ -1,12 +1,14 @@
-<ion-content class="backlog-detail-content">
-  <ion-navbar #ionNavbar>
-    <button ion-button menuToggle >
-      <ion-icon name="md-arrow-back"></ion-icon>
-    </button>
+<!--<add-header>-->
+  <!--<header-title>BackLog History</header-title>-->
+<!--</add-header>-->
+<ion-header class="add-header">
+  <ion-navbar>
     <ion-title>
       BackLog History
     </ion-title>
   </ion-navbar>
+</ion-header>
+<ion-content class="backlog-detail-content">
   <ion-item class="weekly-backlog-details">
     <ion-label class="weekly-backlog-details-label">
       <p class="icon">
@@ -51,7 +53,10 @@
       <div class="details-item-right">
         <ion-label class="label-content">
           <p>{{item.owner}}</p>
-          <p><progress max="100" value="{{item.progress}}"></progress> {{item.progress}}%</p>
+          <p>
+            <progress max="100" value="{{item.progress}}"></progress>
+            {{item.progress}}%
+          </p>
           <p>Priority:{{item.priority}}</p>
           <p>EndDay:{{item.endDay}}</p>
           <p>Reported:{{item.reported}}</p>

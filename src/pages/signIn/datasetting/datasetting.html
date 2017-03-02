@@ -5,7 +5,6 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content class="setting-content">
   <ion-list no-border>
 
@@ -21,37 +20,37 @@
        <ion-label>
          Backlog
       </ion-label>
-     
+
        <ion-toggle item-right [(ngModel)]="form.backlog"></ion-toggle>
     </ion-item>
-    
+
     <ion-item>
       <ion-icon name='folder-outline' item-left></ion-icon>
        <ion-label>
          Task
       </ion-label>
-     
+
        <ion-toggle item-right [(ngModel)]="form.task"></ion-toggle>
     </ion-item>
-    
+
     <ion-item>
       <ion-icon name='medkit-outline' item-left></ion-icon>
        <ion-label>
          Bug
       </ion-label>
-     
+
        <ion-toggle item-right [(ngModel)]="form.bug"></ion-toggle>
     </ion-item>
-    
+
     <ion-item>
       <ion-icon name='planet' item-left></ion-icon>
        <ion-label>
          QA
       </ion-label>
-     
+
        <ion-toggle item-right [(ngModel)]="form.qa"></ion-toggle>
     </ion-item>
-    
+
   </ion-list>
 
 
@@ -94,9 +93,9 @@
        <ion-toggle item-right [(ngModel)]="form.duplication"></ion-toggle>
     </ion-item>
   </ion-list>
-  <ion-footer>
-    <button ion-button full (click)="save()">Save</button>
+  <ion-footer class="datasetting-footer">
+    <button class="save-button" ion-button full (click)="save()">Save</button>
 </ion-footer>
-    
+
 </ion-content>
 

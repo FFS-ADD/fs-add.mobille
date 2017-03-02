@@ -11,15 +11,11 @@ import {BackLogDetailStore} from "./backlog-detail.store";
 })
 export class BackLogDetailComponent {
 
-  @ViewChild(Navbar) private navbar:Navbar;
+  @ViewChild(Navbar) private navbar: Navbar;
 
   constructor(private action: BackLogDetailAction, private state: BackLogDetailState, private store: BackLogDetailStore) {
     this.action.init();
 
     console.info(this.state);
-  }
-
-  public ngAfterViewInit() {
-    this.navbar.setBackButtonText("");
   }
 }
