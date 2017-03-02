@@ -44,7 +44,7 @@ export class BugStore {
 
   private DATA_SET_LABELS = ["New","In Progress","Fixed","ReTesting","Closed"];
 
-  private colors = [{backgroundColor: ["#efb14e", "#6e3c78", "#2d578b", "#3f99ec", "#00060e"]}];
+  private colors = [{backgroundColor: ["#efb14e", "#6e3c78", "#2d578b", "#3f99ec", "#2baf2b"]}];
 
   public init(httpResponse) {
     console.log("BugStore#init");

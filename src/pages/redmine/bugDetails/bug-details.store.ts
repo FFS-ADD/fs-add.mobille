@@ -51,11 +51,11 @@ export class BugDetailsStore {
   };
 
   private BAR_CHART_COLORS = [
-    {backgroundColor: ["#6fb02f","#6fb02f","#6fb02f","#6fb02f","#6fb02f","#6fb02f","#6fb02f"]},
-    {backgroundColor: ["#bb2c2f","#bb2c2f","#bb2c2f","#bb2c2f","#bb2c2f","#bb2c2f","#bb2c2f"]},
-    {backgroundColor: ["#6c7371","#6c7371","#6c7371","#6c7371","#6c7371","#6c7371","#6c7371"]},
-    {backgroundColor: ["#e6a375","#e6a375","#e6a375","#e6a375","#e6a375","#e6a375","#e6a375"]},
-    {backgroundColor: ["#d38d77","#d38d77","#d38d77","#d38d77","#d38d77","#d38d77","#d38d77"]}];
+    {backgroundColor: ["#efb14e","#efb14e","#efb14e","#efb14e","#efb14e","#efb14e","#efb14e"]},
+    {backgroundColor: ["#6e3c78","#bb2c2f","#bb2c2f","#bb2c2f","#bb2c2f","#bb2c2f","#bb2c2f"]},
+    {backgroundColor: ["#2d578b","#6c7371","#6c7371","#6c7371","#6c7371","#6c7371","#6c7371"]},
+    {backgroundColor: ["#3f99ec","#e6a375","#e6a375","#e6a375","#e6a375","#e6a375","#e6a375"]},
+    {backgroundColor: ["#2baf2b","#d38d77","#d38d77","#d38d77","#d38d77","#d38d77","#d38d77"]}];
 
   private LINE_CHART_OPTIONS = {
     responsive: true,
