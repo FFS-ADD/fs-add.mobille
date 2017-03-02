@@ -65,7 +65,7 @@ export class BugDetailsStore {
       position: "bottom",
       onClick: null,
       labels: {
-        boxWidth: 13
+        boxWidth: 12
       }
     },
     scales: {
