@@ -52,10 +52,10 @@ export class BugDetailsStore {
 
   private BAR_CHART_COLORS = [
     {backgroundColor: ["#efb14e","#efb14e","#efb14e","#efb14e","#efb14e","#efb14e","#efb14e"]},
-    {backgroundColor: ["#6e3c78","#bb2c2f","#bb2c2f","#bb2c2f","#bb2c2f","#bb2c2f","#bb2c2f"]},
-    {backgroundColor: ["#2d578b","#6c7371","#6c7371","#6c7371","#6c7371","#6c7371","#6c7371"]},
-    {backgroundColor: ["#3f99ec","#e6a375","#e6a375","#e6a375","#e6a375","#e6a375","#e6a375"]},
-    {backgroundColor: ["#2baf2b","#d38d77","#d38d77","#d38d77","#d38d77","#d38d77","#d38d77"]}];
+    {backgroundColor: ["#6e3c78","#6e3c78","#6e3c78","#6e3c78","#6e3c78","#6e3c78","#6e3c78"]},
+    {backgroundColor: ["#2d578b","#2d578b","#2d578b","#2d578b","#2d578b","#2d578b","#2d578b"]},
+    {backgroundColor: ["#3f99ec","#3f99ec","#3f99ec","#3f99ec","#3f99ec","#3f99ec","#3f99ec"]},
+    {backgroundColor: ["#2baf2b","#2baf2b","#2baf2b","#2baf2b","#2baf2b","#2baf2b","#2baf2b"]}];
 
   private LINE_CHART_OPTIONS = {
     responsive: true,
