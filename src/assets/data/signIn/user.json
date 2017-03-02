@@ -1,0 +1,17 @@
+{
+  "msgList": [],
+  "status": 1,
+  "errorCause": 0,
+  "errorLocation": 0,
+  "data": {
+    "id": "5886b422e6f67f06d9fb859b",
+    "email": "abc@abc.com",
+    "password": "abc#123",
+    "role": "ADMINS",
+    "avatar": null,
+    "firstName": null,
+    "lastName": null,
+    "project": null,
+    "status": null
+  }
+}

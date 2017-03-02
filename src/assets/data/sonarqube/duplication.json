@@ -1,0 +1,12 @@
+{
+  "msgList": [],
+  "status": 1,
+  "errorCause": 0,
+  "errorLocation": 0,
+  "data": {
+    "duplication": "13.6",
+    "line": "1756",
+    "blocks": "75",
+    "file": "33"
+  }
+}

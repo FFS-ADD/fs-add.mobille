@@ -1,0 +1,12 @@
+{
+  "msgList": [],
+  "status": 1,
+  "errorCause": 0,
+  "errorLocation": 0,
+  "data": {
+    "coverage": "0",
+    "tests": "0",
+    "success": "0",
+    "failures": "0"
+  }
+}

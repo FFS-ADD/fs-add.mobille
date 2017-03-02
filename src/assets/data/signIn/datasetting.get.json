@@ -1,0 +1,17 @@
+{
+  "msgList": [],
+  "status": 1,
+  "errorCause": 0,
+  "errorLocation": 0,
+  "data": {
+    "email": "abc@abc.com",
+    "backlog": true,
+    "task": true,
+    "bug": true,
+    "qa": true,
+    "qualitygate": true,
+    "loc": true,
+    "duplication": true,
+    "coverage": true
+  }
+}

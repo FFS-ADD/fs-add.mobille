@@ -1,0 +1,68 @@
+{
+  "msgList": [],
+  "status": 1,
+  "errorCause": 0,
+  "errorLocation": 0,
+  "data": {
+    "sonardashboardlList": [
+      {
+        "id": {
+          "timestamp": 1488211200,
+          "machineIdentifier": 16235868,
+          "processIdentifier": 416,
+          "counter": 3937478,
+          "date": 1488211200000,
+          "time": 1488211200000,
+          "timeSecond": 1488211200
+        },
+        "projectKey": "fs-add.api",
+        "createDate": "20170228",
+        "qualityGateStatus": "success",
+        "vulneralilities": "2",
+        "bugs": "38",
+        "codeSmells": "292",
+        "codeLines": "8184",
+        "line": "12919",
+        "statement": "3053",
+        "file": "170",
+        "coverage": "0",
+        "tests": "0",
+        "success": "0",
+        "failures": "0",
+        "duplication": "13.6",
+        "dLine": "1756",
+        "blocks": "75",
+        "dFile": "33"
+      },
+      {
+        "id": {
+          "timestamp": 1488203520,
+          "machineIdentifier": 16235868,
+          "processIdentifier": 9044,
+          "counter": 16072413,
+          "date": 1488203520000,
+          "time": 1488203520000,
+          "timeSecond": 1488203520
+        },
+        "projectKey": "fs-add.api",
+        "createDate": "20170227",
+        "qualityGateStatus": "success",
+        "vulneralilities": "2",
+        "bugs": "38",
+        "codeSmells": "291",
+        "codeLines": "8103",
+        "line": "12816",
+        "statement": "3009",
+        "file": "171",
+        "coverage": "0",
+        "tests": "0",
+        "success": "0",
+        "failures": "0",
+        "duplication": "13.2",
+        "dLine": "1696",
+        "blocks": "73",
+        "dFile": "31"
+      }
+    ]
+  }
+}

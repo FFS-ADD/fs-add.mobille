@@ -1,0 +1,11 @@
+{
+  "msgList": [],
+  "status": 1,
+  "errorCause": 0,
+  "errorLocation": 0,
+  "data": {
+    "eventLevel": 1,
+    "eventDate": "2017/02/28",
+    "eventDescription": "Critical:The rate of the delayed backlog has been over upper limit!"
+  }
+}
