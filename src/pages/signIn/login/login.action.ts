@@ -10,8 +10,8 @@ export default class LoginAction {
 
   public login(form) {
     console.debug("login action start.");
-    let observable = this.httpService.post('/oauth/token', form, false);
-    // let observable = this.httpService.getFakeData('/assets/data/signIn/login.json', form);
+    // let observable = this.httpService.post('/oauth/token', form, false);
+    let observable = this.httpService.getFakeData('/assets/data/signIn/login.json', form);
     observable.subscribe(
       (data) => {
         this.dispatcher.dispatch(LoginActionType.LOGIN, data);
@@ -19,13 +19,14 @@ export default class LoginAction {
     return observable;
   }
 
-  public clear(){
+  public clear() {
     this.dispatcher.dispatch(LoginActionType.CLEAR, null);
   }
 
   public getUser(email) {
-    let observable = this.httpService.get('/user/get', {'email' : email});
-     observable.subscribe(
+    let observable = this.httpService.getFakeData('/assets/data/signIn/user.json', {'email': email});
+    // let observable = this.httpService.get('/user/get', {'email' : email});
+    observable.subscribe(
       (data) => {
         this.dispatcher.dispatch(LoginActionType.USER, data);
       });

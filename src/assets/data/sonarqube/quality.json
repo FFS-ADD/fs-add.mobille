@@ -1,0 +1,12 @@
+{
+  "msgList": [],
+  "status": 1,
+  "errorCause": 0,
+  "errorLocation": 0,
+  "data": {
+    "qualityGateStatus": "success",
+    "vulneralilities": "2",
+    "bugs": "38",
+    "codeSmells": "292"
+  }
+}

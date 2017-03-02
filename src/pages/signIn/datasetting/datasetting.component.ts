@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from "@angular/core";
 import { NavController, NavParams } from 'ionic-angular';
 import { DataSettingInterface } from "./datasetting.interface";
