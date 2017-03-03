@@ -1,20 +1,17 @@
-
-ion-header {
-    .home-title {
-        .title {
-            background: #03a9f4;
-            line-height: 41px;
-            overflow: auto;
-        }
-        .toolbar-title {
-          overflow: visible !important;
-        }
-        .toolbar-title-ios {
-            color: #ffffff !important;
-        }
-    }
-}
-
-page-home {
-
+.home-title {
+  
+  .setting-button {
+    color: white !important;
+  }
+  .title {
+    background: #03a9f4;
+    line-height: 41px;
+    overflow: auto;
+  }
+  .toolbar-title {
+    overflow: visible !important;
+  }
+  .toolbar-title-ios {
+    color: #ffffff !important;
+  }
 }
