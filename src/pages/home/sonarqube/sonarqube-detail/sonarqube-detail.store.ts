@@ -15,10 +15,14 @@ export class SonarqubeDetailStore {
 
     // VBC
     private VBC_CHART_OPTIONS: any = {
-        'responsive': true,
+        // 'responsive': true,
         'scales': {
             yAxes: [{
-                display: true
+                display: true,
+                ticks: {
+                    min: 0,
+                    beginAtZero:true
+                }
             }]
         }
     };
@@ -130,7 +134,7 @@ export class SonarqubeDetailStore {
 
             // Vulneralilities
             var vDatas: Array<any> = [
-                {data: c.vArray, label: 'Vulneralilities'}
+                {data: c.vArray.reverse(), label: 'Vulneralilities'}
             ];
             let vResponse: SonarqubeVulneralilitiesHistoryResponseInterface = {
                 colors: this.V_CHART_COLORS,
@@ -141,7 +145,7 @@ export class SonarqubeDetailStore {
 
             // bugs
             var bugsDatas: Array<any> = [
-                {data: c.bArray, label: 'Bugs'}
+                {data: c.bArray.reverse(), label: 'Bugs'}
             ];
             let bugsResponse: SonarqubeBugsHistoryResponseInterface = {
                 colors: this.B_CHART_COLORS,
@@ -152,18 +156,18 @@ export class SonarqubeDetailStore {
 
             // CodeSmells
             var codeSmellsDatas: Array<any> = [
-                {data: c.cArray, label: 'Code Smells'}
+                {data: c.cArray.reverse(), label: 'Code Smells'}
             ];
             let codeSmellsResponse: SonarqubeCodeSmellsHistoryResponseInterface = {
                 colors: this.C_CHART_COLORS,
                 options: this.VBC_CHART_OPTIONS,
                 labels: c.dates.reverse(),
-                datas: bugsDatas
+                datas: codeSmellsDatas
             };
 
             // loc
             var locDatas: Array<any> = [
-                {data: c.locLineArray, label: 'Line'}
+                {data: c.locLineArray.reverse(), label: 'Line'}
             ];
             let locResponse: SonarqubeLocHistoryResponseInterface = {
                 colors: this.LOC_CHART_COLORS,
@@ -171,9 +175,9 @@ export class SonarqubeDetailStore {
                 labels: c.dates.reverse(),
                 datas: locDatas
             };
-            // coverage
+            // Duplication
             var coverageDatas: Array<any> = [
-                {data: c.coverageLineArray, label: 'Line'}
+                {data: c.coverageLineArray.reverse(), label: 'Line'}
             ];
             let coverageResponse: SonarqubeCoverageHistoryResponseInterface = {
                 colors: this.COVERAGE_CHART_COLORS,

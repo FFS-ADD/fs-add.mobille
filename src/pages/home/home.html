@@ -1,20 +1,14 @@
-<ion-header>
-    <ion-toolbar class="home-title">
-        <ion-buttons start>
-            <button ion-button menuToggle>
-              <ion-icon name="settings"></ion-icon>
-            </button>
-        </ion-buttons>
-            <ion-title class="home-subtitle">
-                Agile & DevOps Dashboard
-            </ion-title>
-        <ion-buttons end>
-        </ion-buttons>
-    </ion-toolbar>
+<ion-header class="add-header home-title">
+  <ion-navbar hideBackButton>
+    <button class="setting-button" ion-button icon-only menuToggle>
+      <ion-icon name="settings"></ion-icon>
+    </button>
+    <ion-title class="home-subtitle">
+      Agile & DevOps Dashboard
+    </ion-title>
+  </ion-navbar>
 </ion-header>
 <ion-content>
-  <!--Welcome to ADD !!! test slack is OK
-  it's not OK-->
   <ion-refresher (ionRefresh)="doRefresh($event)" pullMin="100">
     <ion-refresher-content
       pullingIcon="arrow-dropdown"
@@ -24,9 +18,9 @@
     </ion-refresher-content>
   </ion-refresher>
   <barometer-area></barometer-area>
-    <backlog></backlog>
-    <task *ngIf="form.task"></task>
-    <bug *ngIf="form.bug"></bug>
-    <qa *ngIf="form.qa"></qa>
-    <sonar-qibe></sonar-qibe>
+  <backlog></backlog>
+  <task *ngIf="form.task"></task>
+  <bug *ngIf="form.bug"></bug>
+  <qa *ngIf="form.qa"></qa>
+  <sonar-qibe></sonar-qibe>
 </ion-content>
