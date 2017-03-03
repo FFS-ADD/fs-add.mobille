@@ -10,7 +10,7 @@ export default class SonarqubeAction {
   }
 
   public init() {
-    let observableQuality = this.httpService.getFakeData('/assets/data/sonarqube/quality.json', {});
+    let observableQuality = this.httpService.getFakeData('assets/data/sonarqube/quality.json', {});
     // let observableQuality = this.httpService.get(this.config.webapiSonarQuality, {});
     observableQuality.subscribe(
        response => {
@@ -19,7 +19,7 @@ export default class SonarqubeAction {
         }
     });
 
-    let observableLoc = this.httpService.getFakeData('/assets/data/sonarqube/loc.json', {});
+    let observableLoc = this.httpService.getFakeData('assets/data/sonarqube/loc.json', {});
     // let observableLoc = this.httpService.get(this.config.webapiSonarLoc, {});
     observableLoc.subscribe(
       response => {
@@ -29,7 +29,7 @@ export default class SonarqubeAction {
       }
     )
 
-    let observableCoverage = this.httpService.getFakeData('/assets/data/sonarqube/coverage.json', {});
+    let observableCoverage = this.httpService.getFakeData('assets/data/sonarqube/coverage.json', {});
     // let observableCoverage = this.httpService.get(this.config.webapiSonarCoverage, {});
     observableCoverage.subscribe(
       response => {
@@ -39,7 +39,7 @@ export default class SonarqubeAction {
       }
     )
 
-    let observableDuplication = this.httpService.getFakeData('/assets/data/sonarqube/duplication.json', {});
+    let observableDuplication = this.httpService.getFakeData('assets/data/sonarqube/duplication.json', {});
     // let observableDuplication = this.httpService.get(this.config.webapiSonarDuplication, {});
     observableDuplication.subscribe(
       response => {

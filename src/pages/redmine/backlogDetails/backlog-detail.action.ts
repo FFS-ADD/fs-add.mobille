@@ -10,7 +10,7 @@ export default class BackLogDetailAction {
   }
 
   public init() {
-    let observable = this.httpService.getFakeData('/assets/data/redmine/backLogDetails.json', {});
+    let observable = this.httpService.getFakeData('assets/data/redmine/backLogDetails.json', {});
     // let observable = this.httpService.get(this.config.webapiBacklogDetail, {});
     observable.subscribe(
       (data) => this.dispatcher.dispatch(BackLogDetailActionType.INIT, data)

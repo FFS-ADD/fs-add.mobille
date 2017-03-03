@@ -11,7 +11,7 @@ export default class BaroMeterAction {
 
   public init() {
     // let observableOverview = this.httpService.get(this.config.webapiProjectOverview, {});
-    let observableOverview = this.httpService.getFakeData('/assets/data/barometer/overview.json', {});
+    let observableOverview = this.httpService.getFakeData('assets/data/barometer/overview.json', {});
     observableOverview.subscribe(
       response => {
         if (response.status === 1) {
@@ -20,7 +20,7 @@ export default class BaroMeterAction {
       });
 
     // let observableTopEvent = this.httpService.get(this.config.webapiProjectEventsTop, {});
-    let observableTopEvent = this.httpService.getFakeData('/assets/data/barometer/top.json', {});
+    let observableTopEvent = this.httpService.getFakeData('assets/data/barometer/top.json', {});
     observableTopEvent.subscribe(
       response => {
         if (response.status === 1) {

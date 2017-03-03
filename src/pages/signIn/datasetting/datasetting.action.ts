@@ -13,7 +13,7 @@ export class DataSettingAction {
 
   public init(email) {
     console.debug("init");
-    let observable = this.httpService.getFakeData('/assets/data/signIn/datasetting.get.json', {"email": email});
+    let observable = this.httpService.getFakeData('assets/data/signIn/datasetting.get.json', {"email": email});
      // let observable = this.httpService.get(this.config.webapiGetDataSetting, {"email": email});
     observable.subscribe((data) => this.dispatcher.dispatch(DataSettingActionType.INIT, data));
     return observable;
@@ -21,7 +21,7 @@ export class DataSettingAction {
 
   public save(form) {
     console.debug("toggle");
-    let observable = this.httpService.getFakeData('/assets/data/signIn/datasetting.save.json', form);
+    let observable = this.httpService.getFakeData('assets/data/signIn/datasetting.save.json', form);
     // let observable = this.httpService.post(this.config.webapiSaveDataSetting, form);
     observable.subscribe(
       (data) =>

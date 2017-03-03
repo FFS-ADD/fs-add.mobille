@@ -24,7 +24,7 @@ export class HomeService {
 
     public getInitDataSetting(email:string) {
        // let observable = this.httpService.get(this.config.webapiGetDataSetting, {"email": email});
-      let observable = this.httpService.getFakeData('/assets/data/signIn/datasetting.get.json', {"email": email});
+      let observable = this.httpService.getFakeData('assets/data/signIn/datasetting.get.json', {"email": email});
        return observable;
     }
 

@@ -11,7 +11,7 @@ export default class BarometerDetailAction {
 
   public init() {
     // let observableOverview = this.httpService.get(this.config.webapiProjectEventsAll, {});
-    let observableOverview = this.httpService.getFakeData('/assets/data/barometer/detail.json', {});
+    let observableOverview = this.httpService.getFakeData('assets/data/barometer/detail.json', {});
     observableOverview.subscribe(
       response => {
         if (response.status === 1) {
