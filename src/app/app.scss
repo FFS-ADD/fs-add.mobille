@@ -53,3 +53,16 @@
     margin-top: 100px !important;
   }
 }
+
+ion-header {
+  &.header-md {
+    .toolbar-md {
+      background-color: #0288D1;
+      transform: inherit;
+      padding: 0;
+      .toolbar-background-md {
+        background-color: #0288D1;
+      }
+    }
+  }
+}
