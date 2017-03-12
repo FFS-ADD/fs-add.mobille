@@ -9,6 +9,7 @@ export interface QaScreenInterface {
 
 export interface QaScreenDataSet {
   backgroundColor: any;
+  labels:string[];
   data: number[];
 }
 
