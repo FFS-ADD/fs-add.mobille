@@ -44,25 +44,50 @@
     </ion-row>
   </ion-grid>
   </div>
-  <ion-item class="detail-area">
-    <ion-label>
-      <div>
-        <label class="degree-title">Completion Degree</label>
+  <ion-row>
+    <ion-col class="detail-area">
+      <div class="detail-area-text">
+        <div>
+          <div class="degree-title">Completion Degree</div>
+        </div>
+        <div>
+          <div class="degree-content">{{state?.screen?.backLogResponse?.completed}} of {{state?.screen?.backLogResponse?.backLogTotal}}</div>
+        </div>
+        <div>
+          <div class="degree-content">Backlogs Completed</div>
+        </div>
       </div>
-      <div>
-        <label class="degree-content">{{state?.screen?.backLogResponse?.completed}} of {{state?.screen?.backLogResponse?.backLogTotal}}</label>
+    </ion-col>
+    <ion-col class="backlog-canvas-area">
+        <canvas baseChart class="canvas"
+                [chartType]="state?.screen?.chartType"
+                [datasets]="state?.screen?.dataSets"
+                [options]="state?.screen?.options"
+                [colors]="state?.screen?.colors" *ngIf="state != null && state.screen != null">
+        </canvas>
+    </ion-col>
+  </ion-row>
+  <!--<ion-item>
+    <div class="detail-area">
+      <div class="detail-area-text">
+        <div>
+          <div class="degree-title">Completion Degree</div>
+        </div>
+        <div>
+          <div class="degree-content">{{state?.screen?.backLogResponse?.completed}} of {{state?.screen?.backLogResponse?.backLogTotal}}</div>
+        </div>
+        <div>
+          <div class="degree-content">Backlogs Completed</div>
+        </div>
       </div>
-      <div>
-        <label class="degree-content">Backlogs Completed</label>
-      </div>
-    </ion-label>
-    <ion-label class="backlog-canvas-area" *ngIf="state != null && state.screen != null">
-      <canvas baseChart class="canvas"
-              [chartType]="state?.screen?.chartType"
-              [datasets]="state?.screen?.dataSets"
-              [options]="state?.screen?.options"
-              [colors]="state?.screen?.colors">
-      </canvas>
-    </ion-label>
-  </ion-item>
+      <label class="backlog-canvas-area" *ngIf="state != null && state.screen != null">
+        <canvas baseChart class="canvas"
+                [chartType]="state?.screen?.chartType"
+                [datasets]="state?.screen?.dataSets"
+                [options]="state?.screen?.options"
+                [colors]="state?.screen?.colors">
+        </canvas>
+      </label>
+    </div>
+  </ion-item>-->
 </ion-card>

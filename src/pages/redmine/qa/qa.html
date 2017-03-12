@@ -6,7 +6,39 @@
             <ion-icon name="md-more"></ion-icon>
         </ion-label>
     </ion-item>
-    <ion-item class="qa-canvas">
+    <ion-row class="qa-canvas">
+      <ion-col class="qa-canvas-title">
+        <div>
+            <label>Total QAs : {{state?.totalQas}}</label>
+        </div>
+        <div>
+            <p class="qa-new-title"></p>
+            <label>New : {{state?.screen?.qaResponse?.new}}</label>
+        </div>
+        <div>
+            <p class="qa-in-progress-title"></p>
+            <label>In Progress : {{state?.screen?.qaResponse?.inProgress}}</label>
+        </div>
+        <div>
+            <p class="qa-overdue-title"></p>
+            <label>Overdue : {{state?.screen?.qaResponse?.overdue}}</label>
+        </div>
+        <div>
+            <p class="qa-closed-title"></p>
+            <label>Closed : {{state?.screen?.qaResponse?.closed}}</label>
+        </div>
+      </ion-col>
+      <ion-col class="qa-canvas-area">
+          <canvas baseChart class="canvas"
+                    [chartType]="state?.screen?.chartType"
+                    [labels]="state?.screen?.labels"
+                    [datasets]="state?.screen?.dataSets"
+                    [options]="state?.screen?.options"
+                    [colors]="state?.screen?.colors" *ngIf="state.screen && state.screen.dataSets">
+            </canvas>
+      </ion-col>
+    </ion-row>
+    <!--<ion-item class="qa-canvas">
         <ion-label class="qa-canvas-title">
             <div>
                 <label>Total QAs : {{state?.totalQas}}</label>
@@ -37,5 +69,5 @@
                     [colors]="state?.screen?.colors">
             </canvas>
         </ion-label>
-    </ion-item>
+    </ion-item>-->
 </ion-card>
