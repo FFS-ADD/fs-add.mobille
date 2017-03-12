@@ -38,14 +38,33 @@ export class QaStore {
         }
       }]
     },
+    // tooltips: {
+    //   display: true,
+    //   enabled: true,
+    //   mode: 'label',
+    // },
     tooltips: {
       display: true,
       enabled: true,
-      mode: 'label',
+      callbacks: {
+        beforeTitle: function(tooltipItems, data) {
+          let item = tooltipItems[0];
+          let labels = data.datasets[item.datasetIndex].labels;
+
+          return labels[item.index];
+        },
+        label: function(tooltipItem, data) {
+          let item = tooltipItem;
+          let datasets = data.datasets[item.datasetIndex].data;
+          return datasets[item.index];
+        }
+      }
     },
+
   };
 
   private labels = ["", "", "", ""];
+  private toolTipLabels = ["New", "In process", "Overdue", "Closed"];
 
   private colors = [{ backgroundColor: ["#5677fc", "#259b24", "#ffff00", "#ff9800"] }];
 
@@ -56,6 +75,7 @@ export class QaStore {
     let response: QaResponseInterface = httpResponse.data;
     let dataSets: QaScreenDataSet = {
       backgroundColor:this.colors,
+      labels: this.toolTipLabels,
       data: [response.new, response.inProgress, response.overdue, response.closed]
     };
 
