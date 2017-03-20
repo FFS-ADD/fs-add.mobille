@@ -89,7 +89,7 @@ export class SonarqubeDetailStore {
                             tickString = '0'; // never show decimal places for 0
                         }
 
-                        return tickString + 'K'
+                        return tickString + 'k'
                     }
                 }
             }]
