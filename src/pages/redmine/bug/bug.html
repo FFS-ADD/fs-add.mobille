@@ -6,7 +6,42 @@
       <ion-icon name="md-more"></ion-icon>
     </ion-label>
   </ion-item>
-  <ion-item class="bug-canvas">
+  <ion-row class="bug-canvas">
+      <ion-col class="bug-canvas-title">
+        <div>
+          <label>Total bugs : {{state?.totalBugs}}</label>
+        </div>
+        <div>
+          <p class="bug-new-title"></p>
+          <label>New : {{state?.screen?.bugResponse?.news}}</label>
+        </div>
+        <div>
+          <p class="bug-in-progress-title"></p>
+          <label>In Progress : {{state?.screen?.bugResponse?.inProgress}}</label>
+        </div>
+        <div>
+          <p class="bug-fixed-title"></p>
+          <label>Fixed : {{state?.screen?.bugResponse?.fixed}}</label>
+        </div>
+        <div>
+          <p class="bug-retesting-title"></p>
+          <label>ReTesting : {{state?.screen?.bugResponse?.retesting}}</label>
+        </div>
+        <div>
+          <p class="bug-closed-title"></p>
+          <label>Closed : {{state?.screen?.bugResponse?.close}}</label>
+        </div>
+      </ion-col>
+      <ion-col class="bug-canvas-area">
+          <canvas baseChart class="canvas"
+              [chartType]="state?.screen?.chartType"
+              [datasets]="state?.screen?.dataSets"
+              [options]="state?.screen?.options"
+              [colors]="state?.screen?.colors" *ngIf="state != null && state.screen != null">
+      </canvas>
+      </ion-col>
+  </ion-row>
+  <!--<ion-item class="bug-canvas">
     <ion-label class="bug-canvas-title">
       <div>
         <label>Total bugs : {{state?.totalBugs}}</label>
@@ -40,5 +75,5 @@
               [colors]="state?.screen?.colors">
       </canvas>
     </ion-label>
-  </ion-item>
+  </ion-item>-->
 </ion-card>

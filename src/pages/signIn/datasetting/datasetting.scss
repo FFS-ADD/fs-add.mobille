@@ -37,13 +37,13 @@ ion-header {
       width: 300px;
     }
   }
-  .datasetting-footer {
-    position: fixed;
-    .save-button {
-      padding-top: 0;
-      padding-bottom: 0;
-      margin: 0;
-    }
-  }
+}
 
+.datasetting-footer {
+  position: fixed;
+  .save-button {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+  }
 }
