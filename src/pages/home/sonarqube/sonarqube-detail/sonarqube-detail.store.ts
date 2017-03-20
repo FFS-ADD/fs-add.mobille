@@ -3,7 +3,8 @@ import {Dispatcher}from "../../../../core/Dispatcher";
 import Rx from 'rxjs/Rx';
 import { SonarqubeDetailState }from "./sonarqube-detail.state";
 import { SonarqubeDetailActionType }from "./sonarqube-detail.action.type";
-import { SonarqubeDetailScreenInterface, 
+import * as _ from "lodash";
+import { SonarqubeDetailScreenInterface,
          SonarqubeVulneralilitiesHistoryResponseInterface,
          SonarqubeBugsHistoryResponseInterface,
          SonarqubeCodeSmellsHistoryResponseInterface,
@@ -52,8 +53,56 @@ export class SonarqubeDetailStore {
     }];
 
     // LOC
-    private LOC_CHART_OPTIONS: any = {
-        responsive: true
+    private CHART_OPTIONS: any = {
+        responsive: true,
+        'scales': {
+            yAxes: [{
+                display: true,
+                ticks: {
+                    min: 0,
+                    beginAtZero:true,
+                    callback: function(tickValue, index, ticks) {
+                        // If we have lots of ticks, don't use the ones
+                        let delta = ticks.length > 3 ? ticks[2] - ticks[1] : ticks[1] - ticks[0];
+
+                        // If we have a number like 2.5 as the delta, figure out how many decimal places we need
+                        if (Math.abs(delta) > 1) {
+                            if (tickValue !== Math.floor(tickValue)) {
+                                // not an integer
+                                delta = tickValue - Math.floor(tickValue);
+                            }
+                        }
+
+                        let logDelta;
+                        if (Math.log10) {
+                            logDelta = Math.log10(Math.abs(delta));
+                        } else {
+                            logDelta = Math.log(Math.abs(delta)) / Math.LN10;
+                        };
+                        let tickString = '';
+
+                        if (tickValue !== 0) {
+                            let numDecimal = -1 * Math.floor(logDelta);
+                            numDecimal = Math.max(Math.min(numDecimal, 20), 0); // toFixed has a max of 20 decimal places
+                            tickString = tickValue.toFixed(numDecimal);
+                        } else {
+                            tickString = '0'; // never show decimal places for 0
+                        }
+
+                        return tickString + 'K'
+                    }
+                }
+            }]
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              let item = tooltipItem;
+              let datasets = data.datasets[item.datasetIndex].data;
+              return datasets[item.index] + 'k';
+            }
+          }
+        }
     };
     private LOC_CHART_COLORS:Array<any> = [{
         backgroundColor: '#FFF',
@@ -63,10 +112,6 @@ export class SonarqubeDetailStore {
         fill: false
     }];
 
-    // coverage
-    private COVERAGE_CHART_OPTIONS: any = {
-        responsive: true
-    };
     private COVERAGE_CHART_COLORS:Array<any> = [{
         backgroundColor: '#FFF',
         borderColor: '#3D5363',
@@ -101,8 +146,8 @@ export class SonarqubeDetailStore {
                 'v': value.vulneralilities,
                 'b': value.bugs,
                 'c': value.codeSmells,
-                'locLine': value.line,
-                'coverageLine': value.dLine
+                'locLine': value.line / 1000,
+                'coverageLine': value.dLine / 1000
             };
         }).reduce((acc: any, value: any) => {
             return {
@@ -116,7 +161,7 @@ export class SonarqubeDetailStore {
                 'locLineArray': [...acc.locLineArray, ...value.locLine],
                 'coverageLineArray': [...acc.coverageLineArray, ...value.coverageLine]
             };
-        }, {'vCount': 0, 'bCount': 0, 'cCount': 0, 
+        }, {'vCount': 0, 'bCount': 0, 'cCount': 0,
             vArray: [], bArray: [], cArray: [], dates: [],
             locLineArray: [], coverageLineArray:[]
         });
@@ -136,9 +181,11 @@ export class SonarqubeDetailStore {
             var vDatas: Array<any> = [
                 {data: c.vArray.reverse(), label: 'Vulneralilities'}
             ];
+            let vOptions = _.cloneDeep(this.VBC_CHART_OPTIONS);
+            vOptions.scales.yAxes[0].ticks.max = parseInt(_.max(c.vArray.reverse())) +  5;
             let vResponse: SonarqubeVulneralilitiesHistoryResponseInterface = {
                 colors: this.V_CHART_COLORS,
-                options: this.VBC_CHART_OPTIONS,
+                options: vOptions,
                 labels: c.dates.reverse(),
                 datas: vDatas
             };
@@ -147,9 +194,11 @@ export class SonarqubeDetailStore {
             var bugsDatas: Array<any> = [
                 {data: c.bArray.reverse(), label: 'Bugs'}
             ];
+            let bugOptions = _.cloneDeep(this.VBC_CHART_OPTIONS);
+            bugOptions.scales.yAxes[0].ticks.max = parseInt(_.max(c.bArray.reverse())) +  5;
             let bugsResponse: SonarqubeBugsHistoryResponseInterface = {
                 colors: this.B_CHART_COLORS,
-                options: this.VBC_CHART_OPTIONS,
+                options: bugOptions,
                 labels: c.dates.reverse(),
                 datas: bugsDatas
             };
@@ -158,9 +207,11 @@ export class SonarqubeDetailStore {
             var codeSmellsDatas: Array<any> = [
                 {data: c.cArray.reverse(), label: 'Code Smells'}
             ];
+            let codeOptions = _.cloneDeep(this.VBC_CHART_OPTIONS);
+            codeOptions.scales.yAxes[0].ticks.max = parseInt(_.max(c.cArray.reverse())) +  5;
             let codeSmellsResponse: SonarqubeCodeSmellsHistoryResponseInterface = {
                 colors: this.C_CHART_COLORS,
-                options: this.VBC_CHART_OPTIONS,
+                options: codeOptions,
                 labels: c.dates.reverse(),
                 datas: codeSmellsDatas
             };
@@ -171,7 +222,7 @@ export class SonarqubeDetailStore {
             ];
             let locResponse: SonarqubeLocHistoryResponseInterface = {
                 colors: this.LOC_CHART_COLORS,
-                options: this.LOC_CHART_OPTIONS,
+                options: this.CHART_OPTIONS,
                 labels: c.dates.reverse(),
                 datas: locDatas
             };
@@ -181,7 +232,7 @@ export class SonarqubeDetailStore {
             ];
             let coverageResponse: SonarqubeCoverageHistoryResponseInterface = {
                 colors: this.COVERAGE_CHART_COLORS,
-                options: this.COVERAGE_CHART_OPTIONS,
+                options: this.CHART_OPTIONS,
                 labels: c.dates.reverse(),
                 datas: coverageDatas
             };
@@ -193,7 +244,7 @@ export class SonarqubeDetailStore {
                 sonarqubeLocHistoryResponse: locResponse,
                 sonarqubeCoverageHistoryResponse: coverageResponse
             }
-            this.state.screen = response; 
+            this.state.screen = response;
         });
 
     }
